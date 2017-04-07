@@ -93,7 +93,7 @@ a:hover{
     margin: 0 auto;
     width: 85%;
     background-size: auto 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,.6);
+    /*box-shadow: 0 0 10px rgba(0,0,0,.6);*/
     /*border:1px solid rgba(68,47,38,.5);*/
 
     position: relative;
@@ -107,12 +107,13 @@ a:hover{
     top:0;
     transition: all 0.3s ease;
     background:url("../images/bg_nav.jpg") repeat-x;
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
 
 .menu-logogundong{
     width: 40px;
     height:40px;
-    margin-left: 20px;
+    margin-left: 0;
     margin-top: 3px;
     background: url("../images/Logo-wowIcon.png") no-repeat;
     background-size: contain;
@@ -121,7 +122,7 @@ a:hover{
     float: left;
     z-index:10;
 }
-#menu-logo{
+.menu-logo{
     width: 293px;
     height:118px;
     position: relative;
@@ -133,42 +134,26 @@ a:hover{
     background: url("../images/home/Logo-wow-cn.png");
     background-size: cover;
 }
-.menu-logo{
-    width:193px;
+.menu-logo-a{
+    width:auto;
+    margin: 0 20px;
     height:90px;
     display: inline-block;
     float: left;
 }
-#menu-logo:after{
-    background: rgba(68,47,38,.5);
-    left: 193px;
-    right: -1px;
-    top: 1px;
-    bottom: 1px;
-    content: "";
-    position: absolute;
-    width: 1px;
-}
 .leftnav{
     float: left;
     display: block;
-}
-.leftnav:after{
-    background: rgba(21,13,9,.8);
-    bottom: 1px;
-    content: "";
-    position: absolute;
-    left: 426px;
-    top: 1px;
-    width: 1px;
+    border-left:1px solid rgba(68,47,38,.5);
+    border-right: 1px solid rgba(21,13,9,.8);
 }
 .rightnav{
     float: right;
-    /*padding-right: 14px;*/
     display: block;
+    border-left:1px solid rgba(68,47,38,.5);
 }
 .menuli{
-    height: 89px;
+    height: 88px;
     max-width: 160px;
     padding: 0 25px;
     text-align: center;
@@ -177,28 +162,11 @@ a:hover{
     font-family: Arial, Helvetica, 微软雅黑, "Microsoft YaHei", "Hei SC", sans-serif;
     font-weight: bold;
     position: relative;
-}
-.menuli:before{
-    background: rgba(21,13,9,.8);
-    bottom: 1px;
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: 1px;
-    width: 1px;
-}
-.menuli:after{
-    background: rgba(68,47,38,.5);
-    left: auto;
-    right: -1px;
-    top: 1px;
-    bottom: 1px;
-    content: "";
-    position: absolute;
-    width: 1px;
+    border-left:1px solid rgba(21,13,9,.8);
+    border-right: 1px solid rgba(68,47,38,.5);
 }
 .menugundong .menuli{
-    height: 46px;
+    height: 50px;
     max-width: 160px;
     padding: 0 25px;
     text-align: center;
@@ -265,12 +233,11 @@ a:hover{
     border: 1px solid #241505;
     border-top: none;
     border-bottom-color: #311c06;
-    margin-left: 94px;
+    margin-left: 109px;
 }
 .menugundong .menu-tuozhan{
     width: 100%;
     margin-left: 0;
-
     top: -2px
 }
 .menugundong .tuozhan-con{
@@ -285,7 +252,7 @@ a:hover{
 .tuozhan-con{
     /**/
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 60px 30px;
     width: 100%;
     height:100%;
     display: block;
