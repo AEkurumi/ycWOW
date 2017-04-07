@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新闻 - Wow</title>
+    <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+
+    <link href="../../public/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../public/css/nav.css" rel="stylesheet" />
+    <link href="../../public/css/news.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="pine">
+        <div class="header">
+            <div class="top-boxer">
+
+                <div class="menu" id="menu">
+
+                    <div class="nav" id="nav">
+                        <a href="" id="menu-logo" class="menu-logo"></a>
+                        <div class="menu-search">
+                            <input type="button" value="搜索内容" />
+                        </div>
+                        <ul class="leftnav row">
+
+                            <li class="menuli">
+                                <a href="javascript:void(0);" class="menu-a" id="game">
+                                    <span class="menu-span">游戏</span>
+                                    <span class="zt glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <li class="menuli">
+                                <a href="javascript:void(0);" class="menu-a" id="story">
+                                    <span class="menu-span">故事背景</span>
+                                    <span class="zt glyphicon glyphicon-chevron-down"></span></a>
+
+                            </li>
+                            <li class="menuli">
+                                <a href="" class="menu-a"><span class="menu-span">新闻</span></a>
+                            </li>
+                            <li class="menuli">
+                                <a href="" class="menu-a"><span class="menu-span">论坛</span></a>
+                            </li>
+                        </ul>
+                        <ul class="rightnav row">
+                            <li class="menuli">
+                                <a href="" class="menu-a"><span class="menu-span">
+                                <span class="\zt glyphicon glyphicon-search"></span></span></a></li>
+                            <li class="menuli">
+                                <a href="login.html" class="menu-a">
+                                    <span class="menu-span">登录</span>
+                                </a>
+                            </li>
+                            <li class="menuli" id="register">
+                                <a href="" class="menu-a">
+                                    <span class="menu-span">注册</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-tuozhan" id="tuozhan1" style="display: none;">
+                        <div class="tuozhan-con">
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>游戏玩法</span>
+                                </div>
+
+                                <ul>
+                                    <li><a href="">种族</a></li>
+                                    <li><a href="">职业</a></li>
+                                    <li><a href="">天赋模拟器</a></li>
+                                    <li><a href="">服务器状态</a></li>
+                                    <li><a href="">拍卖行</a></li>
+                                </ul>
+                            </div>
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>指南</span>
+                                </div>
+                                <ul>
+                                    <li><a href="">新玩家：准备起步</a></li>
+                                    <li><a href="">回归玩家：欢迎回归</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>竞技</span>
+                                </div>
+                                <div class="tuozhan">
+                                    <ul>
+                                        <li><a href="">史诗钥石排行榜</a></li>
+                                        <li><a href="">PvP排行榜</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>下载</span>
+                                </div>
+                                <ul>
+                                    <li><a href="">下载《魔兽世界》</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="menu-tuozhan" id="tuozhan2" style="display: none;">
+                        <div class="tuozhan-con">
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>魔兽世界知识</span>
+                                </div>
+
+                                <ul>
+                                    <li><a href="">所有</a></li>
+                                    <li><a href="">视频</a></li>
+                                    <li><a href="">音频</a></li>
+                                    <li><a href="">漫画</a></li>
+                                    <li><a href="">小说</a></li>
+                                    <li><a href="">短篇小说</a></li>
+                                    <li><a href="">魔兽角色</a></li>
+                                </ul>
+                            </div>
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>魔兽里程碑</span>
+                                </div>
+                                <ul>
+                                    <li><a href="">魔兽里程碑</a></li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content container">
+                <div class="hot">
+                    <div class="hot-top">
+                        <div class="hot-con hot-big">
+                            <a href="" ><div class="hot-content">
+                                <div class="hot-pic"></div>
+                                <div class="hot-tit">
+                                    <div class="hot-tit-c">
+                                        <div class="hot-con-left">
+                                            <div class="hot-synopsis">March 14th, 2017</div>
+                                            <span>7.2版本“萨格拉斯之墓”3月30日正式上线！</span></div>
+                                        <div class="hot-con-right">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span>0</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="hot-con hot-small">
+                            <a href="" ><div class="hot-content">
+                                <div class="hot-pic"></div>
+                                <div class="hot-tit">
+                                    <div class="hot-tit-c">
+                                        <div class="hot-con-left">
+                                            <div class="hot-synopsis">March 14th, 2017</div>
+                                            <span>7.2版本预览：重返破碎海滩</span></div>
+                                        <div class="hot-con-right">
+                                            <span class="glyphicon glyphicon-comment"></span>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="hot-con hot-small">
+                            <a href="" ><div class="hot-content">
+                                    <div class="hot-pic"></div>
+                                    <div class="hot-tit">
+                                        <div class="hot-tit-c">
+                                            <div class="hot-con-left">
+                                                <div class="hot-synopsis">March 14th, 2017</div>
+                                                <span>7.2版本预览：重返破碎海滩</span></div>
+                                            <div class="hot-con-right">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div></a>
+                        </div>
+                    </div>
+                    <div class="hot-bot">
+                        <div class="hot-con hot-small">
+                            <a href="" ><div class="hot-content">
+                                    <div class="hot-pic">
+                                    </div>
+                                    <div class="hot-tit">
+                                        <div class="hot-tit-c">
+                                            <div class="hot-con-left">
+                                                <div class="hot-synopsis">March 14th, 2017</div>
+                                                <span>7.2版本预览：重返破碎海滩</span></div>
+                                            <div class="hot-con-right">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div></a>
+                        </div>
+                    </div>
+                        <div class="hot-con hot-small">
+                            <a href="" ><div class="hot-content">
+                                    <div class="hot-pic"></div>
+                                    <div class="hot-tit">
+                                        <div class="hot-tit-c">
+                                            <div class="hot-con-left">
+                                                <div class="hot-synopsis">March 14th, 2017</div>
+                                                <span>7.2版本预览：重返破碎海滩</span></div>
+                                            <div class="hot-con-right">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div></a>
+                        </div>
+                        <div class="hot-con hot-small">
+                            <a href="" ><div class="hot-content">
+                                    <div class="hot-pic"></div>
+                                    <div class="hot-tit">
+                                        <div class="hot-tit-c">
+                                            <div class="hot-con-left">
+                                                <div class="hot-synopsis">March 14th, 2017</div>
+                                                <span>7.2版本预览：重返破碎海滩</span></div>
+                                            <div class="hot-con-right">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="last">
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-item">
+                        <div class="last-con">
+                            <div class="last-left"></div>
+                            <div class="last-right">
+                                <div class="last-tit">《军团再临》7.2版本在线修正（3月30日更新）</div>
+                                <p class="last-desc">以下是我们对最近发布的《魔兽世界：军团再临》7.1.5版本中存在的问题所进行的在线修正列表。 </p>
+                                <div class="last-dianji">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="dianjilang">72</span>
+                                    <span class="zuihoushijian">an hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more">
+                        <div class="more-con">
+                            <div class="more-btn">
+                                <span>查看更多新闻</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="guanzhu">
+        <div class="guanzhu-con">
+            <ul>
+                <li><span>关注魔兽</span></li>
+                <li><a href=""><span>微博</span></a></li>
+                <li><a href=""><span>腾讯</span></a></li>
+                <li><a href=""><span>微信</span></a></li>
+                <li><a href=""><span>优酷</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer container-fluid">
+        <div class="footer-middle container">
+            <div class="footer-left">
+                <a href="" class="zhichi">
+                    <span class="zhichi-icon"></span>
+                    <span class="footer-left-text">支持</span>
+                </a>
+                <a href="" class="fankui">
+                    <span class="fankui-icon"></span>
+                    <span class="footer-left-text">反馈</span>
+                </a>
+            </div>
+            <div class="footer-sec">
+                <div class="blizzard-logo"></div>
+                <div class=" pull-left">
+                    <div class="footer-links">
+                        <ul class="footer-links">
+                            <li class="footer-links-link--careers">
+                                <a href="" class="footer-links-link footer-links-link--careers">工作机会</a>
+                                |
+                            </li>
+                            <li>
+                                <a href="" class="footer-links-link footer-links-link--about">关于</a>
+                                |
+                            </li>
+                            <li>
+                                <a href="" class="footer-links-link footer-links-link--privacy">隐私</a>
+                                |
+                            </li>
+                            <li>
+                                <a href="" class="footer-links-link footer-links-link--terms">法律条款</a>
+                                |
+                            </li>
+                            <li>
+                                <a href="" class="footer-links-link footer-links-link--api">API</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="copyright">©2017 Blizzard Entertainment, Inc. All rights reserved.</div>
+                </div>
+
+            </div>
+            <div class="footer-media">
+                沪网文[2014]0731-161号 | 增值电信业务经营许可证编号：沪B2－20080012
+                <br/>
+                互联网违法和不良信息举报电话：0571-28090163 | 沪公网安备：31011502002167
+                <div class="space-small"></div>
+                <a href="" class="footer-iconLink">
+                    <div class="footer-iconLink footer-iconLink-cyberPolice"></div>
+                </a>
+                <a href="http://www.zx110.org/" class="Footer-iconLink">
+                    <div class="footer-iconLink footer-iconLink-zx100"></div>
+                </a>
+                <a href="" class="footer-iconLink">
+                    <div class="footer-iconLink footer-iconLink-sgs"></div>
+                </a>
+                <a href="" class="footer-iconLink">
+                    <div class="footer-iconLink footer-iconLink-shjbzx"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/dist/js/bootstrap.js"></script>
+    <script src="../../public/js/nav.js"></script>
+</body>
+</html>

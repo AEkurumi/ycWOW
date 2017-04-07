@@ -1,0 +1,416 @@
+body{
+    color: #ebdec2;
+}
+.container{
+    width:80%;
+}
+.pine{
+    background: url("../../public/images/news/Pane-dirtDark-.jpg") repeat;
+    position: relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow: hidden;
+}
+.header{
+    background: url("../../public/images/news/bg.jpg") no-repeat;
+    width: 100%;
+    height:2000px;
+    background-size: 2400px;
+}
+.content{
+    padding-top: 130px;
+}
+
+/***************hot*******************/
+.hot{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    padding-left: 3px;
+}
+.hot a{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    color:#ebdec2;
+}
+.hot a:hover{
+    color:#ebdec2;
+}
+.hot-top{
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+}
+.hot-bot{
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+}
+.hot-con{
+    padding: 10px;
+}
+.hot-big{
+    width:66%;
+    height:770px;
+    float: left;
+    padding: 10px;
+    position: relative;
+}
+.hot-small{
+    width:33%;
+    height:385px;
+    float: left;
+    padding: 10px;
+    position: relative;
+}
+.hot-content{
+    position: relative;
+    height: 100%;
+    background: #211510;
+    border: 1px solid #504137;
+}
+.hot-content:hover{
+    border: 1px solid #f8b700;
+}
+.hot-pic{
+    width: 100%;
+    height: 73%;
+    border-bottom: 1px solid #504137;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("../../public/images/news/hot-1.jpg");
+    background-color: #000;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hot-tit{
+    height: 27%;
+    top:73%;
+    overflow: hidden;
+    position: absolute;
+    display: table;
+    width: 100%;
+}
+.hot-tit-c{
+    width: 100%;
+    display: table;
+}
+.hot-big .hot-tit-c{
+    padding: 40px 30px;
+    width: 100%;
+}
+.hot-small .hot-tit-c{
+    padding: 20px;
+    width: 100%;
+}
+.hot-big .hot-con-left{
+    float: left;
+    height: 100%;
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 40px;
+}
+.hot-big .hot-con-right{
+    width: 160px;
+    height: 100%;
+    padding-top: 50px;
+    text-align: right;
+    font-size: 18px;
+    float: right;
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.hot-big .hot-con-left span{
+    font-size: 36px;
+    line-height: 52px;
+    color: #f8b700;
+    font-weight: bold;
+}
+.hot-small .hot-con-left{
+    float: left;
+    height: 100%;
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 40px;
+}
+.hot-small .hot-con-right{
+    width: 100px;
+    height: 100%;
+    padding-top: 30px;
+    text-align: right;
+    font-size: 18px;
+    float: left;
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.hot-small .hot-con-left span{
+     font-size: 20px;
+     line-height: 22px;
+     color: #f8b700;
+     font-weight: bold;
+ }
+.hot-synopsis{
+    line-height: 28px;
+    color: #ebdec2;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-shadow: none;
+}
+
+
+/***********************last***********************/
+.last{
+    width:100%;
+
+    float: left;
+    position: relative;
+    margin-top: 30px;
+}
+.last-item{
+    width: 76.5%;
+    height:270px;
+    border-top:1px solid rgba(170,170,170,.4);
+    position: relative;
+    left: -5px;
+}
+.last-item:hover{
+    background-color: #211510;
+}
+.last-item:hover .last-left{
+    border-color: #f8b700;
+}
+.last-con{
+    padding: 25px;
+    height: 100%;
+    position: relative;
+}
+.last-left{
+    width: 380px;
+    height: 100%;
+    float: left;
+    background: url("../../public/images/news/last-1.jpg") no-repeat;
+    background-size: cover;
+    border: 1px solid #504137;
+    display: block;
+}
+.last-right{
+    margin-left: 30px;
+    float: left;
+
+}
+.last-tit{
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #f8b700;
+    line-height: 30px;
+
+}
+.last-desc{
+    font-size: 1.8em;
+    line-height: 2em;
+    color: #ebdec2;
+    margin: 20px 0;
+}
+.last-dianji span{
+    font-size: 1.5em;
+    color: #b1997f;
+}
+.dianjilang{
+    margin-left:10px;
+}
+.zuihoushijian{
+    margin-left:40px;
+}
+.more{
+    width: 76.5%;
+    height:140px;
+    position: relative;
+    left: -5px;
+    border-top:1px solid rgba(170,170,170,.4) ;
+}
+.more-con{
+    width: 100%;
+    padding: 20px 0;
+}
+.more-btn{
+    margin: 0 auto;
+    padding: 0;
+    height: 60px;
+    width: 180px;
+    background: rgba(0,0,0,.4);
+    color: #f7b10a;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    border: 1px solid #c77e19;
+    text-align: center;
+}
+.more-btn span{
+    line-height: 58px;
+    font-weight: 400;
+    font-size: 1.8em;
+
+}
+.more-btn:hover {
+    background: #b06601;
+    color: #ffd36b;
+}
+
+
+/************************footer*************************/
+.divider{
+    height:4px;
+    width: 100%;
+    float: left;
+    background: #000000;
+    position: relative;
+    color: transparent;
+}
+.guanzhu{
+    height:90px;
+    width: 100%;
+    float: left;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: url("../../public/images/guanzhu.jpg") no-repeat top;
+
+}
+.guanzhu-con{
+    display: table;
+    height:90px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #ffffff;
+    line-height: 90px;
+}
+.guanzhu ul li{
+    font-size: 2em;
+    padding: 0 20px 0;
+    text-align: center;
+}
+.footer{
+    background: url("../../public/images/foot_bg.jpg");
+    height:318px;
+    width:100%;
+    float: left;
+    position: relative;color: #b1997f;
+}
+.space-small{
+    height:10px;
+    width:100%;
+}
+.footer-middle{
+    margin-top: 50px;
+}
+.footer-left{
+    margin:0 0 30px;
+}
+.footer-left a:hover span{
+    color: #f8b700;
+    text-decoration: underline;
+}
+.zhichi,.fankui{
+    color: #b1997f;
+    margin-right: 25px;
+    display: inline-block;
+}
+.zhichi-icon,.fankui-icon{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.zhichi-icon{
+    background: url("../../public/images/icon-footer.png") no-repeat 0 63%;
+}
+.fankui-icon{
+    background: url("../../public/images/icon-footer.png") no-repeat 0 30%;
+}
+.footer-left-text{
+    position: relative;
+    top:-5px;
+
+    font-size: 1.3em;
+}
+.footer-sec{
+    width:100%;
+    height: 58px;
+    display: block;
+    margin-bottom: 20px;
+}
+.blizzard-logo{
+    background: url("../../public/images/Logo-blizzardGold.png") no-repeat;
+    background-size: contain;
+    float: left;
+    width: 113px;
+    height: 58px;
+    position: relative;
+    margin-right: 40px;
+}
+.footer-links{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height:17px;
+    color: #b1997f;
+}
+.footer-links li{
+    display: inline-block;
+    height:17px;
+}
+
+.footer-links li a{
+    padding-left: 12px;
+    padding-right: 10px;
+    color: #b1997f;
+    display: inline-block;
+    height:17px;
+}
+
+.copyright{
+    position: relative;
+    float: left;
+    color: #b1997f;
+    text-transform: uppercase;
+}
+.footer-media{
+    position: relative;
+    float: left;
+}
+.footer-iconLink{
+    float: left;
+    background-size: 100%;
+    background-position: center;
+    width:27px;
+    height:27px;
+    margin-right: 10px;
+}
+.footer-iconLink-cyberPolice{
+    background: url("../../public/images/police.png") no-repeat;
+}
+.footer-iconLink-zx100{
+    background: url("../../public/images/zx110.png") no-repeat;
+}
+.footer-iconLink-sgs{
+    background: url("../../public/images/sgs-icon.png") no-repeat;
+}
+.footer-iconLink-shjbzx{
+    background: url("../../public/images/icon20120516.png") no-repeat;
+}

@@ -1,0 +1,204 @@
+/*footer start*/
+footer {
+    background: url("../images/foot_bg.jpg") repeat center 0;
+    padding-top: 62px;
+}
+
+.footer{
+    width: auto;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.Cooperation_info{
+    width: 1000px;
+    position: relative;
+    left: 50%;
+    margin-left: -500px;
+    color: #fff;
+    z-index: 100;
+    padding: 50px 0;
+}
+.customer{
+    float: left;
+}
+.customer a{
+    margin-right: 37px;
+    color:rgba(255,255,255,0.7);
+}
+.customer_sp{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    top:5px;
+    margin-right: 10px;
+    background: url("../images/gamepoints/f-business_20160608.png") no-repeat;
+}
+
+.custom_sp_bg1{
+    background-position:  -6px -7px;
+}
+.custom_sp_bg2{
+    background-position: -36px -8px;
+}
+.custom_sp_bg3{
+    background-position: -8px -32px;
+}
+.customer a:hover{
+    color:#ffffff;
+}
+
+
+
+.brand{
+    text-align: right;
+    margin-right: 50px;
+}
+.brand p{
+    display: block;
+}
+.brand_bg{
+    display: inline-block;
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 20px;
+    margin: 0;
+    position: relative;
+    top:5px;
+    background: url("../images/gamepoints/Fbusiness-logo-wow.png") no-repeat;
+}
+.brand_inter{
+    background-position: 0 0;
+    width: 36px;
+    height: 26px;
+}
+.brnad_naidia{
+    background-position: -36px 0;
+    width: 95px;
+    height: 26px;
+}
+
+
+.brand_add{
+    display: inline-block;
+    background: #241101;
+    border: 1px solid #2d1702;
+    color: #ac771f;
+    width: 14px;
+    height: 14px;
+    margin: 0 0 0 13px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 0;
+}
+.brand_add:hover .brand_line_h{
+    background: #ffffff;
+}
+.brand_add:hover .brand_line_s{
+    background: #ffffff;
+}
+.brand_line_h{
+    width: 10px;
+    height: 2px;
+    margin: -1px 0 0 -5px;
+}
+.brand_line_s{
+    width: 2px;
+    height: 10px;
+    margin: -5px 0 0 -1px;
+}
+.brand_line_s,.brand_line_h{
+    position: absolute;
+    display: block;
+    background: #ac771f;
+    top: 50%;
+    left: 50%;
+}
+
+.f_logo{
+    text-align: left;
+    width: 1000px;
+    margin: 0 auto 8px;
+}
+
+.f_logo a{
+    display: inline-block;
+}
+.f_logo_bz{
+    width: 125px;
+    height: 80px;
+    background: url("../images/gamepoints/logo_blizzard.png") no-repeat 0 0;
+}
+.f_logo_wy{
+    width: 125px;
+    height: 38px;
+    margin: 0 0 0 20px;
+    background: url("../images/gamepoints/logo_ne.png") no-repeat 0 0;
+}
+
+.f_info{
+    width: 640px;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 60px;
+    position: relative;
+    top:30px;
+}
+.info{
+    margin-left: -10px;
+    padding-bottom: 5px;
+}
+.info:after{
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+.info li{
+    float: left;
+}
+.info li a{
+    display: inline-block;
+    padding: 0 12px;
+    color: rgba(255,255,255,0.7);
+}
+.info li a:hover{
+    color: rgb(255,255,255);
+}
+.f_info p{
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p span{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+    display: inline-block;
+}
+.f_info p a{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p a:hover{
+    color:#ffffff;
+}
+.integ a{
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top:5px;
+}
+.tip{
+    border-top: 1px solid #1a1a1a;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+.tip p{
+    color: rgba(255,255,255,.3);
+    font-size: 12px;
+}

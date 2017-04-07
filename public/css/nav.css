@@ -1,0 +1,483 @@
+body{
+    font-size: 10px;
+    /*position: relative;*/
+    width: 100%;
+    word-break: keep-all;
+    background: #222;
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+.container-fluid{
+    padding: 0;
+}
+h1{
+    font-size: 6em;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    text-align: left;
+}
+p{
+    font-size: 2.5em;
+    line-height: 1.5em;
+    color: #fff;
+    width: 550px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    text-align: left;
+}
+ul{
+    margin-bottom: 0;
+}
+ul li{
+    list-style: none;
+    float: left;
+
+}
+a{
+    display: block;
+    width:auto;
+    height: auto;
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+/********************menu*********************/
+.menu{
+    position: absolute;
+    top:50px;
+    z-index: 100;
+    height:130px;
+    width:100%;
+    margin-left: 50px;
+    transition: all 0.2s ease;
+}
+.nav{
+    background:url("../images/bg_nav.jpg") repeat-x 80px 0;
+    background-size: auto 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
+    border:1px solid rgba(68,47,38,.5);
+    height:90px;
+    width:80%;
+    margin: 0 auto;
+    position: relative;
+}
+.menu-search{
+    float: left;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 49px;
+    display: none;
+}
+.menu-search input{
+    font-size: 12px;
+    font-style: italic;
+    padding-left: 20px;
+    text-align: left;
+    height: 49px;
+    margin-top: 0;
+    width:100%;
+    background: #000000;
+    border: none;
+    color: #f8b700;
+}
+.navgundong{
+    height:49px;
+    margin: 0 auto;
+    width: 85%;
+    background-size: auto 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
+    /*border:1px solid rgba(68,47,38,.5);*/
+
+    position: relative;
+    z-index:100;
+}
+.menugundong{
+    position: fixed;
+    height:50px;
+    width:100%;
+    z-index: 100;
+    top:0;
+    transition: all 0.3s ease;
+    background:url("../images/bg_nav.jpg") repeat-x;
+}
+
+.menu-logogundong{
+    width: 40px;
+    height:40px;
+    margin-left: 20px;
+    margin-top: 3px;
+    background: url("../images/Logo-wowIcon.png") no-repeat;
+    background-size: contain;
+    position: relative;
+    display: block;
+    float: left;
+    z-index:10;
+}
+#menu-logo{
+    width: 293px;
+    height:118px;
+    position: relative;
+    margin-top: -15px;
+    margin-left: -120px;
+    display: block;
+    float: left;
+    z-index:10;
+    background: url("../images/home/Logo-wow-cn.png");
+    background-size: cover;
+}
+.menu-logo{
+    width:193px;
+    height:90px;
+    display: inline-block;
+    float: left;
+}
+#menu-logo:after{
+    background: rgba(68,47,38,.5);
+    left: 193px;
+    right: -1px;
+    top: 1px;
+    bottom: 1px;
+    content: "";
+    position: absolute;
+    width: 1px;
+}
+.leftnav{
+    float: left;
+    display: block;
+}
+.leftnav:after{
+    background: rgba(21,13,9,.8);
+    bottom: 1px;
+    content: "";
+    position: absolute;
+    left: 426px;
+    top: 1px;
+    width: 1px;
+}
+.rightnav{
+    float: right;
+    /*padding-right: 14px;*/
+    display: block;
+}
+.menuli{
+    height: 89px;
+    max-width: 160px;
+    padding: 0 25px;
+    text-align: center;
+    line-height: 89px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, 微软雅黑, "Microsoft YaHei", "Hei SC", sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+.menuli:before{
+    background: rgba(21,13,9,.8);
+    bottom: 1px;
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 1px;
+    width: 1px;
+}
+.menuli:after{
+    background: rgba(68,47,38,.5);
+    left: auto;
+    right: -1px;
+    top: 1px;
+    bottom: 1px;
+    content: "";
+    position: absolute;
+    width: 1px;
+}
+.menugundong .menuli{
+    height: 46px;
+    max-width: 160px;
+    padding: 0 25px;
+    text-align: center;
+    line-height: 49px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, 微软雅黑, "Microsoft YaHei", "Hei SC", sans-serif;
+    font-weight: bold;
+
+    border-right:1px solid rgba(68,47,38,.5);
+}
+.menu .menuli .menu-a{
+    height: 90px;
+    transition: all 0.5s ease;
+}
+.menugundong .menuli .menu-a{
+    height: 50px;
+    transition: all 0.5s ease;
+}
+.menu-span{
+    display: inline-block;
+}
+.menu .menuli .menu-a span{
+    display: inline-block;
+    background-size: 1em 1em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100 0,#e2a233 25%, #f0c328 50%, #fff1a3 70%, #ffe13e 100%);
+    color: #f8b700;
+
+}
+.menugundong .menuli a span{
+    display: inline-block;
+    background-size: 1em 1em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100 0,#e2a233 25%, #f0c328 50%, #fff1a3 70%, #ffe13e 100%);
+    color: #f8b700;
+}
+
+.menu .menuli a:hover span{
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#fff 0,#fff 100%);
+}
+.menugundong .menuli .menu-a:hover span{
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#fff 0,#fff 100%);
+}
+
+#register{
+    background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
+}
+
+.menu-tuozhan{
+    position: relative;
+    display: block;
+    top: -1px;
+    width:85%;
+    height:325px;
+    background: linear-gradient(to bottom,rgba(1,1,2,.97),rgba(21,13,6,.97));
+    border: 1px solid #241505;
+    border-top: none;
+    border-bottom-color: #311c06;
+    margin-left: 94px;
+}
+.menugundong .menu-tuozhan{
+    width: 100%;
+    margin-left: 0;
+
+    top: -2px
+}
+.menugundong .tuozhan-con{
+    width: 100%;
+}
+#tuozhan1{
+    height:325px;
+}
+#tuozhan2{
+    height:400px;
+}
+.tuozhan-con{
+    /**/
+    margin: 0 auto;
+    padding: 40px 30px;
+    width: 100%;
+    height:100%;
+    display: block;
+}
+.tuozhanlan{
+    width:25%;
+    height:100%;
+    padding:0 20px;
+    float: left;
+    display: block;
+}
+.tuozhan-title{
+    height: 30px;
+    font-size: 1.6em;
+    line-height: 30px;
+    color: #cacaca;
+    margin: 4px 0;
+    border-bottom: 1px solid #352011;
+}
+.menu-tuozhan a{
+    font-size: 1em;
+    color: #f8b700;
+}
+.menu-tuozhan ul{
+    margin: 20px 0;
+    height:100%;
+    width:100%;
+
+}
+.menu-tuozhan li{
+    width:100%;
+    margin: 0 0 20px;
+    height: 17px;
+}
+
+
+/*****************标题栏响应式********************/
+@media (max-width: 820px) {
+    .menu{
+        position: fixed;
+        height:100px;
+        width:98%;
+        top:0;
+        margin: 0 auto;
+        transition: all .3s ease;
+    }
+    .nav{
+        height:50px;
+        margin-left: 0;
+    }
+    .menu-search{
+        display: inline-block;
+    }
+    #menu-logo{
+        width: 40px;
+        height:40px;
+        margin-left: 0;
+        margin-top: 4px;
+        background: url("../images/Logo-wowMenu-17c65a62fd.png");
+        background-size: cover;
+    }
+    .leftnav,.rightnav{
+        display: none;
+    }
+    .navgundong{
+        width: 100%;
+    }
+
+}
+@media (min-width: 820px) and (max-width: 1080px) {
+    .menu{
+        height:100px;
+        width:95%;
+    }
+    .nav{
+        height:50px;
+        margin-left: 0px;
+    }
+    .menu-logo{
+        width: 40px;
+        height:40px;
+        margin-left: 20px;
+        margin-top: 3px;
+        background: url("../images/Logo-wowIcon.png");
+        background-size: cover;
+    }
+    .menu .menuli{
+        height: 49px;
+        padding: 0 15px;
+        line-height: 49px;
+        font-size: 1.0em;
+    }
+    .menugundong .menuli{
+        font-size: 1em;
+    }
+    .menu .menuli .menu-a{
+        height: 50px;
+    }
+    .menugundong .tuozhan-con{
+        width: 100%;
+    }
+    .navgundong{
+        width: 100%;
+    }
+
+}
+@media (min-width: 1080px) and (max-width: 1210px){
+    .menu{
+        height:100px;
+        width:95%;
+    }
+    .nav{
+        height:70px;
+        margin-left: 100px;
+
+    }
+    .menu-logo{
+        width: 216px;
+        height: 88px;
+        margin-left: -110px;
+        margin-top: -11px;
+    }
+
+
+    .menu .menuli{
+        height: 69px;
+        line-height: 69px;
+        padding: 0 15px;
+        font-size: 1.2em;
+    }
+    .menugundong .menuli{
+        font-size: 1.2em;
+    }
+    .menu .menuli .menu-a{
+        height: 70px;
+    }
+    .menugundong .tuozhan-con{
+        width: 100%;
+    }
+    .navgundong{
+        width: 100%;
+    }
+
+
+}
+@media (min-width: 1210px) and (max-width: 1640px) {
+    .menu{
+        height:110px;
+        width:95%;
+    }
+    .nav{
+        height:80px;
+        margin-top: 10px;
+        margin-left: 110px;
+
+    }
+    .menu-logo{
+        width: 256px;
+        height: 103px;
+        margin-left: -120px;
+        margin-top: -11px;
+    }
+    .menu .menuli{
+        height: 79px;
+        max-width: 150px;
+        padding: 0 25px;
+        line-height: 79px;
+        font-size: 1.5em;
+    }
+    .menu .menuli .menu-a{
+        height: 80px;
+    }
+    .menugundong .menuli{
+        font-size: 1.5em;
+    }
+    .menu-tuozhan{
+        position: relative;
+        display: block;
+        top: -1px;
+        width:100%;
+        height:325px;
+        background: linear-gradient(to bottom,rgba(1,1,2,.97),rgba(21,13,6,.97));
+        border: 1px solid #241505;
+        border-top: none;
+        border-bottom-color: #311c06;
+        margin: 0;
+    }
+    .menugundong .tuozhan-con{
+        width: 100%;
+    }
+    .navgundong{
+        width: 100%;
+    }
+
+}

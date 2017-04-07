@@ -1,0 +1,140 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body{
+    width: 100%;
+    background: url("../../public/images/login/login-background-1920.3f7pb.jpg") no-repeat center 0;
+}
+
+.con_logo{
+    width: 300px;
+    height: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: url("../../public/images/login/china-default.1qc7L.png") no-repeat 0 0;
+}
+.con_form{
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.con_form input {
+    margin: 15px 0;
+    display: block;
+    width: 360px;
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 20px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255,255,255,0.7);
+    border-radius: 2px;
+
+}
+.con_form button{
+    margin: 9px 0;
+    display: block;
+    width: 380px;
+    font-size: 17px;
+    line-height: 20px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,1);
+    background: #098cc8;
+    border-radius: 2px;
+}
+.con_ul{
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.con_ul ul li{
+    text-align: center;
+    list-style: none;
+    display: block;
+    margin: 15px 0;
+    line-height: 20px;
+    font-size: 15px;
+}
+.con_ul ul li a{
+    color: #00aeff;
+    text-decoration: none;
+}
+.con_ul ul li a:hover{
+    color: #ffffff;
+}
+
+footer{
+    width: 645px;
+    margin-top: 135px;
+    margin-bottom: 70px;
+}
+.footer_logo{
+    float: left;
+    width: 113px;
+    height: 58px;
+}
+.footer_text{
+    width: 500px;
+    float: left;
+    margin-left: 30px;
+}
+.text_ul li,.text_ul_none li{
+    float: left;
+    font-size: 12px;
+    list-style: none;
+    color: rgba(255,255,255,0.7);
+}
+
+.text_ul li a{
+    display: inline-block;
+    padding: 0 12px;
+    margin-bottom: 13px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+}
+.text_ul li a:hover{
+    color: rgb(255,255,255);
+}
+.text_ul_none li a{
+    display: inline-block;
+    padding: 0 12px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    cursor: default;
+}
+.text_copy{
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 155px;
+    text-transform: uppercase;
+    position: relative;
+    top:10px;
+}
+.integ{
+    margin-top: 10px;
+    margin-left: 180px;
+}
+.integ a{
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    top:5px;
+}
+@media (max-width: 500px) {
+    .footer_logo{
+        width: 113px;
+        height: 58px;
+    }
+    .footer_text{
+        width: 500px;
+        margin-left: 30px;
+    }
+}

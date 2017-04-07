@@ -1,0 +1,440 @@
+body{
+    font-size: 12px;
+    /*position: relative;*/
+    width: 100%;
+    word-break: keep-all;
+    background: #222;
+
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+    /**/
+}
+
+ul{
+    margin-bottom: 0;
+}
+ul li{
+    list-style: none;
+    float: left;
+
+}
+a{
+    display: block;
+    width:auto;
+    height: auto;
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/************************************/
+.page{
+    line-height: 1.5em;
+    background: #000;
+    box-shadow: 0 0 50px rgba(11,6,4,.8), 0 0 100px rgba(11,6,4,.6), 0 0 500px rgba(11,6,4,.3);
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+    background: url("../images/game/races.jpg") top center;
+    background-size: 2400px;
+}
+.header{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 100px;
+}
+.zz{
+    font-size: 4.3em;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
+    text-align: center;
+    margin-top: 160px;
+}
+.zzjianjie{
+    font-weight: 400;
+    font-size: 1.08rem;
+    line-height: 1.5em;
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+    text-align: center;
+    margin-top: 24px;
+    width:800px;
+    white-space:normal;
+    word-break:break-all;
+    margin-bottom: 120px;
+}
+
+/****************content******************/
+.content{
+
+    width: 80%;
+    position: relative;
+    clear: none;
+    margin:-10px auto;
+}
+.ALLIANCE{
+    position: relative;
+    float: left;
+    width: 50%;
+
+}
+.HORDE{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+.con-tit{
+    margin: 0 auto 30px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.con-tit-lof{
+    margin-left: auto;
+    display: table;
+    position: relative;
+    margin-right: auto;
+    text-align: center;
+}
+.con-lof1{
+    display: table-cell;
+    vertical-align: middle;
+}
+.con-lof2{
+    padding-left: 30px;
+    display: table-cell;
+}
+.ALLIANCE-logo{
+    width:78px;
+    height: 100px;
+    background: url("../images/game/Logo-alliance.png")  top center;
+    background-size: cover;
+    display: block;
+}
+.HORDE-logo{
+    width:78px;
+    height: 100px;
+    background: url("../images/game/Logo-horde-2a80e0466e.png")  top center;
+    background-size: cover;
+    display: block;
+}
+.con-lof1 span{
+    font-size: 3.2em;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+
+.card{
+    background: #211510;
+    color: #ebdec2;
+    border: solid 1px #504137;
+    overflow: hidden;
+    width: 100%;
+    height: 253px;
+    position: relative;
+    z-index: 0;
+}
+.card:hover{
+    border-color: #f8b700;
+}
+.ALLIANCE .con-lof3{
+    padding-right: 10px;
+}
+.HORDE .con-lof3{
+    padding-left: 10px;
+}
+.cards{
+    margin-bottom: 20px;
+    margin-top: -1px;
+}
+.cards-card{
+    display: block;
+}
+.card-ima{
+    display: block;
+    float: left;
+    width: 33%;
+    height: 253px;
+}
+.card-ima div{
+    width: 100%;
+    height: 253px;
+}
+.card-con{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 67%;
+    border-left: solid 1px #504137;
+}
+.card-all{
+    padding: 20px;
+}
+.card-tit{
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    font-weight: 700;
+    color: #f8b700;
+    display: block;
+    margin-bottom: 15px;
+}
+.card-p{
+    line-height: 1.7em;
+    font-size: 1.5em;
+    word-break: normal;
+    color: #ebdec2;
+}
+
+
+
+/************************footer*************************/
+.divider{
+    height:4px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.guanzhu{
+    height:90px;
+    width: 100%;
+    float: left;
+    position: relative;
+    background: url("../../public/images/guanzhu.jpg") no-repeat top;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.guanzhu-con{
+    display: table;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #ffffff;
+    line-height: 90px;
+}
+.guanzhu ul li{
+    font-size: 2em;
+    padding: 0 20px 0;
+    text-align: center;
+}
+
+
+
+
+
+/*footer start*/
+footer {
+    background: url("../images/foot_bg.jpg") repeat center 0;
+    padding-top: 62px;
+}
+
+.footer{
+    width: auto;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.Cooperation_info{
+    width: 1000px;
+    position: relative;
+    left: 50%;
+    margin-left: -500px;
+    color: #fff;
+    z-index: 100;
+    padding: 50px 0;
+}
+.customer{
+    float: left;
+}
+.customer a{
+    margin-right: 37px;
+    color:rgba(255,255,255,0.7);
+}
+.customer_sp{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    top:5px;
+    margin-right: 10px;
+    background: url("../images/gamepoints/f-business_20160608.png") no-repeat;
+}
+
+.custom_sp_bg1{
+    background-position:  -6px -7px;
+}
+.custom_sp_bg2{
+    background-position: -36px -8px;
+}
+.custom_sp_bg3{
+    background-position: -8px -32px;
+}
+.customer a:hover{
+    color:#ffffff;
+}
+
+
+
+.brand{
+    text-align: right;
+    margin-right: 50px;
+}
+.brand p{
+    display: block;
+}
+.brand_bg{
+    display: inline-block;
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 20px;
+    margin: 0;
+    position: relative;
+    top:5px;
+    background: url("../images/gamepoints/Fbusiness-logo-wow.png") no-repeat;
+}
+.brand_inter{
+    background-position: 0 0;
+    width: 36px;
+    height: 26px;
+}
+.brnad_naidia{
+    background-position: -36px 0;
+    width: 95px;
+    height: 26px;
+}
+
+
+.brand_add{
+    display: inline-block;
+    background: #241101;
+    border: 1px solid #2d1702;
+    color: #ac771f;
+    width: 14px;
+    height: 14px;
+    margin: 0 0 0 13px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 0;
+}
+.brand_add:hover .brand_line_h{
+    background: #ffffff;
+}
+.brand_add:hover .brand_line_s{
+    background: #ffffff;
+}
+.brand_line_h{
+    width: 10px;
+    height: 2px;
+    margin: -1px 0 0 -5px;
+}
+.brand_line_s{
+    width: 2px;
+    height: 10px;
+    margin: -5px 0 0 -1px;
+}
+.brand_line_s,.brand_line_h{
+    position: absolute;
+    display: block;
+    background: #ac771f;
+    top: 50%;
+    left: 50%;
+}
+
+.f_logo{
+    text-align: left;
+    width: 1000px;
+    margin: 0 auto 8px;
+}
+
+.f_logo a{
+    display: inline-block;
+}
+.f_logo_bz{
+    width: 125px;
+    height: 80px;
+    background: url("../images/gamepoints/logo_blizzard.png") no-repeat 0 0;
+}
+.f_logo_wy{
+    width: 125px;
+    height: 38px;
+    margin: 0 0 0 20px;
+    background: url("../images/gamepoints/logo_ne.png") no-repeat 0 0;
+}
+
+.f_info{
+    width: 640px;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 60px;
+    position: relative;
+    top:30px;
+}
+.info{
+    margin-left: -10px;
+    padding-bottom: 5px;
+}
+.info:after{
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+.info li{
+    float: left;
+}
+.info li a{
+    display: inline-block;
+    padding: 0 12px;
+    color: rgba(255,255,255,0.7);
+}
+.info li a:hover{
+    color: rgb(255,255,255);
+}
+.f_info p{
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p span{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+    display: inline-block;
+}
+.f_info p a{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p a:hover{
+    color:#ffffff;
+}
+.integ a{
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top:5px;
+}
+.tip{
+    border-top: 1px solid #1a1a1a;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+.tip p{
+    color: rgba(255,255,255,.3);
+    font-size: 12px;
+}

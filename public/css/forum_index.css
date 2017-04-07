@@ -1,0 +1,722 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    font-size: 14px;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+span,i{
+    display: block;
+}
+li{
+    list-style: none;
+}
+
+/****************forum_index.css***************************/
+.maxheader{
+    display: block;
+}
+/*头部*/
+.header_bg_top{
+    width: 100%;
+    height: 100px;
+    background: url("../../public/images/forum/wow-glass.jpg") no-repeat center -500px;
+}
+.bg_top_zw{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.bg_top{
+    width: 85%;
+    position: relative;
+}
+.bg_top_zw_left{
+    float: left;
+}
+.bg_top_zw_right{
+    float: right;
+}
+.bg_top_zw_left ul li{
+    float: left;
+}
+.bg_top_zw_right ul li{
+    float: right;
+}
+.bg_top_zw_left ul li a{
+    display: inline-block;
+    color:rgba(255,255,255,0.7);
+    font-size: 20px;
+}
+.bg_top_zw_right ul li a{
+    display: inline-block;
+    color:rgba(255,255,255,0.7);
+    font-size: 17px;
+}
+.bg_top_zw_left ul li a:hover,.bg_top_zw_right ul li a:hover{
+    color:rgb(255,255,255);
+}
+.zw_logo{
+    width: 60px;
+    height: 60px;
+    background: url("../../public/images/forum/logo-bnet.png") no-repeat -5px -5px;
+}
+.zw_logo:hover{
+    background: url("../../public/images/forum/logo-bnet.png") no-repeat -5px -75px;
+}
+.zw_a_txt{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 23px;
+    padding-right: 30px;
+    position: relative;
+}
+.zw_a_txt_right{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 23px;
+    padding-right: 30px;
+    position: relative;
+}
+.zw_game_cor,.zw_game_cor_right{
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: url("../images/forum/icon/sprite-16-white.png") no-repeat;
+    background-position: -64px -256px;
+    overflow: hidden;
+    opacity: 0.3;
+    position: absolute;
+
+}
+.zw_game_cor{
+    top:28px;
+    right: 5px;
+}
+.zw_game_cor_right{
+    top:25px;
+    right: 5px;
+}
+
+.bg_top_wow{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.bg_top_wow_logo{
+    display: inline-block;
+    height: 40px;
+    padding-right: 30px;
+    position: absolute;
+    top:0;
+    left:0;
+    border-right: 1px solid rgba(255,255,255,.15);
+    color:rgba(255,255,255,0.7);
+}
+.bg_top_wow_logo i{
+    font-style: normal;
+    display: inline-block;
+    font-family: Blizzard,sans-serif;
+    font-size: 15px;
+    position: relative;
+    top:-7px;
+    left:10px;
+}
+.wow_logo{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    opacity: .7;
+    background: url("../images/forum/icon/icon-sprites-32-white.png") no-repeat;
+    background-position: -32px -192px;
+    position: relative;
+    top:4px;
+    left:10px;
+}
+.bg_top_wow_logo:hover{
+    color:rgb(255,255,255);
+}
+.bg_top_wow_forum{
+    display: inline-block;
+    height: 40px;
+    color:rgb(255,255,255);
+    position: absolute;
+    top:0;
+    left:180px;
+}
+.bg_top_wow_forum i{
+    font-style: normal;
+    display: inline-block;
+    font-family: Blizzard,sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 5px;
+}
+.forum_logo{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/forum/icon/icon-sprites-16-blue-light.png") no-repeat -16px -16px;
+    position: relative;
+    top:3px;
+}
+.header_bg_con {
+    width: 100%;
+    height: 400px;
+    background: url("../../public/images/forum/wow-glass.jpg") no-repeat center 0;
+    position: relative;
+}
+
+/*header_two*/
+.header{
+    display: none;
+    width: 100%;
+    height: 44px;
+    background: #343434;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+}
+.header span{
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255,255,255,.7);
+}
+.header_forum{
+    display: inline-block;
+    width:44px;
+    height: 44px;
+    background-image: url("../images/forum/icon/icon-blue-menu.png");
+    background-size: 44px;
+    float: left;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.header_login{
+    display: inline-block;
+    width:44px;
+    height: 44px;
+    background-image: url("../images/forum/icon/icon-blue-bnet.png");
+    background-size: 44px;
+    float: right;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+
+.welcome{
+    display: block;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,.5);
+    position: absolute;
+    top:0;
+}
+/*welcome*/
+.welcome_img{
+    margin-top: 130px;
+    text-align: left;
+    margin-left: 80px;
+}
+.welcome_img img{
+    max-width: 100%;
+    max-height: 200px;
+    min-height: 120px;
+}
+.welcome_text{
+    font-size:28px;
+    position: relative;
+    top:0;
+    left:100px;
+}
+.welcome_text_p{
+    font-size:28px;
+}
+.welcome_text_p span{
+    font-size:28px;
+    display: inline-block;
+}
+
+
+/*con*/
+.con{
+    width: 100%;
+    height: auto;
+    border-top: 2px solid rgba(0,0,0,0.3);
+    background:url("../../public/images/forum/background-wow-top.jpg") no-repeat center -700px,
+    url("../../public/images/forum/background-wow-repeat.jpg");
+}
+
+
+
+/*客服*/
+
+.forumCus{
+    width: 85%;
+    height: 330px;
+    color: rgba(255,255,255,.7);
+    position: relative;
+}
+.forumCus header,.forumComplex header,.forumCareer header{
+    width: 100%;
+    height: 85px;
+}
+.forumCus h1,.forumComplex h1,.forumCareer h1{
+    display: inline-block;
+    position: absolute;
+    font-size: 19px;
+    font-weight: 500;
+    top:45px;
+    left:0;
+}
+.search{
+    display: inline-block;
+    position: absolute;
+    top:20px;
+    right:0;
+    border: 1px solid #000;
+}
+.search_icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/forum/icon/icon-sprites-32-white.png");
+    background-repeat: no-repeat;
+    background-position: -166px -34px;
+    position: absolute;
+    top:7px;
+    left:5px;
+}
+.search_txt{
+    width: 248px;
+    height: 38px;
+    border: 1px solid #504137;
+    background: #000000;
+    padding-left: 40px;
+    font-size: 18px;
+    color: #ffffff;
+}
+.search_txt:hover{
+    border-color: #A47C1C;
+}
+
+.search_txt:focus{
+    outline: none;
+    border-color:  #F8B700;
+}
+.forumCuspice_left,.forumCuspice_right,.forumCuspice_content{
+    display: inline-block;
+    width: 32%;
+    padding-top: 25px;
+    padding-bottom:25px;
+    background-color: rgba(255,255,255,0.05);
+    float: left;
+    border:1px solid #56574B;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.forumCuspice_left:hover,.forumCuspice_right:hover,.forumCuspice_content:hover{
+    background-color: rgba(255,255,255,.15);
+}
+.forumCuspice_content{
+    margin-right: 19px;
+}
+.forumCuspice_right {
+    margin-right: 0;
+}
+.forumCus_img_Cus,.forumCus_img_tech,.forumCus_img_bug,.forumCus_img_bug,.forumCus_img_sug,.forumCus_img_gruel,.forumCus_img_sever,.forumCus_img_complex,.forumCus_img_new,.forumCus_img_pet,.forumCus_img_act,.forumCus_img_word,.forumCus_img_copy,.forumCus_img_task,.forumCus_img_pvp,.forumCus_img_user,.forumCus_img_guild,.forumCus_img_talent,.forumCus_img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+}
+.forumCus_img_Cus{
+    background-image: url("../../public/images/forum/icon/XW3QBOQMWP271310986661037.gif");
+}
+.forumCus_img_tech{
+    background-image: url("../../public/images/forum/icon/user.gif");
+}
+.forumCus_img_bug{
+    background-image: url("../../public/images/forum/icon/bug.gif");
+}
+.forumCus_img_sug{
+    background-image: url("../../public/images/forum/icon/Suggest.gif");
+}
+.forumCus_img_gruel{
+    background-image: url("../../public/images/forum/icon/gruel.gif");
+}
+.forumCus_img_sever{
+    background-image: url("../../public/images/forum/icon/sever.gif");
+
+}
+.forumCus_txt{
+    width: 250px;
+    position: relative;
+    left:30px;
+}
+.forum_title{
+    display: block;
+    font-size: 18px;
+    font-weight: 100;
+    color: #ffffff;
+}
+.forum_intr{
+    display: block;
+    font-size:15px;
+    height: 40px;
+    overflow: hidden;
+    color: rgba(255,255,255,.7);
+}
+
+/*综合讨论*/
+.forumComplex{
+    width: 85%;
+    height: 610px;
+    color: rgba(255,255,255,.7);
+    position: relative;
+}
+.forumCus_img_complex{
+    background-image: url("../../public/images/forum/icon/complex.gif");
+}
+.forumCus_img_new{
+    background-image: url("../../public/images/forum/icon/new.png");
+}
+.forumCus_img_pet{
+    background-image: url("../../public/images/forum/icon/pet.gif");
+}
+.forumCus_img_act{
+    background-image: url("../../public/images/forum/icon/activity.gif");
+}
+.forumCus_img_word{
+    background-image: url("../../public/images/forum/icon/word.gif");
+}
+.forumCus_img_copy{
+    background-image: url("../../public/images/forum/icon/copy.gif");
+}
+.forumCus_img_task{
+    background-image: url("../../public/images/forum/icon/task.gif");
+}
+.forumCus_img_pvp{
+    background-image: url("../../public/images/forum/icon/pvp.gif");
+}
+.forumCus_img_user{
+    background-image: url("../../public/images/forum/icon/user.gif");
+}
+.forumCus_img_guild{
+    background-image: url("../../public/images/forum/icon/guild.gif");
+}
+.forumCus_img_talent{
+    background-image: url("../../public/images/forum/icon/talent.gif");
+}
+/*职业*/
+.forumCareer{
+    width: 85%;
+    color: rgba(255,255,255,.7);
+    height: 730px;
+    position: relative;
+}
+
+/*底部*/
+.footer{
+    width: 85%;
+    height: 100px;
+    background:  url("../../public/images/forum/background-wow-repeat.jpg") repeat;
+    text-align: center;
+}
+.foot_thank{
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+}
+.foot_thank a{
+    display: inline-block;
+    color: rgba(255,255,255,0.5);
+}
+.foot_thank a:hover{
+    color: rgba(255,255,255,0.7);
+}
+.foot_div{
+    width: 100%;
+    margin: auto;
+}
+footer.foot{
+    width: 85%;
+    padding-bottom: 200px;
+    position: relative;
+}
+.customer{
+    margin-bottom: 30px;
+    position: relative;
+}
+.customer p{
+    display: block;
+}
+.customer_p_a{
+    display: inline-block;
+    margin-right: 37px;
+    color:rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 16px;
+}
+.customer_p_a span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top:5px;
+    margin-right: 10px;
+
+}
+.cus_p_a_sp1{
+    background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -96px 0px;
+}
+.cus_p_a_sp2{
+    background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -144px -24px;
+}
+.cus_p_a_sp3{
+    background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -120px -432px;
+}
+.customer_right{
+    display: inline-block;
+    position: absolute;
+    right:0;
+
+}
+
+.word_bg{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -120px -432px;
+    position: relative;
+    top:5px;
+}
+.language{
+    display: inline-block;
+    color:rgba(255,255,255,0.7);
+    position: relative;
+    top:-2px;
+    left: 5px;
+}
+.country{
+    display: inline-block;
+    font-size: 16px;
+}
+.country_langue{
+    display: inline-block;
+    font-size: 16px;
+}
+.drow_icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../../public/images/forum/icon/sprite-16-white.png") no-repeat -64px -256px;
+    margin-left: 10px;
+    opacity: 0.3;
+}
+
+.footer_logo{
+    float: left;
+    width: 113px;
+    height: 58px;
+}
+.footer_text{
+    float: left;
+    margin-left: 30px;
+
+}
+
+
+.text_ul{
+    width: 800px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+.text_ul li,.text_ul_none li{
+    float: left;
+    font-size: 12px;
+    color: rgba(255,255,255,.7);
+}
+.text_ul li a,.text_ul_none li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 12px;
+    color: rgba(255,255,255,0.7);
+}
+.text_ul_none li a{
+    cursor: default;
+}
+
+.text_ul li a:hover{
+    color: rgb(255,255,255);
+}
+.text_copy{
+    width: 800px;
+    height: 20px;
+    position:absolute;
+    top:150px;
+    left:156px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+}
+
+.integ{
+   position: absolute;
+    top:170px;
+    left:156px;
+}
+.integ a{
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    top:5px;
+}
+.game{
+    position: absolute;
+    top:60px;
+    left: 175px;
+    background: #272E3B;
+    box-shadow: 0 0 0 1px #3d434f inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+.game table{
+    border-color: #3D434F;
+}
+.game table a{
+    padding: 20px 10px 15px;
+}
+.game_logo_wow1,.game_logo_wow2,.game_logo_wow3,.game_logo_wow4,.game_logo_wow5,.game_logo_wow6{
+    width: 70px;
+    height: 70px;
+    background-image: url("../../public/images/forum/icon/game-icons-70.png");
+    background-repeat: no-repeat;
+}
+.game_logo_wow1{
+    background-position:  0px 0;
+}
+.game_logo_wow2{
+    background-position:  -70px 0;
+}
+.game_logo_wow3{
+    background-position:  -140px 0;
+}
+.game_logo_wow4{
+    background-position:  -210px 0;
+}
+.game_logo_wow5{
+    background-position:  -280px 0;
+}
+.game_logo_wow6{
+    background-position:  -350px 0;
+}
+.game_name{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+}
+.dropdown_menu{
+    position: absolute;
+    top:0px;
+    right:0px;
+    background: red;
+
+}
+
+.dropdown_con{
+    background: #272E3B;
+}
+.dropdown_con_login{
+
+}
+
+/*@media (min-width:768px) and (max-width: 970px) {*/
+    /*.header{*/
+        /*display: block;*/
+    /*}*/
+    /*.maxheader{*/
+        /*display: none;*/
+    /*}*/
+
+    /*.welcome_img{*/
+        /*margin-top: 130px;*/
+        /*text-align: left;*/
+        /*margin-left: 20px;*/
+    /*}*/
+    /*.welcome_text{*/
+        /*font-size:28px;*/
+        /*margin-left: 20px;*/
+    /*}*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+    /*.header{*/
+        /*display: block;*/
+    /*}*/
+    /*.maxheader{*/
+        /*display: none;*/
+    /*}*/
+
+    /*.header_bg_con{*/
+        /*width: 100%;*/
+        /*height: 220px;*/
+        /*background-image: url("../../public/images/forum/wow-mobile.jpg");*/
+        /*background-repeat: no-repeat;*/
+        /*background-position: center 0;*/
+        /*background-size: cover;*/
+        /*position: relative;*/
+    /*}*/
+
+
+    /*.welcome_img{*/
+        /*margin-top: 50px;*/
+        /*text-align: center;*/
+    /*}*/
+    /*.welcome_img img{*/
+        /*max-height: 120px;*/
+    /*}*/
+    /*.welcome_text{*/
+        /*font-size:20px;*/
+        /*text-align: center;*/
+    /*}*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

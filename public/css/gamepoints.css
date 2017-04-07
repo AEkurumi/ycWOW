@@ -1,0 +1,617 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    color:#ffffff;
+    font-size: 14px;
+    font-family: 微软雅黑,Microsoft YaHei,Helvetica,Tahoma,StSun,宋体,SimSun,sans-serif;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+
+
+header{
+    width: 100%;
+    height: 473px;
+    background: url("../images/gamepoints/gamepoints_head_bg.jpg") no-repeat center 0;
+}
+.logo a{
+    display: block;
+    width: 248px;
+    height: 139px;
+    background: url("../images/logo.png") no-repeat;
+    position: absolute;
+    top:20px;
+    left: 60px;
+}
+.text{
+    font-size: 80px;
+    font-weight: 700;
+    color:#ffffff;
+    line-height: 600px;
+    margin-left: 100px;
+}
+
+/*header end*/
+
+
+
+/*nav end*/
+nav{
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    background: #211510;
+    background-clip: padding-box;
+    border-bottom: 8px solid #000000;
+}
+nav ul{
+    margin: auto;
+    width: 1250px;
+}
+nav ul li{
+    width: 250px;
+    line-height: 80px;
+    float: left;
+}
+nav ul li a{
+    color:#f8b700;
+    display: block;
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+nav ul li a:hover{
+    color:#211510;
+    background: #f8b700;
+    text-decoration: none;
+}
+
+.active{
+    color:#211510;
+    background: #f8b700;
+    text-decoration: none;
+}
+
+/*nav end*/
+
+
+/*content 结构
+* pay-online
+* online_reward
+* recharge_con
+*/
+
+
+/*pay-online  start*/
+.pay-online{
+    width: 100%;
+    height: 440px;
+    display: block;
+    background: url("../images/gamepoints/con_bg.jpg") no-repeat center center;
+    padding: 80px 0;
+    border-bottom: 4px solid #000000;
+}
+.online_con{
+    width: 1200px;
+    margin: auto;
+    padding-left: 20px;
+    text-shadow: rgba(0,0,0,.8)0 1px 2px;
+}
+.online_con_txt{
+    width: 650px;
+    display: block;
+    float: left;
+}
+.online_txt_title{
+    margin: 13px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e1d5bb;
+}
+.online_div{
+    margin: 30px 0;
+}
+.online_p1_sp1{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.8)0 1px 2px;
+}
+.online_p1_sp2{
+    font-size: 20px;
+    font-weight: 500;
+    color: #e1d5bb;
+}
+.online_con_btn{
+    width: 500px;
+    display: block;
+    float: left;
+    margin-top: 150px;
+}
+.online_btn_all{
+    width: 390px;
+    margin: auto;
+    text-align: center;
+}
+.online_btn_log{
+    line-height: 100px;
+    height: 100px;
+    border: 1px solid #9f1600;
+    text-shadow: none;
+    margin-bottom: 6px;
+}
+.online_btn_log a{
+    font-size: 30px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #ffb100;
+    background: rgba(159,22,0,.5);
+}
+
+.online_btn_log a:hover{
+    background: rgba(159,22,0,1);
+    color: #ffb100;
+}
+
+
+.online_btn_info{
+    width: 390px;
+
+    height: 60px;
+    line-height: 60px;
+}
+
+.online_btn_info a:first-child{
+    margin-right: 6px;
+}
+
+.online_btn_info a{
+    display: block;
+    font-size: 16px;
+    color: #ffb100;
+    float: left;
+    width: 190px;
+    height: 100%;
+    border: 1px solid #f7b10a;
+}
+
+.online_btn_info a:hover{
+    background: rgba(176,102,1,1);
+    color: #ffffff;
+}
+/*pay-online  end*/
+
+
+
+
+/*online_reward start*/
+.online_reward{
+    width: 100%;
+    height: 440px;
+    background: url("../images/gamepoints/con_bg2.jpg") no-repeat center 0;
+    padding: 80px 0;
+    border-bottom: 4px solid #000000;
+}
+.online_reward_txt{
+    width: 1200px;
+    margin: auto;
+    padding-left: 50px;
+    text-shadow: rgba(0,0,0,.8)0 1px 2px;
+}
+
+.reward_txt_all{
+    width: 500px;
+    display: block;
+    float: left;
+    margin-left: 650px;
+    margin-top: 90px;
+}
+.reward_txt_title{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.8)0 1px 2px;
+}
+
+.reward_txt_con{
+    display: block;
+    margin: 40px 0;
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 500;
+    color: #e1d5bb;
+}
+.reward_txt_con span{
+    color: #ff4200!important;
+}
+.reward_txt_btn{
+    display: block;
+    width: 178px;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+}
+.reward_txt_btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #ffb100;
+    border: 1px solid #f7b10a;
+}
+.reward_txt_btn a:hover{
+    background: rgba(176,102,1,1);
+    color:#ffffff;
+}
+/*online_reward end*/
+
+
+/*recharge_con start*/
+.cell_recharge_con,.recharge_con{
+    display: block;
+    width: 100%;
+    background: url("../images/gamepoints/tb_bg3.jpg") repeat center 0;
+    border-bottom: 4px solid #000;
+
+}
+.recharge_con{
+    height: 919px;
+    padding: 80px 0;
+}
+.cell_recharge_con{
+    height: auto;
+    padding: 60px 0;
+}
+
+.cell_recharge_con table,.recharge_con table{
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+    border: #504137;
+}
+.recharge_con caption{
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color:#ffffff;
+    margin: 60px 0 50px;
+}
+.cell_recharge_con table thead tr th,.recharge_con table thead tr th{
+    line-height: 56px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cell_recharge_con td,.recharge_con td{
+    font-size: 16px;
+    height: 43px;
+    color: #ebdec2;
+}
+td[class^="recharge_tbody_Tit"]{
+     font-size: 18px;
+     color: #f8b700;
+     font-style: italic;
+}
+.last_br_right{
+    border-right: none;
+}
+.br_top{
+    border-top: none;
+}
+.br_left{
+    border-left:none;
+}
+.br_bottom{
+    border-bottom:none;
+}
+/*cellphone*/
+.con_title{
+    font-size: 48px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    line-height: 60px;
+    text-align: center;
+    margin: 0px auto 10px;
+}
+
+.con_title_con{
+    display: block;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color: rgb(235, 222, 194);
+    line-height: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.pay-process{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+.pay_service_tit,.pay-process_tit{
+    line-height: 80px;
+    font-size: 16px;
+    color: #ebdec2;
+}
+.pay-process_con{
+    background: rgba(0,0,0,.3);
+    padding: 12px 0;
+}
+.pay-process_con p{
+    display: block;
+    width: 900px;
+    height: 58px;
+    font-size: 16px;
+    line-height: 58px;
+    margin: 30px auto;
+    text-align: center;
+    border: 1px solid #504137;
+    background: #000;
+    color: #ebdec2;
+    position: relative;
+}
+.process_point{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    margin-left: -40px;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    background: url("../images/gamepoints/sprite.png") no-repeat -33px -20px;
+}
+
+.pay_service{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+.pay_service_div a{
+    display: inline-block;
+}
+.pay_service_div a span{
+    width: 230px;
+    height: 100px;
+    display: block;
+    float: left;
+    margin: 0 30px;
+}
+.sev_shenzhouxing{
+    background: url("../images/gamepoints/sprite.png") -20px -112px no-repeat;
+}
+.sev_pay{
+    background: url("../images/gamepoints/sprite.png") -20px -235px no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer start*/
+footer {
+    background: url("../images/foot_bg.jpg") repeat center 0;
+    padding-top: 62px;
+}
+
+.footer{
+    width: auto;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.Cooperation_info{
+    width: 1000px;
+    position: relative;
+    left: 50%;
+    margin-left: -500px;
+    color: #fff;
+    z-index: 100;
+    padding: 50px 0;
+}
+.customer{
+    float: left;
+}
+.customer a{
+    margin-right: 37px;
+    color:rgba(255,255,255,0.7);
+}
+.customer_sp{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    top:5px;
+    margin-right: 10px;
+    background: url("../images/gamepoints/f-business_20160608.png") no-repeat;
+}
+
+.custom_sp_bg1{
+    background-position:  -6px -7px;
+}
+.custom_sp_bg2{
+    background-position: -36px -8px;
+}
+.custom_sp_bg3{
+    background-position: -8px -32px;
+}
+.customer a:hover{
+    color:#ffffff;
+}
+
+
+
+.brand{
+    text-align: right;
+    margin-right: 50px;
+}
+.brand p{
+    display: block;
+}
+.brand_bg{
+    display: inline-block;
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 20px;
+    margin: 0;
+    position: relative;
+    top:5px;
+    background: url("../images/gamepoints/Fbusiness-logo-wow.png") no-repeat;
+}
+.brand_inter{
+    background-position: 0 0;
+    width: 36px;
+    height: 26px;
+}
+.brnad_naidia{
+    background-position: -36px 0;
+    width: 95px;
+    height: 26px;
+}
+
+
+.brand_add{
+    display: inline-block;
+    background: #241101;
+    border: 1px solid #2d1702;
+    color: #ac771f;
+    width: 14px;
+    height: 14px;
+    margin: 0 0 0 13px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 0;
+}
+.brand_add:hover .brand_line_h{
+    background: #ffffff;
+}
+.brand_add:hover .brand_line_s{
+    background: #ffffff;
+}
+.brand_line_h{
+    width: 10px;
+    height: 2px;
+    margin: -1px 0 0 -5px;
+}
+.brand_line_s{
+    width: 2px;
+    height: 10px;
+    margin: -5px 0 0 -1px;
+}
+.brand_line_s,.brand_line_h{
+    position: absolute;
+    display: block;
+    background: #ac771f;
+    top: 50%;
+    left: 50%;
+}
+
+.f_logo{
+    text-align: left;
+    width: 1000px;
+    margin: 0 auto 8px;
+}
+
+.f_logo a{
+    display: inline-block;
+}
+.f_logo_bz{
+    width: 125px;
+    height: 80px;
+    background: url("../images/gamepoints/logo_blizzard.png") no-repeat 0 0;
+}
+.f_logo_wy{
+    width: 125px;
+    height: 38px;
+    margin: 0 0 0 20px;
+    background: url("../images/gamepoints/logo_ne.png") no-repeat 0 0;
+}
+
+.f_info{
+    width: 640px;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 60px;
+    position: relative;
+    top:30px;
+}
+.info{
+    margin-left: -10px;
+    padding-bottom: 5px;
+}
+.info:after{
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+.info li{
+    float: left;
+}
+.info li a{
+    display: inline-block;
+    padding: 0 12px;
+    color: rgba(255,255,255,0.7);
+}
+.info li a:hover{
+    color: rgb(255,255,255);
+}
+.f_info p{
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p span{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+    display: inline-block;
+}
+.f_info p a{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+}
+.f_info p a:hover{
+    color:#ffffff;
+}
+.integ a{
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top:5px;
+}
+.tip{
+    border-top: 1px solid #1a1a1a;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+.tip p{
+    color: rgba(255,255,255,.3);
+    font-size: 12px;
+}

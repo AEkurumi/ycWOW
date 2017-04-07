@@ -1,0 +1,764 @@
+/********************理论上要整合的css********************/
+
+body{
+    font-size: 10px;
+    /*position: relative;*/
+    width: 100%;
+    word-break: keep-all;
+    background: #222;
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+
+}
+.container{
+    width:80%;
+}
+
+.container-fluid{
+    padding: 0;
+}
+h1{
+    font-size: 6em;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    text-align: left;
+}
+p{
+    font-size: 2.5em;
+    line-height: 1.5em;
+    color: #fff;
+    width: 550px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    text-align: left;
+}
+ul{
+    margin-bottom: 0;
+}
+ul li{
+    list-style: none;
+    float: left;
+
+}
+a{
+    display: block;
+    width:auto;
+    height: auto;
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+/***************home中的css****************/
+/********************header*********************/
+
+.page-home-header{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 1070px;
+    overflow: hidden;
+    background: none,#000;
+    background-size: contain;
+}
+#video-bg{
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    width: auto;
+    height: auto;
+    display: block;
+}
+.video-bg{
+    position: relative;
+    display: block;
+}
+.header{
+    position: absolute;
+    top:0;
+    width: 100%;
+    background: transparent;
+}
+
+
+/********************title之类*********************/
+.space-large{
+    height:120px;
+    width: 80%;
+    position: relative;
+
+}
+.align-left{
+    position: relative;
+    top:0;
+
+}
+.ruKeng{
+    margin: 35px 0;
+}
+.rukengbtn{
+    display: inline-block;
+    margin-right: 25px;
+    width:200px;
+    height:60px;
+    color: #f7b10a;
+    line-height: 59px;
+    text-align: center;
+    border: 1px solid #c77e19;
+    margin-top: 0;
+    background: rgba(0,0,0,.4);
+}
+.rukengbtn2{
+    background: rgba(159,22,0,.6);
+}
+.rukengbtn span{
+    font-size: 1.8em;
+}
+.rukengbtn:hover{
+    background: #b06601;
+    text-decoration: none;
+}
+.rukengbtn2:hover{
+    background: #9f1600;
+}
+.rukengbtn:hover span{
+    color: #ffd36b;
+
+}
+
+/******************news*********************/
+#news{
+    height:400px;
+    position: relative;
+    top:0;
+}
+.news-title{
+    height:40px;
+    margin-left: 0;
+}
+.news-title p{
+    font-size: 1.7em;
+    display: inline-block;
+    width:auto;
+    float: left;
+}
+.news-title a span{
+    font-size: 1.5em;
+    display: inline-block;
+    width:auto;
+    float: left;
+    margin-left: 20px;
+    color: #f7b10a;
+    text-decoration: underline;
+}
+.news-con-area{
+    width:25%;
+    height:260px;
+    float: left;
+    padding: 10px;
+}
+.news-con-content{
+    border:1px solid #000000;
+    height: 310px;
+    width: 100%;
+    position: relative;
+}
+.news-con-pic{
+    position: relative;
+    height:70%;
+    width: 100%;
+
+}
+.news-con-pic img{
+    height:100%;
+    width: 100%;
+}
+.news-con-title{
+    padding: 12px 10px;
+    background: #211510;
+    border: 1px solid #504137;
+    position: relative;
+    width:100%;
+    height:30%;
+}
+.news-date{
+    font-size: 1.4em;
+    color: #fff;
+}
+.news-con-left{
+    font-size: 1.7em;
+    line-height: 1.3em;
+    color: #f8b700;
+    float: left;
+    width:80%;
+    overflow: hidden;
+    font-weight: bold;
+}
+.news-con-right{
+    font-size: 1.7em;
+    line-height: 1.3em;
+    color: #b1997f;
+    float: left;
+    width:20%;
+    padding-left: 10%;
+    padding-top: 23px;
+}
+.news-con-content:hover{
+    border:2px solid #f8b700;
+}
+.news-con-title:hover span{
+    color: #f8b700;
+}
+
+
+/*****************con************************/
+.page-home-con{
+    position: relative;
+    float: left;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top:4px;
+}
+.home-little{
+    float: left;
+    width:50%;
+    position: relative;
+    height:560px;
+    padding: 0 2px 4px;
+
+}
+.home-large{
+    float: left;
+    width:100%;
+    position: relative;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+}
+
+/*****************little**********************/
+.little-con{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height:100%;
+    background-color: #504137;
+    z-index: 1;
+    border:1px solid #504137;
+}
+
+.little-con:hover{
+    border: 1px solid #f8b700;
+}
+.little-con:hover .abstract{
+    color: #ffffff;
+}
+.little-pic{
+    width: 100%;
+    height:67%;
+    padding-bottom: 1px;
+}
+.little-pic-a{
+    background: url("../../public/images/home/little-1.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+.little-pic-b{
+    background: url("../../public/images/home/little-2.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+.little-pic-c{
+    background: url("../../public/images/home/little-3.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+.little-pic-d{
+    background: url("../../public/images/home/little-4.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.little-title{
+    width: 100%;
+    height:33%;
+    background-color: #211510;
+    padding: 1px 0 1px;
+    margin: 1px 0 1px;
+    text-align: center;
+}
+.little-title-con{
+    width: 100%;
+    height:100%;
+    padding: 40px;
+}
+.little-title .abstract{
+    display: block;
+    font-size: 1.6em;
+}
+.little-title span{
+    display: block;
+    font-size: 4.0em;
+    font-weight: bold;
+    color: #f8b700;
+}
+
+
+/**********************large***********************/
+.large-bg{
+    width: 100%;
+    height:100%;
+    float: left;
+    position: relative;
+    background-size: contain;
+}
+.large-carbon{
+    background: url("../images/home/large-1.jpg") no-repeat 50% 50%;
+    height: 750px;
+    background-size: cover;
+}
+.large-version{
+    background: url("../images/home/large-2.jpg") no-repeat 50% 50%;
+    height: 600px;
+}
+.large-assistant{
+    background: url("../images/home/large-3.jpg") no-repeat 50% 50%;
+    height: 475px;
+}
+.large-data{
+    /*background: url("../images/home/large-4.jpg") no-repeat 50% 50%;*/
+    height: 750px;
+}
+.large-con{
+    height: 100%;
+    color: #ffffff;
+    clear: both;
+    float: left;
+    position: relative;
+    top:0;
+}
+.large-right{
+    width:50%;
+    position: relative;
+    left: 25%;
+    top: 25%;
+    text-align: right;
+}
+.large-title{
+    font-size: 6.7em;
+    font-weight: 700;
+}
+.Content-con{
+    font-size: 2.0em;
+    margin-top: 30px;
+
+}
+.Content-button{
+    margin-top: 30px;
+    font-size: 2.0em;
+    width:150px;
+    height: 50px;
+    border: 1px solid #ccc;
+}
+.large-left{
+    width:50%;
+    position: relative;
+    left: -10%;
+    top: 25%;
+    text-align: left;
+}
+.large-video{
+    position: absolute;
+    overflow: hidden;
+    height: 750px;
+    width:100%;
+
+}
+#video-large{
+    background-size: 2400px;
+    height: 750px;
+    width: auto;
+    display: block;
+    position: absolute;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+/************************footer*************************/
+.divider{
+    height:4px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.guanzhu{
+    height:90px;
+    width: 100%;
+    float: left;
+    position: relative;
+    background: url("../../public/images/guanzhu.jpg") no-repeat top;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.guanzhu-con{
+    display: table;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #ffffff;
+    line-height: 90px;
+}
+.guanzhu ul li{
+    font-size: 2em;
+    padding: 0 20px 0;
+    text-align: center;
+}
+.footer{
+    background: url("../../public/images/foot_bg.jpg");
+    height:318px;
+    width:100%;
+    float: left;
+    position: relative;color: #b1997f;
+}
+.space-small{
+    height:10px;
+    width:100%;
+}
+.footer-middle{
+    margin-top: 50px;
+}
+.footer-left{
+    margin:0 0 30px;
+}
+.footer-left a:hover span{
+    color: #f8b700;
+    text-decoration: underline;
+}
+.zhichi,.fankui{
+    color: #b1997f;
+    margin-right: 25px;
+    display: inline-block;
+}
+.zhichi-icon,.fankui-icon{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.zhichi-icon{
+    background: url("../../public/images/icon-footer.png") no-repeat 0 63%;
+}
+.fankui-icon{
+    background: url("../../public/images/icon-footer.png") no-repeat 0 30%;
+}
+.footer-left-text{
+    position: relative;
+    top:-5px;
+
+    font-size: 1.3em;
+}
+.footer-sec{
+    width:100%;
+    height: 58px;
+    display: block;
+    margin-bottom: 20px;
+}
+.blizzard-logo{
+    background: url("../../public/images/Logo-blizzardGold.png") no-repeat;
+    background-size: contain;
+    float: left;
+    width: 113px;
+    height: 58px;
+    position: relative;
+    margin-right: 40px;
+}
+.footer-links{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height:17px;
+    color: #b1997f;
+}
+.footer-links li{
+    display: inline-block;
+    height:17px;
+}
+
+.footer-links li a{
+    padding-left: 12px;
+    padding-right: 10px;
+    color: #b1997f;
+    display: inline-block;
+    height:17px;
+}
+
+.copyright{
+    position: relative;
+    float: left;
+    color: #b1997f;
+    text-transform: uppercase;
+}
+.footer-media{
+    position: relative;
+    float: left;
+}
+.footer-iconLink{
+    float: left;
+    background-size: 100%;
+    background-position: center;
+    width:27px;
+    height:27px;
+    margin-right: 10px;
+}
+.footer-iconLink-cyberPolice{
+    background: url("../../public/images/police.png") no-repeat;
+}
+.footer-iconLink-zx100{
+    background: url("../../public/images/zx110.png") no-repeat;
+}
+.footer-iconLink-sgs{
+    background: url("../../public/images/sgs-icon.png") no-repeat;
+}
+.footer-iconLink-shjbzx{
+    background: url("../../public/images/icon20120516.png") no-repeat;
+}
+
+/********************响应式**********************/
+
+/******************内容响应式*********************/
+@media (max-width: 720px) {
+    h1{
+        font-size: 4.5em;
+        text-align: center;
+    }
+    p{
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .home-large{
+        height:750px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .video-bg{
+        display: none;
+    }
+    .page-home-header{
+        height: 2300px;
+        background: url("../../public/images/home/header-bg.jpg") no-repeat,#000;
+        background-size: contain;
+    }
+    .align-left{
+        top:110px
+    }
+    .ruKeng{
+        margin: 35px auto;
+    }
+    .rukengbtn{
+        display: inline-block;
+        margin-right: 25px;
+        width:150px;
+        height:50px;
+        color: #f7b10a;
+        line-height: 49px;
+        text-align: center;
+        border: 1px solid #c77e19;
+        margin-top: 0;
+        background: rgba(0,0,0,.4);
+    }
+    .rukengbtn2{
+        background: rgba(159,22,0,.6);
+    }
+    .rukengbtn span{
+        font-size: 1.6em;
+    }
+    #news{
+        top:50px;
+    }
+    .news-title{
+        margin-left: -60px;
+    }
+
+    .news-con-area{
+        width: 120%;
+        height:420px;
+        margin-left: -10%;
+    }
+
+    .news-con-content{
+        height: 400px;
+    }
+    .news-con-pic{
+        height:78%;
+    }
+
+    .news-con-title{
+        height:22%;
+    }
+    .home-little{
+        width:100%;
+        padding: 0 2px 10px;
+    }
+    .large-bg{
+        width: 100%;
+        height:67%;
+        float: left;
+        background-size: cover;
+    }
+    .large-con{
+        height:100%;
+        color: #ffffff;
+        background: url("../../public/images/large-title-bg.jpg") no-repeat 50% 50%;
+        clear: both;
+        background-size: cover;
+        top:100%;
+        width: 100%;
+    }
+    .large-right{
+        width:100%;
+        position: relative;
+        left: 0;
+        top:20px;
+        text-align: center;
+    }
+    .large-left{
+        width:100%;
+        position: relative;
+        left: 0;
+        top:20px;
+        text-align: center;
+    }
+    .large-title{
+        font-size: 3.0em;
+        font-weight: 500;
+    }
+
+    .Content-con{
+        font-size: 1.4em;
+        margin-top: 25px;
+
+    }
+    .large-data{
+        background: url("../images/home/large-4.jpg") no-repeat 50% 50%;
+        height: 67%;
+    }
+    .large-video{
+        display: none;
+    }
+}
+@media (min-width: 720px) and (max-width: 1080px) {
+    .home-little{
+        width:100%;
+    }
+    h1{
+        font-size: 5em;
+        color: #fff;
+        font-weight: bold;
+        margin: 0 0 20px 0;
+        text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    }
+    p{
+        font-size: 2em;
+        line-height: 1.5em;
+        color: #fff;
+        width: 550px;
+        text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    }
+    .page-home-header{
+        height: 1520px;
+        background: url("../../public/images/home/header-bg.jpg") no-repeat,#000;
+        background-size: contain;
+    }
+    .ruKeng{
+        margin: 35px auto;
+    }
+    .rukengbtn{
+        display: inline-block;
+        margin-right: 25px;
+        width:165px;
+        height:55px;
+        color: #f7b10a;
+        line-height: 54px;
+        text-align: center;
+        border: 1px solid #c77e19;
+        margin-top: 0;
+        background: rgba(0,0,0,.4);
+    }
+    .rukengbtn2{
+        background: rgba(159,22,0,.6);
+    }
+    .rukengbtn span{
+        font-size: 1.7em;
+    }
+    .news-con-area{
+        width: 50%;
+        height:410px;
+    }
+    .news-con-content{
+        height: 360px;
+        width: 100%;
+    }
+    .video-bg{
+        display: none;
+    }
+    .home-large{
+        overflow: hidden;
+    }
+    .large-title{
+        font-size: 4.6em;
+        font-weight: 600;
+    }
+    .Content-con{
+        font-size: 1.6em;
+        margin-top: 25px;
+
+    }
+    .large-con{
+        height:100%;
+        color: #ffffff;
+        clear: both;
+        width: 100%;
+    }
+    .large-right{
+        width:100%;
+        position: relative;
+        left: 0;
+        top:20%;
+        text-align: center;
+    }
+    .large-left{
+        width:100%;
+        position: relative;
+        left: 0;
+        top:20%;
+        text-align: center;
+    }
+    .rukengbtn{
+
+        margin-top: 20px;
+
+    }
+    .large-assistant .large-left{
+        top:20px;
+    }
+    .large-data{
+        background: url("../images/home/large-4.jpg") no-repeat 50% 50%;
+        height: 750px;
+    }
+    .large-video{
+        display: none;
+    }
+}
+@media (min-width: 1080px) {
+    .large-assistant .large-left{
+        top:20px;
+    }
+    .rukengbtn,.rukengbtn2{
+        margin-top: 20px;
+    }
+}
