@@ -1,0 +1,110 @@
+body{
+    font-size: 12px;
+    /*position: relative;*/
+    width: 100%;
+    word-break: keep-all;
+    background: #222;
+
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+    /**/
+}
+
+ul{
+    margin-bottom: 0;
+}
+ul li{
+    list-style: none;
+    float: left;
+
+}
+a{
+    display: block;
+    width:auto;
+    height: auto;
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+
+
+
+/***************************************************/
+.page{
+
+}
+.header{
+    width:100%;
+    overflow: hidden;
+    background: url("../../public/images/game/xinshou-bg.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.header-tit{
+    margin: 250px auto 110px;
+}
+h2{
+    font-size: 3.5rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+.xinshou{
+    margin-top: 30px;
+    font-size: 1.1rem;
+    text-align: center;
+    word-break: break-all;
+    width: 750px;
+    color: #ebdec2;
+}
+
+/****************con******************/
+.tabs{
+    background: #211510;
+    border-top: 1px solid #504137;
+    border-bottom: 1px solid #504137;
+    position: relative;
+    overflow: hidden;
+}
+.tabs-container{
+    width:80%;
+    overflow: hidden;
+}
+.tabs-list{
+    width: 100%;
+    position: relative;
+}
+.tabs-item {
+    width: 25%;
+    vertical-align: middle;
+    height: 82px;
+}
+.tabs-item a{
+    width: 100%;
+    height:82px;
+    /*margin-top: 1px;*/
+    text-align: center;
+    font-size:1.4rem;
+    font-weight:bold;
+    line-height: 82px;
+}
+.tabs-item .tabs-off{
+
+    color: #f8b700;
+}
+.tabs-on{
+    background: #f8b700;
+    color: #000;
+}
+
+/**********************************************/
+.Divider {
+    height: 4px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+}
