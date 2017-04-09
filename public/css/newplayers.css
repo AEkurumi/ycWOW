@@ -3,8 +3,8 @@ body{
     /*position: relative;*/
     width: 100%;
     word-break: keep-all;
-    background: #222;
-
+    background: #000;
+    box-sizing:border-box;
 }
 *{
     margin: 0 auto;
@@ -113,6 +113,22 @@ h2{
     border-top:1px solid rgba(255,255,255,.08);
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
+.middle{
+    height: 600px;
+    width:49.8%;
+    padding: 0;
+    border:1px solid rgba(255,255,255,.08);
+    display: inline-block;
+    overflow: hidden;
+}
+
+.small{
+    height: 600px;
+    width:33.3%;
+    padding:1px;
+    border:1px solid rgba(255,255,255,.08);
+    display: inline-block;
+}
 .welcome{
     overflow: hidden;
     position: relative;
@@ -123,6 +139,8 @@ h2{
     height: 100%;
     width: 70%;
     cursor: default;
+    margin:0 auto;
+    overflow: hidden;
 }
 .left-align{
     position: relative;
@@ -133,6 +151,12 @@ h2{
     height:50%;
     float: left;
 }
+.center-align{
+    position: relative;
+    left:0;
+    text-align: center;
+    width:90%;
+}
 .right-align{
     position: relative;
     top: 170px;
@@ -142,20 +166,32 @@ h2{
     height:50%;
     float: right;
 }
+.con-img{
+    height: 70%;
+}
+.con-area{
+    height: 30%;
+    background: url("../../public/images/large-title-bg.jpg") no-repeat 50% 50%;
+}
 .con-tit{
     color: #fff;
     font-size: 3.5rem;
     font-weight: bold;
     text-align: left;
     float: left;
-    position: absolute;
-    top:0;
-    left: 0;
+    margin-bottom: 30px;
+}
+.con-tit1{
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 auto 30px;
 }
 .con-content{
     float: left;
-    position: absolute;
-    top: 100px;
+    position: relative;
     left:0;
 }
 .con-content p{
@@ -187,6 +223,21 @@ h2{
     background-size: cover;
     height: 600px;
 }
+.pinel-3{
+    background: url("../../public/images/game/ctrl.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 600px;
+}
+.pinel-4{
+    background: url("../../public/images/game/jianshu.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+}
+.pinel-5{
+    background: url("../../public/images/game/shubiao.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+}
 
 
 
@@ -197,4 +248,51 @@ h2{
     overflow: hidden;
     border-top:1px solid rgba(255,255,255,.08);
     border-bottom: 1px solid rgba(255,255,255,.08);
+    position: relative;
+}
+.panic-con{
+    position: relative;
+    margin: 140px auto;
+    text-align: center;
+}
+.ruKeng{
+    margin: 35px 0;
+}
+.rukengbtn{
+    display: inline-block;
+    margin-right: 25px;
+    width:200px;
+    height:60px;
+    color: #f7b10a;
+    line-height: 59px;
+    text-align: center;
+    border: 1px solid #c77e19;
+    margin-top: 0;
+    background: rgba(0,0,0,.4);
+
+}
+.rukengbtn2{
+    background: rgba(159,22,0,.6);
+    display: inline-block;
+}
+.rukengbtn:hover{
+    background: #b06601;
+    text-decoration: none;
+}
+.rukengbtn:hover{
+    background: #b06601;
+    color: #ffd36b;
+}
+.btn-prev{
+    display: inline-block;
+}
+.btn-next{
+    display: inline-block;
+}
+.download{
+    display: none;
+}
+.rukengbtn span{
+    color: #f7b10a;
+    font-size: 1.06rem;
 }
