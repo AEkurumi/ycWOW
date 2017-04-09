@@ -46,6 +46,11 @@ router.get("/user/register",function (req,res) {
 });
 
 
+router.get("/",function (req,res) {
+    res.render("main/index",{
+
+    });
+});
 
 
 

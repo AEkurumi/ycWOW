@@ -221,7 +221,7 @@ a:hover{
 /****************footer********************/
 footer {
     background: #000000;
-    padding-top: 62px;
+    padding-top: 32px;
 }
 
 .footer{
@@ -243,6 +243,7 @@ footer {
     float: left;
 }
 .customer a{
+    float: left;
     margin-right: 37px;
     color:rgba(255,255,255,0.7);
 }
@@ -414,7 +415,7 @@ footer {
 .tip{
     border-top: 1px solid #1a1a1a;
     width: 90%;
-    margin: 40px auto 0;
+    margin: 80px auto 0;
     padding: 20px;
     text-align: center;
 }
