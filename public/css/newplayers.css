@@ -108,3 +108,93 @@ h2{
     background-color: #000;
     position: relative;
 }
+.large{
+    height: 600px;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.welcome{
+    overflow: hidden;
+    position: relative;
+}
+
+.con-box{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    cursor: default;
+}
+.left-align{
+    position: relative;
+    top: 170px;
+    left:0;
+    text-align: left;
+    width:50%;
+    height:50%;
+    float: left;
+}
+.right-align{
+    position: relative;
+    top: 170px;
+    left:0;
+    text-align: left;
+    width:50%;
+    height:50%;
+    float: right;
+}
+.con-tit{
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.con-content{
+    float: left;
+    position: absolute;
+    top: 100px;
+    left:0;
+}
+.con-content p{
+    text-align: left;
+    font-size: 1.1rem;
+    word-break: break-all;
+    width: 100%;
+    color: #ebdec2;
+}
+.con-bottom{
+    font-size: 1.1rem;
+    color: #ebdec2;
+    margin-top: 40px;
+}
+.con-link{
+    display: inline;
+    color: #f8b700;
+}
+.con-link:hover{
+    text-decoration: underline;
+}
+.pinel-1{
+    background: url("../../public/images/game/welcome.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 600px;
+}
+.pinel-2{
+    background: url("../../public/images/game/hero.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 600px;
+}
+
+
+
+/***************panic****************/
+.panic{
+    background: url("../../public/images/game/panic.jpg") no-repeat 50% 50%;
+    height: 335px;
+    overflow: hidden;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
