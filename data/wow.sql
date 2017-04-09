@@ -1,4 +1,4 @@
-CREATE TABLE `safe_question` (
+CREATE TABLE `safequestion` (
   `questionid` int(10) NOT NULL AUTO_INCREMENT,
   `quesname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`questionid`)
@@ -16,4 +16,4 @@ CREATE TABLE `wow_user` (
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-alter table wow_user add foreign key(questionid) references safe_question(questionid);
+alter table wow_user add foreign key(questionid) references safequestion(questionid);

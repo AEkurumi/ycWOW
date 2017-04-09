@@ -26,13 +26,23 @@ router.use(function (req,res,next) {
     next();
 });
 
-router.get("/",function (req,res) {
+router.get("/user/register",function (req,res) {
     //使用模板引擎去渲染界面
     // 第一个参数模板的路径  第二个参数分配给模板使用的数据
-    res.render("main/index",{
-
-    })
-
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from safequestion",function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+            }else if(result.length<=0){
+                console.log("数据库为空，请先添加数据库");
+            }else{
+                res.render("main/register",{
+                    questions:result
+                })
+            }
+        })
+    });
 });
 
 

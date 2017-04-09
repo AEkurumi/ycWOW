@@ -7,6 +7,10 @@
     <title>注册</title>
     <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../public/css/registered.css">
+    <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/js/index.js"></script>
+    <script src="../../public/js/checkCode.js"></script>
+
 </head>
 <body style="background-position: center -200px">
 <div class="content">
@@ -18,7 +22,9 @@
         </div>
         <div class="baa" style="display:none;width:auto; height:34px;background: red;margin-bottom: 10px;"></div>
         <div class="wow_form">
+            <form action="post"  name="form1" onSubmit="return myCheck()">
             <div class="user_info_inp">
+                <div class="warn_kong" style="display: none"></div>
                 <div class="input_group">
                     <input class="wow_inp" type="text" name="IdNum" id="userid" maxlength="18"  placeholder="身份证号">
                     <div class="err" style="display: none"><i class="err_icon"></i><span class="err_txt">err</span></div>
@@ -28,7 +34,7 @@
                     <div class="err" style="display: none"><i class="err_icon"></i><span>err</span></div>
                 </div>
             </div>
-            <div class="user_info_inp">
+                <div class="user_info_inp">
                 <div class="input_group">
                     <input class="wow_inp" type="text" id="email" name="email" placeholder="邮箱地址">
                     <div class="err" style="display: none"><i class="err_icon"></i><span>err</span></div>
@@ -39,9 +45,9 @@
                 </div>
 
                 <div class="input_group">
-                    <input class="wow_inp_sm" type="password" id="pwd" name="pwd" maxlength="16" placeholder="密码">
+                    <input class="wow_inp_sm" type="password" id="upwd" name="pwd" maxlength="16" placeholder="密码">
                     <input class="wow_inp_sm" type="password" id="repwd" name="reppwd" maxlength="16" placeholder="确认密码输入">
-                    <div class="safe_warn" style="display: none"></div>
+                    <div class="safe_warn" style="display: block"></div>
                     <div class="err pwd_err" style="display: none"><i class="err_icon"></i><span>err</span></div>
                     <div class="pwd_hint" style="display: none;">
                         <div class="pwd_arrow"></div>
@@ -56,33 +62,31 @@
                     </div>
                 </div>
             </div>
-            <div class="user_info_inp">
-                <div class="wow_inp wow_select">
-                    <span class="wow_question_arror"></span>
-                    <span class="question1">选择一个安全提问问题</span>
+                <div class="user_info_inp">
+                    <div class="wow_inp wow_select">
+                        <span class="wow_question_arror"></span>
+                        <span class="question1">选择一个安全提问问题</span>
+                    </div>
+                    <div class="wow_question" style="display: none">
+                        {% for question in questions %}
+                        <span class="question"><a href="javascript:void (0)">{{question.quesname}}</a></span>
+                        {%endfor%}
+                    </div>
+                    <input class="wow_inp wow_userAns" type="text" name="userAns" id="uans"  placeholder="安全提问回答">
+                    <input class="verification" type = "button" id="code" onclick="createCode()"/>
+                    <i class="refresh_verification"></i>
+                    <input class="wow_inp" id="rep_verification" type = "text" placeholder="输入验证码"/>
+                    <div class="verification_err" style="display: none"><i class="err_icon"></i><span></span></div>
                 </div>
-                <div class="wow_question" style="display: none">
-                    <span class="question"><a href="javascript:void(0)">选择一个安全提问问题</a></span>
-                    <span class="question"><a href="javascript:void(0)">你的第一辆车是什么车1</a></span>
-                    <span class="question"><a href="javascript:void(0)">你的第一辆车是什么车2</a></span>
-                    <span class="question"><a href="javascript:void(0)">你的第一辆车是什么车3</a></span>
-                    <span class="question"><a href="javascript:void(0)">你的第一辆车是什么车4</a></span>
+
+                <div class="user_info_inp check">
+                    <input  type="checkbox" class="check_inp ">&nbsp;我同意该<a href="">隐私政策</a>中规定的各项条款
                 </div>
-                <input class="wow_inp wow_userAns" type="text" name="userAns"  placeholder="安全提问回答">
-                <input class="verification" type = "button" id="code" onclick="createCode()"/>
-                <i class="refresh_verification"></i>
-                <input class="wow_inp" id="rep_verification" type = "text" placeholder="输入验证码"/>
-                <div class="verification_err" style="display: none"><i class="err_icon"></i><span></span></div>
-            </div>
 
-            <div class="user_info_inp check">
-                <input  type="checkbox" class="check_inp ">&nbsp;我同意该<a href="">隐私政策</a>中规定的各项条款
-            </div>
-
-            <div class="user_info_inp">
-                <input class="wow_sub" type="submit" value="免费注册战网通行证">
-                <input class="wow_btn" type="button" value="已经有通行证了？">
-            </div>
+                <div class="user_info_inp">
+                    <input class="wow_sub" type="submit" id="subbtn" value="免费注册战网通行证">
+                    <input class="wow_btn" type="button" value="已经有通行证了？">
+                </div>
             </form>
         </div>
         <div class="wow_user_info_tit">
@@ -130,48 +134,6 @@
     </footer>
 </div>
 
-
-<!--<div class="foot_div">-->
-    <!--<footer class="foot">-->
-        <!--<div class="customer">-->
-            <!--<p>-->
-                <!--<a class="customer_p_a" href=""><span class="cus_p_a_sp1"></span>支持</a>-->
-                <!--<a class="customer_p_a" href=""><span class="cus_p_a_sp2"></span>反馈</a>-->
-                <!--<a class="customer_p_a" href=""><span class="cus_p_a_sp3"></span>战网安全中心</a>-->
-            <!--</p>-->
-        <!--</div>-->
-        <!--<div class="footer_logo">-->
-            <!--<img src="../../public/images/blizzard.0tuLw.png" alt="blizzard">-->
-        <!--</div>-->
-        <!--<div class="footer_text">-->
-            <!--<ul class="text_ul">-->
-                <!--<li><a href="">查找职位</a>|</li>-->
-                <!--<li><a href="">关于</a>|</li>-->
-                <!--<li><a href="">隐私</a>|</li>-->
-                <!--<li><a href="">法律条款</a>|</li>-->
-                <!--<li><a href="">著作权侵权</a></li>-->
-            <!--</ul>-->
-            <!--<ul class="text_ul">-->
-                <!--<li><a href="">沪网文[2014]0731-161号</a>|</li>-->
-                <!--<li><a href=""> 增值电信业务经营许可证编号：沪B2－20080012</a></li>-->
-            <!--</ul>-->
-            <!--<ul class="text_ul_none">-->
-                <!--<li><a href="javascript:void(0)">互联网违法和不良信息举报电话：0571-28090163</a>|</li>-->
-                <!--<li><a href="javascript:void(0)">沪公网安备：31011502002167</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="text_copy">©2017 Blizzard Entertainment, Inc.</div>-->
-        <!--<div class="integ">-->
-            <!--<a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="../../public/images/police.png"></a>-->
-            <!--<a target="_blank" href="http://www.zx110.org/"><img src="../../public/images/zx110.png"></a>-->
-            <!--<a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20111011175417664"><img src="../../public/images/sgs-icon.png"></a>-->
-            <!--<a target="_blank" href="http://www.shjbzx.cn/"><img src="../../public/images/icon20120516.png"></a>-->
-        <!--</div>-->
-    <!--</footer>-->
-<!--</div>-->
-
-<script src="../../public/js/jquery-2.0.3.js"></script>
-<script src="../../public/js/checkCode.js"></script>
 <script>
     $(function() {
         $(window).bind('scroll', function () {
@@ -257,9 +219,9 @@
         }
 
         //密码验证
-        $("#pwd").focus(function () {
+        $("#upwd").focus(function () {
             $(".pwd_hint").show();
-            $("#pwd").keyup();
+            $("#upwd").keyup();
             $(this).removeClass("inp_err");
         });
 
@@ -267,7 +229,7 @@
             $(this).removeClass("inp_err");
         });
 
-        $("#pwd").blur(function () {
+        $("#upwd").blur(function () {
             var hassuccess=[];
             var err="您所输入的密码格式不正确，请重新输入";
             for(var j=0;j<=3;j++){
@@ -276,28 +238,28 @@
             }
             if(hassuccess[0]==false && hassuccess[1]==false && hassuccess[2]==false && hassuccess[3]==false){
                 //密码正确
-                $("#pwd").removeClass("inp_err");
-                $("#pwd").addClass("inp_def");
+                $("#upwd").removeClass("inp_err");
+                $("#upwd").addClass("inp_def");
                 $(".pwd_hint").css("top","10px");
                 $(".pwd_err").hide();
             }else{
                 $(".pwd_err").show();
                 $(".pwd_err span").text(err);
                 $(".pwd_hint").css("top","5px");
-                $("#pwd").addClass("inp_err");
-                $("#pwd").removeClass("inp_def");
+                $("#upwd").addClass("inp_err");
+                $("#upwd").removeClass("inp_def");
 
             }
         });
 
         $("#repwd").blur(function () {
-            var pwd=$("#pwd").val();
+            var pwd=$("#upwd").val();
             var repwd=$("#repwd").val();
             var err="您所输入的密码与之前的密码不一致，请重新输入";
             if(pwd===repwd){
                 //密码正确
-                $("#pwd").removeClass("inp_err");
-                $("#pwd").addClass("inp_def");
+                $("#upwd").removeClass("inp_err");
+                $("#upwd").addClass("inp_def");
                 $("#repwd").removeClass("inp_err");
                 $("#repwd").addClass("inp_def");
                 $(".pwd_err").hide();
@@ -307,16 +269,16 @@
                 $(".pwd_err span").text(err);
                 $(".pwd_err").show();
                 $(".pwd_hint").css("top","5px");
-                $("#pwd").addClass("inp_err");
-                $("#pwd").removeClass("inp_def");
+                $("#upwd").addClass("inp_err");
+                $("#upwd").removeClass("inp_def");
                 $("#repwd").removeClass("inp_def");
                 $("#repwd").addClass("inp_err");
 
                 return false;
             }
         });
-        $("#pwd").keyup(function () {
-            var pwd=$("#pwd").val();
+        $("#upwd").keyup(function () {
+            var pwd=$("#upwd").val();
             var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
             var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
             var enoughRegex = new RegExp("(?=.{8,}).*", "g");
@@ -420,15 +382,23 @@
             $("div.verification_err").show();
             $("div.verification_err span").text("验证码输入错误，请重新输入");
         }
-    })
+    });
 
 
 
+    function myCheck() {
 
-
-
-
-
+        for(var i=0;i<document.form1.elements.length-1;i++)
+        {
+            if(document.form1.elements[i].value=="") {
+                $("div.warn_kong").show();
+                $("div.warn_kong").text("表单不能为空");
+                document.form1.elements[i].focus();
+                return false;
+            }
+        }
+        return true;
+    }
 </script>
 </body>
 </html>

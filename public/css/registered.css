@@ -104,7 +104,7 @@ body{
     color: rgba(255, 255, 255, 0.7);
 }
 
-#pwd{
+#upwd{
     margin-right: 7px;
 }
 .wow_question{
@@ -227,15 +227,6 @@ body{
 
 
 
-
-
-.email_err,.re_email_err,.pwd_err,.verification_err{
-    width: auto;
-    font-size: 12px;
-    color:#cd0606;
-    margin-bottom: 10px;
-    transition: 0.2s;
-}
 .err_icon{
     display: inline-block;
     width: 16px;
@@ -412,7 +403,6 @@ footer.foot{
 .pwd_hint{
     width: 580px;
     height: 30px;
-    background: red;
     position: relative;
     top:10px;
     z-index: 11;
@@ -487,17 +477,27 @@ footer.foot{
 .i_icon_fail{
     background: url("../../public/images/registered/sprite-16-red.3vUhX.png") no-repeat -112px -96px;
 }
-
-
+.input_group{
+    position: relative;
+}
 .safe_warn{
     position: absolute;
-    right: 10px;
-    top: 100px;
+    right: 15px;
+    top: 12px;
     font-style: italic;
     font-size: 12px;
 }
 
-
+.warn_kong{
+    width: 580px;
+    background:#360e10;
+    height: 30px;
+    border: 1px solid #000;
+    color: #f00;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
 
 
 /*出错*/
@@ -585,7 +585,7 @@ footer.foot{
         width: 100%;
     }
     .pwd_hint_con{
-        width: 295px;
+        width: 100%;
     }
 
     #pwd{
@@ -666,6 +666,9 @@ footer.foot{
         margin-right: 20px;
         position: relative;
         top:5px;
+    }
+    .warn_kong{
+        width: 100%;
     }
 
 
