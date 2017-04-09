@@ -26,14 +26,11 @@ router.use(function (req,res,next) {
     next();
 });
 
-router.get("/login",function (req,res) {
+router.get("/",function (req,res) {
     //使用模板引擎去渲染界面
     // 第一个参数模板的路径  第二个参数分配给模板使用的数据
+    res.render("main/index",{
 
-    pool.getConnection(function (err,conn) {
-        conn.select("select * from safe_question",function (err,result) {
-            console.log(result);
-        })
     })
 
 });
