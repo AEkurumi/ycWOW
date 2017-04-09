@@ -22,6 +22,7 @@ body{
     height: 140px;
     margin-top: 50px;
     background: url("../../public/images/registered/wow-cn.0z8mB.png") no-repeat 0 0;
+
 }
 .wow_user_info{
     background: url('../../public/images/registered/top-light.1x8jO.png') center top no-repeat rgba(29, 34, 44, 0.95);
@@ -31,6 +32,7 @@ body{
 }
 .wow_user_info_tit h1{
     color:#ffffff;
+    font-size: 30px;
     font-weight: 100;
     text-align: center;
 }
@@ -50,6 +52,9 @@ body{
     text-decoration: none;
     display: inline-block;
     color: #0f9ada;
+}
+.wow_user_info_tit a:hover{
+    color: #FFFFFF;
 }
 .icon_link{
     display: inline-block;
@@ -85,7 +90,7 @@ body{
 }
 .wow_inp_sm{
     display: inline-block;
-    width: 49.5%;
+    width: 49%;
     height: 34px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(0, 0, 0, 0.5);
@@ -99,7 +104,9 @@ body{
     color: rgba(255, 255, 255, 0.7);
 }
 
-
+#pwd{
+    margin-right: 7px;
+}
 .wow_question{
     border: 1px solid #56575A;
     border-top: none;
@@ -125,6 +132,10 @@ body{
     background:rgba(0,0,0,0.2);
 }
 
+.wow_select{
+    /*margin-top: 10px;*/
+}
+
 .wow_question_arror{
     display: inline-block;
     width: 16px;
@@ -137,11 +148,14 @@ body{
     z-index: 1;
 }
 
-
+.wow_userAns{
+    margin-top: 8px;
+}
 
 
 
 .wow_sub {
+    cursor: pointer;
     display: inline-block;
     width: 580px;
     height: 34px;
@@ -153,10 +167,14 @@ body{
     box-sizing: border-box;
     border-radius: 2px;
     border: 1px solid #0f9ada;
-    background: #0f9ada;
+    background-image: linear-gradient(to bottom, #0f9ada, #0076ad);
     color: #fff;
 }
+.wow_sub:hover{
+    background-image: linear-gradient(to bottom, #37c0ff, #0097dd);
+}
 .wow_btn{
+    cursor: pointer;
     display: inline-block;
     width:580px;
     height: 34px;
@@ -171,7 +189,12 @@ body{
     border-radius: 2px;
     color: #0f9ada;
 }
-
+.wow_btn:hover{
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
 .check{
     font-size: 15px;
     color: #ffffff;
@@ -193,6 +216,19 @@ body{
    background: url("../../public/images/registered/sprite-18-inputs.48WPM.png") no-repeat -64px -96px;
 }
 
+.err{
+    width: auto;
+    font-size: 12px;
+    color:#cd0606;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+
+
+
+
+
 .email_err,.re_email_err,.pwd_err,.verification_err{
     width: auto;
     font-size: 12px;
@@ -211,28 +247,31 @@ body{
 }
 
 
-.footer{
-    width: 1000px;
+.foot_div{
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
 }
-.foot{
-    float: left;
-    width: 645px;
-    margin-top: 135px;
-    margin-bottom: 70px;
+footer.foot{
+    width: 85%;
+    padding-bottom: 200px;
+    position: relative;
 }
 .customer{
     margin-bottom: 30px;
+    position: relative;
 }
 .customer p{
     display: block;
 }
-.customer p a{
+.customer_p_a{
     display: inline-block;
     margin-right: 37px;
     color:rgba(255,255,255,0.7);
     text-decoration: none;
+    font-size: 16px;
 }
-.customer p a span{
+.customer_p_a span{
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -250,6 +289,44 @@ body{
 .cus_p_a_sp3{
     background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -120px -432px;
 }
+.customer_right{
+    display: inline-block;
+    position: absolute;
+    right:0;
+
+}
+
+.word_bg{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../../public/images/registered/sprite-24-blue.png") no-repeat -120px -432px;
+    position: relative;
+    top:5px;
+}
+.language{
+    display: inline-block;
+    color:rgba(255,255,255,0.7);
+    position: relative;
+    top:-2px;
+    left: 5px;
+}
+.country{
+    display: inline-block;
+    font-size: 16px;
+}
+.country_langue{
+    display: inline-block;
+    font-size: 16px;
+}
+.drow_icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../../public/images/forum/icon/sprite-16-white.png") no-repeat -64px -256px;
+    margin-left: 10px;
+    opacity: 0.3;
+}
 
 .footer_logo{
     float: left;
@@ -257,46 +334,48 @@ body{
     height: 58px;
 }
 .footer_text{
-    width: 500px;
     float: left;
     margin-left: 30px;
+}
+
+
+.text_ul{
+    width: 800px;
+    height: 20px;
+    margin-bottom: 10px;
 }
 .text_ul li,.text_ul_none li{
     float: left;
     font-size: 12px;
+    color: rgba(255,255,255,.7);
+}
+.text_ul li a,.text_ul_none li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 12px;
     color: rgba(255,255,255,0.7);
+}
+.text_ul_none li a{
+    cursor: default;
 }
 
-.text_ul li a{
-    display: inline-block;
-    padding: 0 12px;
-    margin-bottom: 13px;
-    text-decoration: none;
-    color: rgba(255,255,255,0.7);
-}
 .text_ul li a:hover{
     color: rgb(255,255,255);
 }
-.text_ul_none li a{
-    display: inline-block;
-    padding: 0 12px;
-    text-decoration: none;
-    color: rgba(255,255,255,0.7);
-    cursor: default;
-}
 .text_copy{
-    padding: 8px 0;
+    width: 800px;
+    height: 20px;
+    position:absolute;
+    top:150px;
+    left:156px;
     color: rgba(255, 255, 255, 0.3);
     font-size: 12px;
-    line-height: 20px;
-    margin-left: 155px;
-    text-transform: uppercase;
-    position: relative;
-    top:10px;
 }
+
 .integ{
-    margin-top: 10px;
-    margin-left: 180px;
+    position: absolute;
+    top:170px;
+    left:156px;
 }
 .integ a{
     display: inline-block;
@@ -304,6 +383,8 @@ body{
     position: relative;
     top:5px;
 }
+
+
 
 /*验证码*/
 .verification{
@@ -314,6 +395,8 @@ body{
     border: none;
     display: block;
     float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .refresh_verification{
     display: block;
@@ -322,14 +405,17 @@ body{
     height: 64px;
     background: url("../../public/images/registered/sprite-64-blue.15DN8.png") no-repeat -384px -256px;
     position: relative;
-    top:5px;
+    top:10px;
     left: 5px;
 }
 
 .pwd_hint{
+    width: 580px;
+    height: 30px;
+    background: red;
+    position: relative;
+    top:10px;
     z-index: 11;
-    position: absolute;
-    top:140px;
 }
 .pwd_arrow,.pwd_arrow:after{
     width: 0;
@@ -346,8 +432,8 @@ body{
 }
 .pwd_arrow{
     position: absolute;
+    left:30px;
     top:-8px;
-    left: 25px;
 }
 .pwd_arrow:after{
     content: "";
@@ -367,8 +453,10 @@ body{
 
 
 .pwd_hint_con{
-    width: 541px;
-    padding: 19px;
+    width: 580px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    /*padding: 19px;*/
     text-align: left;
     background: #272e3b;
     font-size: 12px;
@@ -417,7 +505,7 @@ body{
     border: 2px solid #cd0606;
 }
 .inp_def{
-    border: 1px solid #1e5f99;
+    border: 1px solid  rgba(255, 255, 255, 0.3);
 }
 
 .refresh_verification{
@@ -461,3 +549,124 @@ body{
 
 
 
+@media (max-width: 669px) {
+    .wow_logo{
+        margin-bottom: 30px;
+    }
+    .wow_user_info{
+        min-width: 280px;
+        margin: 0 5px;
+        padding: 40px 20px;
+    }
+    .wow_user_info_tit h1{
+        color:#ffffff;
+        font-weight: 100;
+        font-size: 30px;
+        text-align: center;
+    }
+    .wow_user_info_tit p{
+        display: block;
+        color:#ffffff;
+        margin-top: 30px;
+        font-size: 12px;
+        margin-bottom: 22px;
+        line-height: 25px;
+    }
+    .wow_user_info_tit p span{
+        color: #75e900;
+    }
+    .wow_inp{
+        width: 100%;
+    }
+    .wow_inp_sm{
+        width: 49%;
+    }
+    .pwd_hint{
+        width: 100%;
+    }
+    .pwd_hint_con{
+        width: 295px;
+    }
+
+    #pwd{
+        margin-right: 0;
+    }
+    .wow_sub{
+        width: 100%;
+    }
+    .wow_btn{
+        width: 100%;
+    }
+
+    .customer_p_a{
+        margin-right: 0;
+    }
+    .footer_logo{
+        position: absolute;
+        left:0;
+        right:0;
+
+    }
+
+
+}
+@media (max-width: 1100px) {
+    .customer_p_a{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    .footer_logo{
+        position: absolute;
+        left:0;
+
+    }
+    .footer_text{
+        position: absolute;
+        top:150px;
+        margin-left: 0;
+    }
+    .foot_div{
+        width: 100%;
+        margin-bottom: 150px;
+    }
+    .footer_text{
+        position: absolute;
+        left:0;
+        right:0;
+        top:150px;
+    }
+    .text_ul,.text_copy{
+        width: 100%;
+    }
+    .text_ul li a,.text_ul_none li a{
+        padding: 0 8px;
+    }
+    .text_ul li{
+        margin-bottom: 5px;
+    }
+    .text_ul_none li{
+        margin-bottom: 5px;
+    }
+    .text_copy{
+        width: 100%;
+        top:270px;
+        left:0;
+        right:0;
+    }
+
+
+    .integ{
+        position: absolute;
+        top:290px;
+        left:0;
+        right:0;
+    }
+    .integ a{
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+        top:5px;
+    }
+
+
+}
