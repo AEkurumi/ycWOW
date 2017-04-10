@@ -184,7 +184,7 @@ a:hover{
     padding: 20px;
 }
 .card-tit{
-    font-size: 1.6rem;
+    font-size: 2.5rem;
     line-height: 1.5em;
     font-weight: 700;
     color: #f8b700;
@@ -193,7 +193,7 @@ a:hover{
 }
 .card-p{
     line-height: 1.7em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     word-break: normal;
     color: #ebdec2;
 }
