@@ -13,7 +13,7 @@ var swig=require("swig");   //加载模板引擎
 
 var app=express();
 app.use(cookieParser());
-app.use(bodyparser.urlencoded({extended:false}));
+app.use(bodyparser.urlencoded({extended:true}));
 
 //配置模板引擎
 app.engine("html",swig.renderFile);    //engine（"后缀名"，处理模板引擎渲染的方法）
@@ -46,6 +46,10 @@ var pool=mysql.createPool({
     password:"aaaa"
 });
 
+//使用静态资源管理插件
+app.use(express.static("../ycWOW"));   //这个page下面的所有的文件全部都使用静态资源管理
+
+
 
 //考虑到所有的业务逻辑都写到server.js里面，那么将过于庞大，因此，我们我们分模块开发
 //定义路由路径
@@ -58,8 +62,7 @@ app.use("/",require("./routers/main"));
 
 
 
-//使用静态资源管理插件
-app.use(express.static("../ycWOW"));   //这个page下面的所有的文件全部都使用静态资源管理
+
 
 
 //监听

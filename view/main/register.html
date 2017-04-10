@@ -8,9 +8,8 @@
     <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../public/css/registered.css">
     <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/js/md5.js"></script>
     <script src="../../public/js/index.js"></script>
-    <script src="../../public/js/checkCode.js"></script>
-
 </head>
 <body style="background-position: center -200px">
 <div class="content">
@@ -69,11 +68,18 @@
                     </div>
                     <div class="wow_question" style="display: none">
                         {% for question in questions %}
-                        <span class="question"><a href="javascript:void (0)">{{question.quesname}}</a></span>
+                        <span class="question" value={{question.questionid}}><a href="javascript:void (0)">{{question.quesname}}</a></span>
                         {%endfor%}
                     </div>
                     <input class="wow_inp wow_userAns" type="text" name="userAns" id="uans"  placeholder="安全提问回答">
-                    <input class="verification" type = "button" id="code" onclick="createCode()"/>
+                        <div class="verification" id="yanzheng" onclick="createCode()">
+                            <span class="yanzheng1">1</span>
+                            <span class="yanzheng2">2</span>
+                            <span class="yanzheng3">3</span>
+                            <span class="yanzheng4">4</span>
+                            <span class="yanzheng5">5</span>
+                            <span class="yanzheng6">6</span>
+                        </div>
                     <i class="refresh_verification"></i>
                     <input class="wow_inp" id="rep_verification" type = "text" placeholder="输入验证码"/>
                     <div class="verification_err" style="display: none"><i class="err_icon"></i><span></span></div>
@@ -84,7 +90,7 @@
                 </div>
 
                 <div class="user_info_inp">
-                    <input class="wow_sub" type="submit" id="subbtn" value="免费注册战网通行证">
+                    <input class="wow_sub" type="button" id="subbtn" value="免费注册战网通行证">
                     <input class="wow_btn" type="button" value="已经有通行证了？">
                 </div>
             </form>
@@ -201,9 +207,6 @@
         });
 
         function yanzheng(id,reg,txt,err) {
-            console.log(id);
-            console.log(reg);
-            console.log(txt);
             if(reg.test(txt)){
                 $("#"+id+"").addClass("inp_def");
                 $("#"+id+"").removeClass("inp_err");
@@ -226,15 +229,16 @@
         });
 
         $("#repwd").focus(function () {
+            $(".pwd_hint").show();
             $(this).removeClass("inp_err");
         });
 
         $("#upwd").blur(function () {
             var hassuccess=[];
+            $(".pwd_hint").hide();
             var err="您所输入的密码格式不正确，请重新输入";
             for(var j=0;j<=3;j++){
                 hassuccess[j]=$("div.pwd_hint_con ul li:eq("+j+") i").hasClass("i_icon_fail");
-                console.log("hassuccess["+j+"]"+hassuccess[j]);
             }
             if(hassuccess[0]==false && hassuccess[1]==false && hassuccess[2]==false && hassuccess[3]==false){
                 //密码正确
@@ -325,6 +329,7 @@
         var flag=$(".wow_question").hide();
         $(".wow_select").click(function () {
             if(flag){
+
                 $(".wow_question").show();
                 return flag=false;
             }else {
@@ -335,17 +340,18 @@
         $(".wow_select").blur(function () {
             $(".wow_question").hide();
         });
-        $(".wow_select").focus(function () {
-            $(".wow_select").click();
-        });
-
+        
         $("div.wow_question span.question ").on("click",function () {
             var txt=$(this).text();
-            console.log(txt);
+            var valnum=$(this).attr("value");
+
             $(".question1").text(""+txt+"");
+            $(".question1").attr("value",valnum);
             $(".wow_userAns").val("");
-            $(".wow_select").blur();
+            flag=true;
+            $(".wow_question").hide();
         });
+
     });
 
 
@@ -358,7 +364,7 @@
         },500);
     });
 
-    $("input.verification").click(function () {
+    $("#yanzheng").click(function () {
         $("i.refresh_verification").addClass("refresh_verification_action");
         createCode();
         setTimeout(function () {
@@ -366,30 +372,14 @@
         },500);
     });
 
-    //验证码验证
-    $("#rep_verification").blur(function () {
-        var verificationCode=$("input.verification").val();
-        var repVerification=$("#rep_verification").val();
-        console.log(repVerification);
-        if(repVerification.length<=0){
-            $("input.verification").click();
-            $("div.verification_err").show();
-            $("div.verification_err span").text("请输入验证码");
-        }else if(repVerification==verificationCode){
-            $("div.verification_err").hide();
-        }else{
-            $("input.verification").click();
-            $("div.verification_err").show();
-            $("div.verification_err span").text("验证码输入错误，请重新输入");
-        }
+
+    $("#rep_verification").focus(function () {
+        $(this).removeClass("inp_err");
     });
 
 
-
     function myCheck() {
-
-        for(var i=0;i<document.form1.elements.length-1;i++)
-        {
+        for(var i=0;i<document.form1.elements.length-1;i++) {
             if(document.form1.elements[i].value=="") {
                 $("div.warn_kong").show();
                 $("div.warn_kong").text("表单不能为空");

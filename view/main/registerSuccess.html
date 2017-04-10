@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册成功</title>
+    <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../public/css/registered.css">
+    <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/js/index.js"></script>
+</head>
+<body style="background-position: center -200px">
+<div class="content" style="height: 650px;">
+    <div class="wow_logo"></div>
+    <div class="wow_reg_success"></div>
+    <div class="wow_user_info">
+        <p class="wow_success_title">通行证创建成功!</p>
+        <p class="wow_success_name">通行证名（电子邮箱）：</p>
+        <a class="wow_success_email" href=""></a>
+        <p class="wow_success">您登录暴雪游戏平台，网站或者移动端应用程序时需要输入该邮箱地址。您可以随时在<a href="">通行证设置</a>中修改您的邮箱地址</p>
+        <button class="wow_success_download">下载《魔兽世界》</button>
+    </div>
+</div>
+
+<div class="foot_div">
+    <footer class="foot">
+        <div class="customer">
+            <p>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp1"></span>支持</a>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp2"></span>反馈</a>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp3"></span>战网安全中心</a>
+            </p>
+        </div>
+        <div class="footer_logo">
+            <img src="../../public/images/blizzard.0tuLw.png" alt="blizzard">
+        </div>
+        <div class="footer_text">
+            <ul class="text_ul">
+                <li><a href="">查找职位</a>|</li>
+                <li><a href="">关于</a>|</li>
+                <li><a href="">隐私</a>|</li>
+                <li><a href="">法律条款</a>|</li>
+                <li><a href="">著作权侵权</a></li>
+            </ul>
+            <ul class="text_ul">
+                <li><a href="">沪网文[2014]0731-161号</a>|</li>
+                <li><a href=""> 增值电信业务经营许可证编号：沪B2－20080012</a></li>
+            </ul>
+            <ul class="text_ul_none">
+                <li><a href="javascript:void(0)">互联网违法和不良信息举报电话：0571-28090163</a>|</li>
+                <li><a href="javascript:void(0)">沪公网安备：31011502002167</a></li>
+            </ul>
+        </div>
+        <div class="text_copy">©2017 Blizzard Entertainment, Inc.</div>
+        <div class="integ">
+            <a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="../../public/images/police.png"></a>
+            <a target="_blank" href="http://www.zx110.org/"><img src="../../public/images/zx110.png"></a>
+            <a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20111011175417664"><img src="../../public/images/sgs-icon.png"></a>
+            <a target="_blank" href="http://www.shjbzx.cn/"><img src="../../public/images/icon20120516.png"></a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    $(function(){
+        var url=window.location.href;
+        var email=url.split("=")[1];
+        $(".wow_success_email").html(email);
+    });
+</script>
+</body>
+</html>
