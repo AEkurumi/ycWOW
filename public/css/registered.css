@@ -431,13 +431,19 @@ footer.foot{
 .verification{
     width: 200px;
     height: 70px;
-    font-size: 30px;
+    font-size: 25px;
     background: #ffffff;
     border: none;
     display: block;
     float: left;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+#yanzheng{
+    position: relative;
+}
+.yanzheng1,.yanzheng2,.yanzheng3,.yanzheng4,.yanzheng5,.yanzheng6{
+    position: absolute;
 }
 .refresh_verification{
     display: block;
@@ -727,4 +733,36 @@ footer.foot{
         margin-bottom: 15px;
     }
 
+}
+
+
+.yanzheng1{
+    transform: rotate(16deg);
+    top:10px;
+    left: 0px;
+}
+.yanzheng2{
+    transform: rotate(26deg);
+    top:10px;
+    left: 10px;
+}
+.yanzheng3{
+    transform: rotate(11deg);
+    top:10px;
+    left: 20px;
+}
+.yanzheng4{
+    transform: rotate(19deg);
+    top:10px;
+    left: 30px;
+}
+.yanzheng5{
+    transform: rotate(21deg);
+    top:10px;
+    left: 40px;
+}
+.yanzheng6{
+    transform: rotate(24deg);
+    top:10px;
+    left: 50px;
 }

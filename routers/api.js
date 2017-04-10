@@ -39,49 +39,29 @@ router.post("/user/register",function (req,res) {
 
     pool.getConnection(function (err,conn) {
         conn.query("select questionid from safequestion where quesname=? ",[uquestion],function (err,result) {
-            console.log(result);
             if(err){
                 resData.code=0;
                 resData.msg="网络连接失败，请稍后重试";
                 res.json(resData);
             }else{
-                // conn.query("insert into wowuser values(null,?,?,?,?,?,?,0)",[unum,uname,uemail,upwd,1,])
+                console.log(result);
+                conn.query("insert into wowuser values(null,?,?,?,?,?,?,0)",[unum,uname,uemail,upwd,1,uans,0],function (err,rs) {
+                    if(err){
+                        console.log(err);
+                        resData.code=1;
+                        resData.msg="网络连接失败，请稍后重试注册";
+                        res.json(resData);
+                    }else{
+                        resData.code=2;
+                        resData.msg=uemail;
+                        res.json(resData);
+                    }
+                })
+
             }
 
         })
     })
-
-
-
-
-    // pool.getConnection(function (err,conn) {
-    //     conn.query("select * from user where uname=?",[uname],function (err,result) {
-    //         if(err){
-    //             resData.code=0;
-    //             resData.msg="网络连接失败，请稍后重试";
-    //             res.json(resData);
-    //         }else if(result.length>0){
-    //             resData.code=1;
-    //             resData.msg="用户名已存在，请重新输入";
-    //             res.json(resData);
-    //         }else{
-    //             //可以 注册
-    //             conn.query("insert into user  values(null,?,?,0)",[uname,pwd],function (err,resu) {
-    //                 conn.release();
-    //                 if(err){
-    //                     console.log(err);
-    //                     resData.code=0;
-    //                     resData.msg="网络连接失败，请稍后重试注册";
-    //                     res.json(resData);
-    //                 }else{
-    //                     resData.code=2;
-    //                     resData.msg="注册成功";
-    //                     res.json(resData);
-    //                 }
-    //             })
-    //         }
-    //     })
-    // })
 });
 
 
