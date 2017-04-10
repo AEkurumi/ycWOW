@@ -14,10 +14,10 @@ $(function () {
         var uname=$("#uname").val();
         var uemail=$("#email").val();
         var upwd=$("#pwd").val();
-        var uquestion=$("span.question1").val();
         var uans=$("uans").val();
+        var uquestionid=$("span.question1").attr("value");
+        console.log(uquestionid);
 
-        console.log(unum);
 
         unum=md5(unum);
         upwd=md5(upwd);
@@ -45,7 +45,7 @@ $(function () {
                     uname:uname,
                     uemail:uemail,
                     upwd:upwd,
-                    uquestion:uquestion,
+                    uquestionid:uquestionid,
                     uans:uans
                 },
                 dataType:"json",
@@ -55,8 +55,7 @@ $(function () {
                     }else if(data.code==1){
                         alert(data.msg);
                     }else if(data.code==2){
-                        location.href="../../view/main/registerSuccess.html";
-                        $("a.wow_success_email").text(data.msg);
+                        location.href="../../view/main/registerSuccess.html?email="+data.msg;
                     }
                 }
             });

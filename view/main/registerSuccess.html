@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../public/css/registered.css">
     <script src="../../public/js/jquery-2.0.3.js"></script>
     <script src="../../public/js/index.js"></script>
-    <script src="../../public/js/checkCode.js"></script>
 </head>
 <body style="background-position: center -200px">
 <div class="content" style="height: 650px;">
@@ -18,7 +17,7 @@
     <div class="wow_user_info">
         <p class="wow_success_title">通行证创建成功!</p>
         <p class="wow_success_name">通行证名（电子邮箱）：</p>
-        <a class="wow_success_email" href="">991538766@qq.com</a>
+        <a class="wow_success_email" href=""></a>
         <p class="wow_success">您登录暴雪游戏平台，网站或者移动端应用程序时需要输入该邮箱地址。您可以随时在<a href="">通行证设置</a>中修改您的邮箱地址</p>
         <button class="wow_success_download">下载《魔兽世界》</button>
     </div>
@@ -62,5 +61,13 @@
         </div>
     </footer>
 </div>
+
+<script>
+    $(function(){
+        var url=window.location.href;
+        var email=url.split("=")[1];
+        $(".wow_success_email").html(email);
+    });
+</script>
 </body>
 </html>
