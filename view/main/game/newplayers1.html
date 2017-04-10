@@ -153,16 +153,16 @@
         <div class="tabs">
             <div class="tabs-container">
                 <ul class="tabs-list">
-                    <li class="tabs-item"><a href="" class="tabs-on">第一部分</a></li>
-                    <li class="tabs-item"><a href="" class="tabs-off">第二部分</a></li>
-                    <li class="tabs-item"><a href="" class="tabs-off">第三部分</a></li>
-                    <li class="tabs-item"><a href="" class="tabs-off">第四部分</a></li>
+                    <li class="tabs-item"><a href="newplayers1.html" class="tabs-on">第一部分</a></li>
+                    <li class="tabs-item"><a href="newplayers2.html" class="tabs-off">第二部分</a></li>
+                    <li class="tabs-item"><a href="newplayers3.html" class="tabs-off">第三部分</a></li>
+                    <li class="tabs-item"><a href="newplayers4.html" class="tabs-off">第四部分</a></li>
                 </ul>
             </div>
 
         </div>
         <div class="Divider"></div>
-        <div class="first" style="display: none">
+        <div class="neirong" id="firstpart" style="display: block">
             <div class="large welcome">
                 <div class="pinel-1">
                     <div class="con-box">
@@ -201,98 +201,18 @@
                 <div class="con-box">
                     <div class="panic-con">
                         <div class="rukeng">
+                            <a href="newplayers2.html" class="panic-a">
+                                <div class=" btn-next rukengbtn">
+                                    <span>下一页：第二部分</span>
+                                </div>
+                            </a>
 
-                            <div class=" btn-next rukengbtn">
-                                <span>下一页：第二部分</span>
-                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="second" style="display: block">
-            <div class="large ctrl">
-                <div class="pinel-3">
-                    <div class="con-box">
-                        <div class="left-align">
-                            <div class="con-tit">控制角色</div>
-                            <div class="con-content">
-                                <p>在我们开始前，先让我们来熟悉一下这款游戏的操控。为了尽量简洁，我们只挑选了最基础的部分进行说明。在深入了解游戏之后，你会发现还有很多方式来自定义键盘快捷键和动作条。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="Divider"></div>
-            <div class="middle">
-                <div class="con-img">
-                    <div class="pinel-4"></div>
-                </div>
-                <div class="con-area">
-                    <div class="center-align">
-                        <div class="con-tit1">控制角色</div>
-                        <div class="con-content">
-                            <p>在我们开始前，先让我们来熟悉一下这款游戏的操控。为了尽量简洁，我们只挑选了最基础的部分进行说明。在深入了解游戏之后，你会发现还有很多方式来自定义键盘快捷键和动作条。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="middle">
-                <div class="con-img">
-                    <div class="pinel-5"></div>
-                </div>
-                <div class="con-area">
-                    <div class="center-align">
-                        <div class="con-tit1">控制角色</div>
-                        <div class="con-content">
-                            <p>在我们开始前，先让我们来熟悉一下这款游戏的操控。为了尽量简洁，我们只挑选了最基础的部分进行说明。在深入了解游戏之后，你会发现还有很多方式来自定义键盘快捷键和动作条。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="Divider"></div>
-            <div class="large hero">
-                <div class="pinel-2">
-                    <div class="con-box">
-                        <div class="right-align">
-                            <div class="con-tit">创建英雄</div>
-                            <div class="con-content">
-                                <p>当你首次进入游戏时，你需要为你自己创建一个角色，你将通过这名角色来闯荡丰富多彩的艾泽拉斯世界。首先，你需要选择一个
-                                    <a href="" class="con-link">种族</a>
-                                    （外观），然后是一个
-                                    <a href="" class="con-link">职业</a>
-                                    （定位），最后你可以通过各种自定义选项调整你的角色的外观。</p>
-                                <div class="con-bottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="Divider"></div>
-            <div class="panic">
-                <div class="con-box">
-                    <div class="panic-con">
-                        <div class="rukeng">
-                            <div class=" btn-prev rukengbtn">
-                                <span>上一页：第一部分</span>
-                            </div>
-                            <div class=" btn-next rukengbtn">
-                                <span>下一页：第二部分</span>
-                            </div>
-                            <div class=" download rukengbtn2">
-                                <span>免费下载</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <div class="Divider"></div>
         <div class="guanzhu">
@@ -365,6 +285,20 @@
         </footer>
         <script src="../../../public/js/jquery-2.0.3.js"></script>
         <script src="../../../public/js/nav.js"></script>
+        <script>
+            var tab=$(".tabs-item");
+            //console.log(tab);
+            //var index;
+            tab.click(function () {
+                tab.children().attr("class","tabs-off");
+                $(this).children().attr("class","tabs-on");
+//                $(".neirong").css("display","none");
+//                $(".neirong").eq($(this).index()).css("display","block");
+            }
+
+            );
+
+        </script>
     </div>
 </body>
 </html>
