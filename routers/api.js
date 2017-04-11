@@ -4,7 +4,7 @@
 
 var express=require("express");
 var mysql=require("mysql");
-
+var email=require("emailjs");   //加载emailjs模块
 
 //数据库连接池
 var pool=mysql.createPool({
@@ -14,6 +14,17 @@ var pool=mysql.createPool({
     user:"root",
     password:"aaaa"
 });
+
+//配置emailjs模块
+var server=email.server.connect({
+    user:"991538766@qq.com",
+    password:"bestggcxpqtabefb",
+    host:"smtp.qq.com",
+    ssl: true
+});
+
+
+
 
 //1、加载路由
 var router=express.Router();
@@ -27,7 +38,7 @@ router.use(function (req,res,next) {
     next();
 });
 
-
+//注册
 router.post("/user/register",function (req,res) {
     //获取传过来的参数
     var unum=req.body.unum;
@@ -61,6 +72,17 @@ router.post("/user/register",function (req,res) {
                         resData.code=2;
                         resData.msg=uemail;
                         res.json(resData);
+
+                        //邮箱验证
+                        server.send({
+                            text:"您已经成功注册战网通行证，╮(︶﹏︶)╭鬼知道我经历了什么╮",
+                            from:"991538766@qq.com",
+                            to:uemail,
+                            subject:"╮(︶﹏︶)╭鬼知道我经历了什么╮"
+                        },function (err,message) {
+                            console.log(err);
+                        })
+
                     }
                 })
             }
@@ -69,6 +91,53 @@ router.post("/user/register",function (req,res) {
 });
 
 
+
+//登录2
+router.post("/user/login",function (req,res) {
+    //获取传过来的参数
+    var ulogemail=req.body.ulogemail;
+    var ulogpwd=req.body.ulogpwd;
+
+
+    pool.getConnection(function (err,conn) {
+        if(err){
+            console.log(err);
+            resData.code=0;
+            resData.msg="网络连接失败，请稍后重试";
+            res.json(resData);
+        }else {
+            conn.query("select * from wowuser where uemail=? && upwd=?", [ulogemail, ulogpwd], function (err, result) {
+                conn.release();
+                if (err) {
+                    console.log(err);
+                    resData.code = 0;
+                    resData.msg="网络连接失败，请稍后重试";
+                    res.json(resData);
+
+                } else if(result.length<=0) {
+                    resData.code = 1;
+                    resData.msg="用户名或者密码错误，请验证后再试";
+                    res.json(resData);
+                    console.log("nbbbbb");
+                }else{
+                    resData.code = 2;
+                    console.log("aaaaaaaaaa");
+                    resData.msg="登录成功";
+
+                    // resData.info=result[0];   //传输到前台，好收获用户名
+                    //
+                    // //存session
+                    // req.session.user={
+                    //     _id:result[0].uid,
+                    //     uemail:result[0].uemail,
+                    //     isAdmin:result[0].isAdmin
+                    // };
+                    // res.json(resData);
+                }
+            })
+        }
+    })
+});
 
 
 

@@ -52,10 +52,25 @@ router.get("/",function (req,res) {
     });
 });
 
+router.get("/user/login",function (req,res) {
+    res.render("main/login",{
+
+    });
+});
+
+router.get("/gamepoints/gamepoints",function (req,res) {
+    res.render("main/gamepoints/gamepoints",{
+
+    });
+});
 
 
 
+router.get("/gamepoints/cellphone",function (req,res) {
+    res.render("main/gamepoints/cellphone",{
 
+    });
+});
 
 
 

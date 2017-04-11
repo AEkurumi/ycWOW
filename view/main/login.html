@@ -7,20 +7,23 @@
     <title>登录</title>
     <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../public/css/login.css">
+    <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/js/md5.js"></script>
+    <script src="../../public/js/index.js"></script>
 </head>
 <body>
     <div class="content">
         <div class="con_logo"></div>
         <div class="con_form">
             <form>
-                <input type="text" name="uname" placeholder="战网通行证电子邮箱">
+                <input type="text" name="uemail" placeholder="战网通行证电子邮箱">
                 <input type="password" name="pwd"  placeholder="输入您的密码">
-                <button type="submit">登录战网</button>
+                <button type="button" id="loginbtn">登录战网</button>
             </form>
         </div>
         <div class="con_ul">
             <ul>
-                <li><a href="">免费创建战网通行证</a></li>
+                <li><a href="/user/register">免费创建战网通行证</a></li>
                 <li><a href="">无法登录？</a></li>
             </ul>
         </div>
