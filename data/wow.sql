@@ -19,5 +19,17 @@ CREATE TABLE `wowuser` (
   CONSTRAINT `wowuser_ibfk_1` FOREIGN KEY (`questionid`) REFERENCES `safequestion` (`questionid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--魔兽世界职业表
+CREATE TABLE `gameclass` (
+  `gid` int(10) NOT NULL AUTO_INCREMENT,
+  `gcamp` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `gclass` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `gintro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`gid`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+
 
 alter table wowuser add foreign key(questionid) references safequestion(questionid);

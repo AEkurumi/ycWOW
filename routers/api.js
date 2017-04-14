@@ -23,9 +23,6 @@ var server=email.server.connect({
     ssl: true
 });
 
-
-
-
 //1、加载路由
 var router=express.Router();
 
@@ -75,7 +72,7 @@ router.post("/user/register",function (req,res) {
 
                         //邮箱验证
                         server.send({
-                            text:"您已经成功注册战网通行证，╮(︶﹏︶)╭鬼知道我经历了什么╮",
+                            text:"您已经成功注册战网通行证，╮(︶﹏︶)╭鬼知道你经历了什么╮",
                             from:"991538766@qq.com",
                             to:uemail,
                             subject:"╮(︶﹏︶)╭鬼知道我经历了什么╮"
@@ -118,11 +115,12 @@ router.post("/user/login",function (req,res) {
                     resData.code = 1;
                     resData.msg="用户名或者密码错误，请验证后再试";
                     res.json(resData);
-                    console.log("nbbbbb");
+                    console.log(ulogpwd);
+                    console.log(ulogemail);
                 }else{
                     resData.code = 2;
-                    console.log("aaaaaaaaaa");
                     resData.msg="登录成功";
+                    res.json(resData);
 
                     // resData.info=result[0];   //传输到前台，好收获用户名
                     //
@@ -138,17 +136,6 @@ router.post("/user/login",function (req,res) {
         }
     })
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
