@@ -156,6 +156,7 @@ h2{
     left:0;
     text-align: center;
     width:90%;
+    display: block;
 }
 .right-align{
     position: relative;
@@ -186,10 +187,19 @@ h2{
     text-align: left;
     float: left;
     margin-bottom: 30px;
+    display: block;
 }
 .con-tit1{
     color: #fff;
     font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    margin: 0 auto 25px;
+}
+.con-tit2{
+    color: #fff;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
     padding-top: 25px;
@@ -206,6 +216,16 @@ h2{
     word-break: break-all;
     width: 100%;
     color: #ebdec2;
+}
+.panic .con-content{
+    text-align: center;
+    display: block;
+    width:100%;
+}
+.panic .con-content p{
+    text-align: center;
+    display: block;
+    width:100%;
 }
 .con-bottom{
     font-size: 1.1rem;
@@ -324,6 +344,48 @@ h2{
 }
 .pinel-19{
     background: url("../../public/images/game/py.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-20{
+    background: url("../../public/images/game/chaxun.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-21{
+    background: url("../../public/images/game/juese.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-22{
+    background: url("../../public/images/game/jingying.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-23{
+    background: url("../../public/images/game/zhinan.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-24{
+    background: url("../../public/images/game/pvp.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-25{
+    background: url("../../public/images/game/gonghui.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-26{
+    background: url("../../public/images/game/zhuanye.jpg") no-repeat 50% 50%;
     background-size: cover;
     height: 100%;
     overflow: hidden;
