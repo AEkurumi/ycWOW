@@ -8,6 +8,8 @@ var session=require("express-session");   //session模块
 var bodyparser=require("body-parser");
 var mysql=require("mysql");   //数据库模块
 var fs=require("fs");   //文件操作
+var email=require("emailjs");   //加载emailjs模块
+
 
 var swig=require("swig");   //加载模板引擎
 
@@ -44,6 +46,14 @@ var pool=mysql.createPool({
     database:"wow",
     user:"root",
     password:"aaaa"
+});
+
+//配置emailjs模块
+var sever=email.server.connect({
+    user:"991538766@qq.com",
+    password:"bestggcxpqtabefb",
+    host:"smtp.qq.com",
+    ssl: true
 });
 
 //使用静态资源管理插件

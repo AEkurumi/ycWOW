@@ -37,15 +37,19 @@ body{
 }
 .con_form button{
     margin: 9px 0;
+    cursor: pointer;
     display: block;
     width: 380px;
     font-size: 17px;
     line-height: 20px;
     height: 40px;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: rgba(255,255,255,1);
-    background: #098cc8;
+    border: 1px solid #0f9ada;
+    background-image: linear-gradient(to bottom, #0f9ada, #0076ad);
+    color: #fff;
     border-radius: 2px;
+}
+.con_form button:hover{
+    background-image: linear-gradient(to bottom, #37c0ff, #0097dd);
 }
 .con_ul{
     width: 100%;
@@ -80,7 +84,6 @@ footer{
     height: 58px;
 }
 .footer_text{
-    width: 500px;
     float: left;
     margin-left: 30px;
 }
@@ -128,13 +131,13 @@ footer{
     position: relative;
     top:5px;
 }
-@media (max-width: 500px) {
-    .footer_logo{
-        width: 113px;
-        height: 58px;
-    }
-    .footer_text{
-        width: 500px;
-        margin-left: 30px;
-    }
-}
+/*@media (max-width: 700px) {*/
+    /*.footer_logo{*/
+        /*width: 113px;*/
+        /*height: 58px;*/
+    /*}*/
+    /*.footer_text{*/
+        /*!*width: 500px;*!*/
+        /*margin-left: 30px;*/
+    /*}*/
+/*}*/

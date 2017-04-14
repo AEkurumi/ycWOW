@@ -9,6 +9,8 @@ var bigCode;
 var smallCode;
 
 $(function () {
+
+    //注册
     $("#subbtn").on("click",function () {
         var unum=$("#userid").val();
         var uname=$("#uname").val();
@@ -66,15 +68,44 @@ $(function () {
             $("div.verification_err").show();
             $("div.verification_err span").text("验证码输入错误，请重新输入");
         }
-    })
+    });
 
+    //登录
+    $("#loginbtn").on("click",function () {
+        var ulogemail=$("[name='uemail']").val();
+        var ulogpwd=$("[name='pwd']").val();
 
+        if(ulogemail=="" ||  ulogemail==null || ulogpwd=="" ||  ulogpwd==null ){
+            alert("用户名或者密码不能为空");
+            return;
+        }
 
+        ulogpwd=md5(ulogpwd);
+        console.log(ulogpwd);
 
+        $.ajax({
+            type:'post',
+            url:'/api/user/login',
+            data:{
+                ulogemail:ulogemail,
+                ulogpwd:ulogpwd
+            },
+            dataType:"json",
+            success:function (data) {
+                if(data.code==0){
+                    alert(data.msg);
+                }else if(data.code==1){
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                    setTimeout(function () {
+                        location.href="../../view/main/home.html";
+                    },1000);
+                }
 
-
-
-
+            }
+        })
+    });
 
 
 
