@@ -32,6 +32,7 @@ footer {
     line-height: 20px;
     margin: 0;
     padding: 0;
+    font-size: 10px;
 }
 .Cooperation_info{
     width: 1000px;
@@ -44,8 +45,11 @@ footer {
 }
 .customer{
     float: left;
+
 }
 .customer a{
+    font-size: 10px;
+    float: left;
     margin-right: 37px;
     color:rgba(255,255,255,0.7);
 }
@@ -80,6 +84,7 @@ footer {
 }
 .brand p{
     display: block;
+    font-size: 10px;
 }
 .brand_bg{
     display: inline-block;
