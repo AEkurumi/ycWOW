@@ -9,21 +9,20 @@ var bigCode;
 var smallCode;
 
 $(function () {
-
+    createCode();
     //注册
     $("#subbtn").on("click",function () {
         var unum=$("#userid").val();
         var uname=$("#uname").val();
         var uemail=$("#email").val();
-        var upwd=$("#pwd").val();
+        var upwd=$("#upwd").val();
         var uans=$("uans").val();
         var uquestionid=$("span.question1").attr("value");
         console.log(uquestionid);
 
-
         unum=md5(unum);
         upwd=md5(upwd);
-        uans=md5(upwd);
+        uans=md5(uans);
 
 
         var repVerification=$("#rep_verification").val();
@@ -96,8 +95,9 @@ $(function () {
                     alert(data.msg);
                 }else if(data.code==1){
                     alert(data.msg);
-                }else{
+                }else if(data.code==2){
                     alert(data.msg);
+                    console.log(data.msg);
                     setTimeout(function () {
                         location.href="../../view/main/home.html";
                     },1000);
@@ -106,10 +106,6 @@ $(function () {
             }
         })
     });
-
-
-
-
 });
 
 function createCode() {
@@ -140,6 +136,3 @@ function createCode() {
     bigCode=code.toUpperCase();
     smallCode=code.toLowerCase();
 }
-
-
-

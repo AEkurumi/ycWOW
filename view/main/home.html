@@ -443,17 +443,13 @@
 
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         var menu = document.getElementById( "menu" );
-        console.log(menu);
         var nav = document.getElementById("nav");
         var menulogo = document.getElementById("menu-logo");
         if( t >= 100 ) {
             menu.className= "menugundong";
             nav.className= "navgundong";
             menulogo.className= "menu-logogundong";
-
-
         } else {
-
             menu.className= "menu";
             nav.className= "nav";
             menulogo.className= "menu-logo";
