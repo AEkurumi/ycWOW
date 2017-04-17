@@ -142,9 +142,6 @@ router.post("/user/login",function (req,res) {
                         isadmin:result[0].isadmin
                     };
                     res.json(resData);
-
-                    console.log(req.session.user);
-                    console.log(resData.info);
                 }
             })
         }
