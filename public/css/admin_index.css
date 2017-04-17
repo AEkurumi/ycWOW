@@ -62,17 +62,38 @@ li{
     font-weight: 100;
     color: rgba(255,255,255,0.3);
 }
+.sidebar-user-info{
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    line-height: 70px;
+    margin-top: 30px;
+    position: relative;
+}
+.sidebar-user-info img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sidebar-user-info font{
+    font-size: 16px;
+    color: rgba(255,255,255,0.3);
+    position: absolute;
+    left:0;
+    right:0;
+    top:55px;
+}
+
+
 #main-menu{
     display: block;
     width: 280px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 #main-menu a:hover{
     background: #2B303A;
     color: rgba(255,255,255,1);
-}
-.sub li a{
-
 }
 #main-menu .main-menu-one{
     width: 100%;
@@ -89,6 +110,10 @@ li{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.main-menu-one font{
+    display: inline-block;
+    width: 90%;
+}
 
 
 
@@ -96,9 +121,89 @@ li{
 
 
 
+/*主要的部分*/
+.main-content{
+    display: table-cell;
+    width: 100%;
+    height: 1000px;
+    background: #F1F1F1;
+    vertical-align: top;
+    position: relative;
+}
+.main-user-info{
+    margin-top: 20px;
+}
+.main-user-info-ul{
+    width: 100%;
+    height: 42px;
+    
+}
+.main-user-info-ul li{
+    display: inline-block;
+    float: left;
+}
+.top_img{
+    display: inline-block;
+    width: 150px;
+    height: 42px;
+}
+.top_img img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.top_img font{
+    display: inline-block;
+    font-size: 16px;
+    color: rgba(0,0,0,0.5);
+    position: relative;
+    top:3px;
+    left:8px;
+}
 
+.notice,.dropout,.news{
+    display: inline-block;
+    width: 40px;
+    height: 42px;
+    text-align: center;
+    position: relative;
+}
+.notice span,.dropout span,.news span{
+    line-height: 42px;
+    color: #737881;
+}
 
+.notice font,.news font{
+    color: #ffffff;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #21A9E1;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top:4px;
+    left:20px;
+}
+.news font{
+    background:#EE4749;
+}
+.dropout font{
+    line-height: 42px;
+    color:  rgba(0,0,0,0.5);
+    font-size: 14px;
+}
 
-
-
-
+#container{
+    padding: 0;
+    margin: 0;
+}
+.breadmenu{
+    background:#303641;
+    width: 100%;
+    border-left: 1px solid #454a54;
+    color: #ffffff;
+}

@@ -48,7 +48,12 @@ router.get("/user/register",function (req,res) {
 
 router.get("/",function (req,res) {
     res.render("main/index",{
-
+        userInfo:req.session.user
+    });
+});
+router.get("/home",function (req,res) {
+    res.render("main/home",{
+        userInfo:req.session.user
     });
 });
 
@@ -69,6 +74,12 @@ router.get("/gamepoints/gamepoints",function (req,res) {
 router.get("/gamepoints/cellphone",function (req,res) {
     res.render("main/gamepoints/cellphone",{
 
+    });
+});
+
+router.get("/admin",function (req,res) {
+    res.render("admin/index",{
+        userInfo:req.session.user
     });
 });
 

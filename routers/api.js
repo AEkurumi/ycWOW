@@ -35,6 +35,19 @@ router.use(function (req,res,next) {
     next();
 });
 
+//查看用户是否登录过
+router.get("/user/userIsLogin",function (req,res) {
+    if(req.session.user == undefined){
+        //证明没有登录过
+        res.send("0");
+    }else{
+        res.send(req.session.user);
+    }
+});
+
+
+
+
 //注册
 router.post("/user/register",function (req,res) {
     //获取传过来的参数
@@ -120,17 +133,15 @@ router.post("/user/login",function (req,res) {
                 }else{
                     resData.code = 2;
                     resData.msg="登录成功";
-                    res.json(resData);
 
-                    // resData.info=result[0];   //传输到前台，好收获用户名
-                    //
-                    // //存session
-                    // req.session.user={
-                    //     _id:result[0].uid,
-                    //     uemail:result[0].uemail,
-                    //     isAdmin:result[0].isAdmin
-                    // };
-                    // res.json(resData);
+                    resData.info=result[0];   //传输到前台，好收获用户名
+                    //存session
+                    req.session.user={
+                        _id:result[0].uid,
+                        uname:result[0].uname,
+                        isadmin:result[0].isadmin
+                    };
+                    res.json(resData);
                 }
             })
         }

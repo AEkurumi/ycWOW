@@ -2,14 +2,39 @@
  * Created by 吕金虎 on 2017/4/8.
  */
 
-//注册
-
 var code;
 var bigCode;
 var smallCode;
 
 $(function () {
     createCode();
+    userIsLogin();   //查看是否登录过
+
+    function userIsLogin() {
+        //发请求给服务器，
+        $.get("/api/user/userIsLogin",null,function (data) {
+            if(data=="0"){
+                $("#adLogHome").hide();
+                $("#LogHome").hide();
+                $(".home_no").show();
+            }else{
+                console.log(data);
+                $(".home_no").hide();
+                //判断是管理员还是普通用户
+                if(data.isadmin==0){   //普通用户
+                    $("#LogHome").show();
+                    $("#adLogHome").hide();
+                    $("#LogHome span.menu-span").text(data.uname);
+                }else if(data.isadmin==1){  //管理员
+                    $("#LogHome").hide();
+                    $("#adLogHome").show();
+                    $("#adLogHome span.menu-span").text(data.uname);
+                }
+            }
+        })
+    }
+
+
     //注册
     $("#subbtn").on("click",function () {
         var unum=$("#userid").val();
@@ -98,9 +123,7 @@ $(function () {
                 }else if(data.code==2){
                     alert(data.msg);
                     console.log(data.msg);
-                    setTimeout(function () {
-                        location.href="../../view/main/home.html";
-                    },1000);
+                    location.href="/home";
                 }
 
             }

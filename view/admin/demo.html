@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台界面</title>
+    <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../public/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/css/admin_index.css">
+    <script src="../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../public/dist/js/bootstrap.js"></script>
+</head>
+<body style="height: 1000px;">
+<div class="sidebar-menu">
+    <div class="sidebar-menu-inner">
+        <header>
+            <div class="logo">
+                <a href="">YCWOW</a>
+            </div>
+            <div class="sidebar-collapse">
+                <a href="#" id="sidebar-close" class="sidebar-collapse-icon">
+                    <span class="fa fa-bars"></span>
+                </a>
+            </div>
+        </header>
+        <div class="sidebar-user-info">
+            <img src="../../public/images/admin/index/top.jpg" alt="头像">
+            <font>{{userInfo.uname}}</font>
+        </div>
+        <ul id="main-menu" class="nav">
+            <li><a href="/admin" class="main-menu-one"><i class="fa fa-institution"></i>&nbsp;<font>首页</font></a></li>
+            <li><a href="/" class="main-menu-one"><i class="fa fa-desktop"></i>&nbsp;<font>官网</font></a></li>
+            <li><a href="/admin/user" class="main-menu-one"><i class="fa fa-user"></i>&nbsp; <font>用户管理</font></a></li>
+            <li><a  class="main-menu-one" data-toggle="dropdown" href="#"><i class="fa fa-futbol-o"></i>&nbsp;&nbsp;<font>游戏玩法</font><span class="fa fa-angle-right" style="float: right"></span></a>
+                <ul class="sub" style="display: block;">
+                    <li>
+                        <a  class="main-menu-two" href="/admin/gameClass"><i class="fa fa-male"></i>&nbsp; <font>游戏种族</font></a>
+                    </li>
+                    <li>
+                        <a  class="main-menu-two" href=""><i class="fa fa-address-book-o"></i>&nbsp; <font>游戏职业</font></a>
+                    </li>
+                </ul>
+            </li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-home"></i>&nbsp; <font>论坛管理</font></a>
+                <ul class="sub" style="display: none;">
+                    <li>
+                        <a  class="main-menu-two" href=""><i class="fa fa-fort-awesome"></i>&nbsp; <font>论坛版块</font></a>
+                    </li>
+                    <li>
+                        <a  class="main-menu-two" href=""><i class="fa fa-user-secret"></i>&nbsp; <font>版块内容</font></a>
+                    </li>
+                </ul>
+            </li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-wrench"></i>&nbsp; <font>用户设置</font></a></li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-bell"></i>&nbsp; <font>通知</font></a></li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-envelope"></i>&nbsp; <font>邮箱</font></a></li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-cog"></i>&nbsp; <font>设置</font></a></li>
+            <li><a  class="main-menu-one" href="#"><i class="fa fa-sign-in"></i>&nbsp; <font>退出</font></a></li>
+        </ul>
+    </div>
+</div>
+<div class="main-content container" id="container">
+    {% block main %}{% endblock %}
+</div>
+
+
+<script>
+
+
+
+
+</script>
+</body>
+</html>

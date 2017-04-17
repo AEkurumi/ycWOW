@@ -215,7 +215,7 @@ a:hover{
 #register{
     background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
 }
-#logined{
+.logined{
     background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
 }
 .menu-dengji{
@@ -450,3 +450,24 @@ a:hover{
     }
 
 }
+
+.menuli_a{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #f8b700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
