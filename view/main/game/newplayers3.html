@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../../../public/images/favicon.ico" type="image/x-icon"/>
-    <link href="../../../public/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../public/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="../../../public/css/newplayers.css" rel="stylesheet">
     <script src="../../../public/js/jquery-2.0.3.js"></script>
     <script src="../../../public/js/nav.js"></script>
     <link href="../../../public/css/nav.css" rel="stylesheet">
     <link href="../../../public/css/footer.css" rel="stylesheet">
+    <script src="../../../public/dist/js/bootstrap.js"></script>
 </head>
 <body>
     <div class="page">
@@ -170,146 +171,174 @@
 
             <div class="largest">
                 <div class="outimages">
-                    <div class="outpics">
-                        <ul class="pics">
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-1.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">使用地图</div>
+                    <div class="outpics carousel slide" id="outpics">
+                        <ul class="pics carousel-inner">
+                            <li class="pics-li item active">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
                                         <div class="small-space"></div>
-                                        <div class="op-con">如上文所说，地图在做任务时相当重要，不仅如此，在前往不同地点时地图也是一个好帮手。当你迷路了而且不知道怎么离开时，用“M”键打开地图就能查看你当前所在的地点。你还可以将地图窗口缩小，这样你就可以一边看着地图一边前进了，真方便！</div>
-                                    </div>
+                                        <span class="optit">交通方式</span>
+                                        <div class="small-space"></div>
+                                        <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-1.jpg')"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">使用地图</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">如上文所说，地图在做任务时相当重要，不仅如此，在前往不同地点时地图也是一个好帮手。当你迷路了而且不知道怎么离开时，用“M”键打开地图就能查看你当前所在的地点。你还可以将地图窗口缩小，这样你就可以一边看着地图一边前进了，真方便！</div>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </li>
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-2.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">炉石</div>
+                            <li class="pics-li item">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
                                         <div class="small-space"></div>
-                                        <div class="op-con">每个角色开始旅程时，物品栏里都会有一个炉石。使用炉石可以立即传送回你的家园，而你可以通过和不同地方的旅店老板进行交谈来改变家园的地点。如果你让旅店老板将当前地点设置为家园，下次你使用炉石时就会传送到这个新的家园。
+                                        <span class="optit">交通方式</span>
+                                        <div class="small-space"></div>
+                                        <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-2.jpg') no-repeat 50% 50%"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">炉石</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">每个角色开始旅程时，物品栏里都会有一个炉石。使用炉石可以立即传送回你的家园，而你可以通过和不同地方的旅店老板进行交谈来改变家园的地点。如果你让旅店老板将当前地点设置为家园，下次你使用炉石时就会传送到这个新的家园。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">
-                                        升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-3.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">飞行路线</div>
+                            <li class="pics-li item">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
+                                        <div class="small-space"></div>
+                                        <span class="optit">交通方式</span>
                                         <div class="small-space"></div>
                                         <div class="op-con">
-                                            飞行向来就是最快捷的旅行方式，大多数定居点都在飞行路线覆盖的巨大网络之中。与飞行管理员交谈即可选择你的目的地，只需一小笔费用，他们就能带你前往你的目的地。
+                                            升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-3.jpg')"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">飞行路线</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">
+                                                飞行向来就是最快捷的旅行方式，大多数定居点都在飞行路线覆盖的巨大网络之中。与飞行管理员交谈即可选择你的目的地，只需一小笔费用，他们就能带你前往你的目的地。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">
-                                        升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-4.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">开船喽</div>
+                            <li class="pics-li item">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
+                                        <div class="small-space"></div>
+                                        <span class="optit">交通方式</span>
                                         <div class="small-space"></div>
                                         <div class="op-con">
-                                            如果你想前往另一块大陆，坐船是一个很好的选择。联盟玩家可以通过各个港口的通行船只来往于卡利姆多、东部王国和诺森德的各个港口。
+                                            升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-4.jpg')"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">开船喽</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">
+                                                如果你想前往另一块大陆，坐船是一个很好的选择。联盟玩家可以通过各个港口的通行船只来往于卡利姆多、东部王国和诺森德的各个港口。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </li>
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-5.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">地精飞艇</div>
+                            <li class="pics-li item">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
                                         <div class="small-space"></div>
-                                        <div class="op-con">
-                                            部落的地精飞艇作用和联盟的船只类似，它们将数个部落城市连接在一起。乘坐飞艇可以观看到比船只更加壮丽的风景，但要注意安全——如果你没带着降落伞，最好是等飞艇安全靠港之后再离开飞艇。
+                                        <span class="optit">交通方式</span>
+                                        <div class="small-space"></div>
+                                        <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-5.jpg')"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">地精飞艇</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">
+                                                部落的地精飞艇作用和联盟的船只类似，它们将数个部落城市连接在一起。乘坐飞艇可以观看到比船只更加壮丽的风景，但要注意安全——如果你没带着降落伞，最好是等飞艇安全靠港之后再离开飞艇。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </li>
-                            <li class="pics-li">
-                                <div class="opcon center-align">
-                                    <div class="large-space"></div>
-                                    <div class="small-space"></div>
-                                    <span class="optit">交通方式</span>
-                                    <div class="small-space"></div>
-                                    <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
-                                    <div class="middle-space"></div>
-                                    <div class="op-item">
-                                        <div class="Avatar">
-                                            <div class="Avatar-images" style="background: url('../../../public/images/game/pics-6.jpg')"></div>
-                                        </div>
-                                        <div class="tiny-space"></div>
-                                        <div class="opitem-tit">传送门</div>
+                            <li class="pics-li item">
+                                <div class="Carousel-item">
+                                    <div class="opcon center-align">
+                                        <div class="large-space"></div>
                                         <div class="small-space"></div>
-                                        <div class="op-con">
-                                            传送门是当之无愧的最快速的移动方式。这些传送门由强大的奥术魔法支撑，撕裂时空来达到快速移动的目的，而且“相当”安全。法师和工程学大师可以学习如何开启前往几个特定地点的传送门，有一些城市也通过传送门相互连接。
+                                        <span class="optit">交通方式</span>
+                                        <div class="small-space"></div>
+                                        <div class="op-con">升到十来级时，你就会发现任务开始把你带往全新的地区，如果了解了交通工具的运作状况，那可会为你省下不少的时间。</div>
+                                        <div class="middle-space"></div>
+                                        <div class="op-item">
+                                            <div class="Avatar">
+                                                <div class="Avatar-images" style="background: url('../../../public/images/game/pics-6.jpg')"></div>
+                                            </div>
+                                            <div class="tiny-space"></div>
+                                            <div class="opitem-tit">传送门</div>
+                                            <div class="small-space"></div>
+                                            <div class="op-con">
+                                                传送门是当之无愧的最快速的移动方式。这些传送门由强大的奥术魔法支撑，撕裂时空来达到快速移动的目的，而且“相当”安全。法师和工程学大师可以学习如何开启前往几个特定地点的传送门，有一些城市也通过传送门相互连接。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </li>
                         </ul>
                     </div>
-                    <div class="lunzhuan-prev previcon"></div>
-                    <div class="lunzhuan-next nexticon"></div>
+                    <a class="lunzhuan-prev previcon carousel-control left" href="#outpics" data-slide="prev"></a>
+
+                    <a class="lunzhuan-next nexticon carousel-control right" href="#outpics" data-slide="next"></a>
                     <div class="lunzhuan-ctrl">
-                        <ul class="ctrl-bar">
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="is-selected"></a></li>
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="not-selected"></a></li>
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="not-selected"></a></li>
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="not-selected"></a></li>
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="not-selected"></a></li>
-                            <li class="ctrl-bar-item"><a href="javascript:;" class="not-selected"></a></li>
+                        <ul class="ctrl-bar carousel-indicators">
+                            <li class="ctrl-bar-item">
+                                <a href="javascript:;" class="is-selected item active" data-target="#outpics" data-slide-to="0"></a>
+                            </li>
+                            <li class="ctrl-bar-item">
+                                <a href="javascript:;" class="not-selected item" data-target="#outpics" data-slide-to="1"></a>
+                            </li>
+                            <li class="ctrl-bar-item" >
+                                <a href="javascript:;" class="not-selected item" data-target="#outpics" data-slide-to="2"></a>
+                            </li>
+                            <li class="ctrl-bar-item" >
+                                <a href="javascript:;" class="not-selected item" data-target="#outpics" data-slide-to="3"></a>
+                            </li>
+                            <li class="ctrl-bar-item">
+                                <a href="javascript:;" class="not-selected item" data-target="#outpics" data-slide-to="4" ></a>
+                            </li>
+                            <li class="ctrl-bar-item" >
+                                <a href="javascript:;" class="not-selected item" data-target="#outpics" data-slide-to="5"></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -526,17 +555,38 @@
         </footer>
 
         <script>
-            var tab=$(".tabs-item");
-            tab.click(function () {
-                tab.children().attr("class","tabs-off");
-                $(this).children().attr("class","tabs-on");
-            });
-            var barCrtl=$(".ctrl-bar-item");
-            barCrtl.click(function () {
-                barCrtl.children().attr("class","not-selected");
-                $(this).children().attr("class","is-selected");
-            });
-            var picli=$(".pics-li");
+            $(document).ready(function () {
+                var tab=$(".tabs-item");
+                tab.click(function () {
+                    tab.children().attr("class","tabs-off");
+                    $(this).children().attr("class","tabs-on");
+                });
+
+
+                var barCrtl=$(".ctrl-bar-item");
+                var index=0;
+                var picli=$(".pics-li");
+                var abc=picli.children("div")[1];
+               // console.log(picli.length);
+              //  abc.setAttribute("backgroundColor","red");
+               // console.log(picli.find("UnCarousel-item"));
+               // console.log(picli[1]);
+                barCrtl.click(function () {
+                    barCrtl.children().attr("class","not-selected");
+                    $(this).children().attr("class","is-selected");
+
+
+                    for (var i=0;i<picli.length;i++){
+
+                    //    console.log(picli[i].find("Carousel-item"));
+                      //  console.log(picli[i].find("UnCarousel-item"));
+//                        picli.children().attr("class","UnCarousel-item");
+//                        picli[i].children().attr("class","Carousel-item");
+                    }
+                });
+            })
+
+
         </script>
     </div>
 </body>

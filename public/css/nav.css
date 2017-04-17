@@ -215,7 +215,16 @@ a:hover{
 #register{
     background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
 }
-
+#logined{
+    background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
+}
+.menu-dengji{
+    position: absolute;
+    float: left;
+    top:25px;
+    font-size: 14px;
+    color: #fff;
+}
 .menu-tuozhan{
     position: relative;
     display: block;

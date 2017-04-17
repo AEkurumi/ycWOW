@@ -529,6 +529,9 @@ h2{
     transition: border-color .2s;
     display: inline-block;
 }
+.previcon:hover{
+    animation: Carousel-Animation-BounceLeft .25s;
+}
 .lunzhuan-ctrl{
     width:100%;
     height:150px;
@@ -558,11 +561,41 @@ h2{
     background: url("../../public/images/Icon-shield-66938ea0fc.png");
     background-size: cover;
 }
+.not-selected:hover{
+    background: url("../../public/images/Icon-shield-solid-d0dfd5e616.png");
+    background-size: cover;
+}
 .is-selected{
     width:21px;
     height: 21px;
     background: url("../../public/images/Icon-shield-solid-d0dfd5e616.png");
     background-size: cover;
+}
+.pics{
+    width: 100%;
+    overflow: hidden;
+    height: 850px;
+}
+.pics-li{
+    /*position: static;*/
+    width: 100%;
+    overflow: hidden;
+    height: 850px;
+}
+.Carousel-item{
+    display: block;
+    left: 0;
+    position: static;
+    overflow: hidden;
+    width: 100%;
+    height: 850px;
+}
+.UnCarousel-item{
+    display: none;
+    left: -99999px;
+    position: absolute;
+    height: 850px;
+    width: 100%;
 }
 .opcon{
     position: absolute;

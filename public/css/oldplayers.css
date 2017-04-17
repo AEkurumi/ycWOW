@@ -1,0 +1,349 @@
+body{
+    font-size: 12px;
+    /*position: relative;*/
+    width: 100%;
+    word-break: keep-all;
+    background: #000;
+    box-sizing:border-box;
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+    /**/
+}
+
+ul{
+    margin-bottom: 0;
+}
+ul li{
+    list-style: none;
+    float: left;
+
+}
+a{
+    display: block;
+    width:auto;
+    height: auto;
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+
+
+
+/***************************************************/
+.page{
+
+}
+.header{
+    width:100%;
+    overflow: hidden;
+    background: url("../../public/images/game/xinshou-bg.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.header-tit{
+    margin: 250px auto 110px;
+}
+h2{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    color: #FFFFFF;
+}
+.xinshou{
+    margin-top: 30px;
+    font-size: 17px;
+    text-align: center;
+    word-break: break-all;
+    width: 750px;
+    color: #ebdec2;
+}
+.download{
+    margin: 30px auto;
+    display: inline-block;
+    width:200px;
+    height:60px;
+}
+/****************con******************/
+.tabs{
+    background: #211510;
+    border-top: 1px solid #504137;
+    border-bottom: 1px solid #504137;
+    position: relative;
+    overflow: hidden;
+}
+.tabs-container{
+    width:80%;
+    overflow: hidden;
+}
+.tabs-list{
+    width: 100%;
+    position: relative;
+}
+.tabs-item {
+    width: 25%;
+    vertical-align: middle;
+    height: 82px;
+}
+.tabs-item a{
+    width: 100%;
+    height:82px;
+    /*margin-top: 1px;*/
+    text-align: center;
+    font-size:22px;
+    font-weight:bold;
+    line-height: 82px;
+}
+.tabs-item .tabs-off{
+
+    color: #f8b700;
+}
+.tabs-on{
+    background: #f8b700;
+    color: #000;
+}
+
+/**********************************************/
+.Divider {
+    height: 4px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+}
+.large{
+    height: 600px;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.middle{
+    height: 600px;
+    width:49.8%;
+    padding: 0;
+    border:1px solid rgba(255,255,255,.08);
+    display: inline-block;
+    overflow: hidden;
+}
+
+.small{
+    height: 600px;
+    width:33.1%;
+    padding:0;
+    border:1px solid rgba(255,255,255,.08);
+    display: inline-block;
+}
+.welcome{
+    overflow: hidden;
+    position: relative;
+}
+
+.con-box{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    cursor: default;
+    margin:0 auto;
+    overflow: hidden;
+}
+.left-align{
+    position: relative;
+    top: 170px;
+    left:0;
+    text-align: left;
+    width:50%;
+    height:50%;
+    float: left;
+}
+.center-align{
+    position: relative;
+    left:0;
+    text-align: center;
+    width:90%;
+    display: block;
+}
+.right-align{
+    position: relative;
+    top: 170px;
+    left:0;
+    text-align: left;
+    width:50%;
+    height:50%;
+    float: right;
+}
+.con-img{
+    height: 70%;
+}
+.con-area{
+    height: 30%;
+    background: url("../../public/images/Panel-bg-stacked-18def74ed6.jpg") no-repeat 50% 50%;
+}
+.small .con-img{
+    height: 60%;
+}
+.small .con-area{
+    height: 40%;
+}
+.con-tit{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    margin-bottom: 30px;
+    display: block;
+}
+.con-tit1{
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    margin: 0 auto 25px;
+}
+.con-tit2{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    margin: 0 auto 25px;
+}
+.con-content{
+    float: left;
+    position: relative;
+    left:0;
+}
+.con-content p{
+    text-align: left;
+    font-size: 18px;
+    word-break: break-all;
+    width: 100%;
+    color: #ebdec2;
+}
+.panic .con-content{
+    text-align: center;
+    display: block;
+    width:100%;
+}
+.panic .con-content p{
+    text-align: center;
+    display: block;
+    width:100%;
+}
+.con-bottom{
+    font-size: 18px;
+    color: #ebdec2;
+    margin-top: 40px;
+}
+.con-link{
+    display: inline;
+    color: #f8b700;
+}
+.con-link:hover{
+    text-decoration: underline;
+}
+.pinel-1{
+    background: url("../../public/images/game/zhuangtai.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-2{
+    background: url("../../public/images/game/yitong.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-3{
+    background: url("../../public/images/game/chengjiu.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-4{
+    background: url("../../public/images/game/cangpin.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+
+/*****************************panic******************************/
+.panic{
+    background: url("../../public/images/game/panic.jpg") no-repeat 50% 50%;
+    height: 335px;
+    overflow: hidden;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    position: relative;
+}
+.panic-con{
+    position: relative;
+    margin: 140px auto;
+    text-align: center;
+}
+.ruKeng{
+    margin: 35px 0;
+}
+.panic-a{
+    display: inline-block;
+    width:200px;
+    height:60px;
+    margin-right: 25px;
+}
+.rukengbtn{
+    display: inline-block;
+    margin-right: 25px;
+    width:200px;
+    height:60px;
+    color: #f7b10a;
+    line-height: 59px;
+    text-align: center;
+    border: 1px solid #c77e19;
+    margin-top: 0;
+    background: rgba(0,0,0,.4);
+
+}
+.rukengbtn2{
+    background: rgba(159,22,0,.6);
+    display: inline-block;
+    width:200px;
+    height:60px;
+    color: #f7b10a;
+    line-height: 59px;
+    text-align: center;
+    border: 1px solid #c77e19;
+    margin-top: 0;
+}
+.rukengbtn:hover{
+    background: #b06601;
+    text-decoration: none;
+}
+.rukengbtn:hover span{
+    color: #ffd36b;
+}
+.btn-prev{
+    display: inline-block;
+}
+.btn-next{
+    display: inline-block;
+}
+.download{
+    display: block;
+}
+.rukengbtn span,.rukengbtn2 span{
+    color: #f7b10a;
+    font-size: 18px;
+}
+.rukengbtn2:hover{
+    background: #9f1600;
+    text-decoration: none;
+}
+.rukengbtn2:hover span{
+    color: #ffd36b;
+}
