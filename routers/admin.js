@@ -27,5 +27,23 @@ router.use(function (req,res,next) {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //2、把这个路由的文件和主模块连接起来
 module.exports=router;

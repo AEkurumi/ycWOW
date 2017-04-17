@@ -62,35 +62,7 @@
                             <a href="" class="menu-a"><span class="menu-span">
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                         </li>
-                        {% if userInfo._id %}
-                            {% if userInfo.isadmin %}
-                            <li class="menuli logined" id="adLogHome" style="display: none">
-                                <a href="" class="menuli_a">
-                                    <span class="menu-span">{{}}</span>
-                                </a>
-                                <a class="menuli_a" href="/admin">后台</a>
-                            </li>
-                            {%else%}
-                            <li class="menuli logined" id="LogHome" style="display: none">
-                                <a href="" class="menu-a">
-                                    <span class="menu-span">{{}}</span>
-                                    <span class="zt glyphicon glyphicon-chevron-down"></span>
-                                </a>
-                            </li>
-                            {%endif%}
 
-                        {%else%}
-                        <li class="menuli home_no" style="display: block">
-                            <a href="/user/login" class="menu-a">
-                                <span class="menu-span">登录</span>
-                            </a>
-                        </li>
-                        <li class="menuli home_no" id="register" style="display: block">
-                            <a href="/user/register" class="menu-a">
-                                <span class="menu-span">注册</span>
-                            </a>
-                        </li>
-                        {% endif %}
                     </ul>
                 </div>
                 <div class="menu-tuozhan" id="tuozhan1" style="display: none;">
@@ -457,7 +429,6 @@
 
 
 <script src="../../public/js/jquery-2.0.3.js"></script>
-<script src="../../public/js/index.js"></script>
 <script src="../../public/dist/js/bootstrap.js"></script>
 <script>
     window.onscroll=function () {

@@ -1,64 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>后台界面</title>
-    <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../../public/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../../public/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../public/css/admin_index.css">
-    <script src="../../public/js/jquery-2.0.3.js"></script>
-    <script src="../../public/dist/js/bootstrap.js"></script>
-</head>
-<body style="height: 1000px;">
-<div class="sidebar-menu">
-        <div class="sidebar-menu-inner">
-            <header>
-                <div class="logo">
-                    <a href="">YCWOW</a>
-                </div>
-                <div class="sidebar-collapse">
-                    <a href="#" class="sidebar-collapse-icon">
-                        <span class="fa fa-bars"></span>
-                    </a>
-                </div>
-            </header>
-            <!--<div class="sidebar-user-info">-->
-                <!---->
-            <!--</div>-->
-            <ul id="main-menu" class="nav">
-                <li role="presentation"><a href="#" class="main-menu-one menu_active"><i class="fa fa-home"></i>&nbsp;首页</a></li>
-                <li class="sub-menu"><a href="#" class="main-menu-one"><i class="fa fa-home"></i>&nbsp;首页 <span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul class="sub" style="display: block;">
-                        <li>
-                            <a  class="main-menu-two" href="">界面1</a>
-                        </li>
-                        <li>
-                            <a  class="main-menu-two" href="">界面2</a>
-                        </li>
-                        <li>
-                            <a  class="main-menu-two" href="">界面3</a>
-                        </li>
-                        <li>
-                            <a  class="main-menu-two" href="">界面4</a>
-                        </li>
-                    </ul>
+{% extends "demo.html" %}
 
-                </li>
-                <li><a  class="main-menu-one" href="#"><i class="fa fa-home"></i>&nbsp;首页</a></li>
-            </ul>
-        </div>
+{% block main %}
+<div class="breadmenu">
+    <ol class="breadcrumb" style="background:#303641;">
+        <li><a href="/admin">管理界面</a></li>
+    </ol>
 </div>
-    <div class="mmain-content"></div>
+
+
+<div class="jumbotron">
+    <h1>hello,{{userInfo.uname}}</h1>
+    <p>欢迎进入后台管理界面</p>
+</div>
+
+
+{% endblock %}
 
 
 
 
 
-
-
-
-</body>
-</html>
+{% extends "demo.html" %}
