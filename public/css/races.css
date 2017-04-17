@@ -33,7 +33,7 @@ a:hover{
 
 /************************************/
 .page{
-    line-height: 1.5em;
+
     background: #000;
     box-shadow: 0 0 50px rgba(11,6,4,.8), 0 0 100px rgba(11,6,4,.6), 0 0 500px rgba(11,6,4,.3);
     margin: 0 auto;
@@ -53,9 +53,9 @@ a:hover{
     overflow:hidden;
 }
 .zz{
-    font-size: 3.5em;
+    font-size: 48px;
     font-weight: 700;
-    line-height: 1.5em;
+    line-height: 60px;
     color: #fff;
     text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
     text-align: center;
@@ -63,8 +63,8 @@ a:hover{
 }
 .zzjianjie{
     font-weight: 400;
-    font-size: 1.2em;
-    line-height: 1.5em;
+    font-size: 18px;
+    line-height: 27px;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
     text-align: center;
@@ -130,7 +130,7 @@ a:hover{
     display: block;
 }
 .con-lof1 span{
-    font-size: 2.5em;
+    font-size: 38px;
     color: #fff;
     font-weight: 700;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
@@ -184,16 +184,16 @@ a:hover{
     padding: 20px;
 }
 .card-tit{
-    font-size: 2.5rem;
-    line-height: 1.5em;
+    font-size: 26px;
+    line-height: 39;
     font-weight: 700;
     color: #f8b700;
     display: block;
     margin-bottom: 15px;
 }
 .card-p{
-    line-height: 1.7em;
-    font-size: 1.2em;
+    line-height: 28px;
+    font-size: 17px;
     word-break: normal;
     color: #ebdec2;
 }
@@ -226,7 +226,7 @@ a:hover{
     line-height: 90px;
 }
 .guanzhu ul li{
-    font-size: 2em;
+    font-size: 20px;
     padding: 0 20px 0;
     text-align: center;
 }

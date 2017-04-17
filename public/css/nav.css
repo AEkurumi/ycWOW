@@ -82,7 +82,7 @@ a:hover{
     color: #f8b700;
 }
 .navgundong{
-    height:49px;
+    height:50px;
     margin: 0 auto;
     width: 85%;
     background-size: auto 100%;
@@ -137,21 +137,23 @@ a:hover{
 .leftnav{
     float: left;
     display: block;
+
     border-left:1px solid rgba(68,47,38,.5);
     border-right: 1px solid rgba(21,13,9,.8);
 }
 .rightnav{
     float: right;
     display: block;
+
     border-left:1px solid rgba(68,47,38,.5);
 }
 .menuli{
-    height: 90px;
-    max-width: 160px;
+    height: 89px;
+
     padding: 0 25px;
     text-align: center;
     line-height: 89px;
-    font-size: 18px;
+    font-size: 17px;
     font-family: Arial, Helvetica, 微软雅黑, "Microsoft YaHei", "Hei SC", sans-serif;
     font-weight: bold;
     position: relative;
@@ -164,7 +166,7 @@ a:hover{
     padding: 0 25px;
     text-align: center;
     line-height: 49px;
-    font-size: 18px;
+    font-size: 17px;
     font-family: Arial, Helvetica, 微软雅黑, "Microsoft YaHei", "Hei SC", sans-serif;
     font-weight: bold;
 
@@ -331,7 +333,7 @@ a:hover{
     }
     .nav{
         height:50px;
-        margin-left: 0px;
+        margin-left: 0;
     }
     .menu-logo{
         width: 40px;
@@ -403,12 +405,12 @@ a:hover{
 @media (min-width: 1210px) and (max-width: 1640px) {
     .menu{
         height:110px;
-        width:95%;
+
     }
     .nav{
         height:80px;
         margin-top: 10px;
-        margin-left: 110px;
+        margin-left: 120px;
 
     }
     .menu-logo{
@@ -418,29 +420,29 @@ a:hover{
         margin-top: -11px;
     }
     .menu .menuli{
-        height: 79px;
+        height: 78px;
         max-width: 150px;
         padding: 0 25px;
         line-height: 79px;
-        font-size: 1.5em;
+        font-size: 18px;
     }
     .menu .menuli .menu-a{
-        height: 80px;
+        height: 78px;
     }
     .menugundong .menuli{
-        font-size: 1.5em;
+        font-size: 18px;
     }
     .menu-tuozhan{
         position: relative;
         display: block;
         top: -1px;
-        width:100%;
+        width:85.3%;
         height:325px;
         background: linear-gradient(to bottom,rgba(1,1,2,.97),rgba(21,13,6,.97));
         border: 1px solid #241505;
         border-top: none;
         border-bottom-color: #311c06;
-        margin: 0;
+        margin: 0 auto;
     }
     .menugundong .tuozhan-con{
         width: 100%;

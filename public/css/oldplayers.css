@@ -159,6 +159,7 @@ h2{
 }
 .center-align{
     position: relative;
+
     left:0;
     text-align: center;
     width:90%;
@@ -197,7 +198,7 @@ h2{
 }
 .con-tit1{
     color: #fff;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
     padding-top: 25px;
@@ -215,6 +216,13 @@ h2{
     float: left;
     position: relative;
     left:0;
+}
+.con-content1 p{
+    text-align: center;
+    font-size: 18px;
+    word-break: break-all;
+    width: 100%;
+    color: #ebdec2;
 }
 .con-content p{
     text-align: left;
@@ -269,8 +277,66 @@ h2{
     height: 100%;
     overflow: hidden;
 }
-
-
+.pinel-5{
+    background: url("../../public/images/game/zhisheng.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-6{
+    background: url("../../public/images/game/newmap.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-7{
+    background: url("../../public/images/game/zudeigengxin.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-8{
+    background: url("../../public/images/game/youxihuodong.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-9{
+    background: url("../../public/images/game/pvp1.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-10{
+    background: url("../../public/images/game/weiwang.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-11{
+    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-12{
+    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-13{
+    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-14{
+    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
 
 
 /*****************************panic******************************/
