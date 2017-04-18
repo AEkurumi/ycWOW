@@ -262,6 +262,7 @@ footer {
 .customer a{
     margin-right: 37px;
     color:rgba(255,255,255,0.7);
+    float: left;
 }
 .customer_sp{
     display: inline-block;
