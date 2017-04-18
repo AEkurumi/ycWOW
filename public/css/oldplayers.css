@@ -198,7 +198,7 @@ h2{
 }
 .con-tit1{
     color: #fff;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
     padding-top: 25px;
@@ -209,17 +209,20 @@ h2{
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    padding-top: 25px;
-    margin: 0 auto 25px;
+    padding-top: 35px;
+    margin: 0 auto;
+    position: absolute;
+    left:0;
+    right:0;
 }
 .con-content{
     float: left;
     position: relative;
-    left:0;
+
 }
 .con-content1 p{
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
     word-break: break-all;
     width: 100%;
     color: #ebdec2;
@@ -320,19 +323,55 @@ h2{
     overflow: hidden;
 }
 .pinel-12{
-    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background: url("../../public/images/game/emolieshou.jpg") no-repeat 50% 50%;
     background-size: cover;
     height: 100%;
     overflow: hidden;
 }
 .pinel-13{
-    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background: url("../../public/images/game/wuseng.jpg") no-repeat 50% 50%;
     background-size: cover;
     height: 100%;
     overflow: hidden;
 }
 .pinel-14{
-    background: url("../../public/images/game/xinzhiye.jpg") no-repeat 50% 50%;
+    background: url("../../public/images/game/siwangqishi.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-15{
+    background: url("../../public/images/game/zhiyetiaozheng.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-16{
+    background: url("../../public/images/game/qinglibeibao.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-17{
+    background: url("../../public/images/game/xintianfuxitong.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-18{
+    background: url("../../public/images/game/shuxingshipei.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-19{
+    background: url("../../public/images/game/wupinhuanhua.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.pinel-20{
+    background: url("../../public/images/game/chongwu.jpg") no-repeat 50% 50%;
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -404,7 +443,7 @@ h2{
 }
 .rukengbtn span,.rukengbtn2 span{
     color: #f7b10a;
-    font-size: 18px;
+    font-size: 17px;
 }
 .rukengbtn2:hover{
     background: #9f1600;

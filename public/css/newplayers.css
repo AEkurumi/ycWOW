@@ -182,7 +182,7 @@ h2{
 }
 .con-tit{
     color: #fff;
-    font-size: 3.5rem;
+    font-size: 50px;
     font-weight: bold;
     text-align: left;
     float: left;
@@ -191,7 +191,7 @@ h2{
 }
 .con-tit1{
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
     padding-top: 25px;
@@ -199,7 +199,7 @@ h2{
 }
 .con-tit2{
     color: #fff;
-    font-size: 3rem;
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
     padding-top: 25px;
@@ -212,7 +212,7 @@ h2{
 }
 .con-content p{
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 17px;
     word-break: break-all;
     width: 100%;
     color: #ebdec2;
@@ -458,7 +458,7 @@ h2{
 }
 .rukengbtn span,.rukengbtn2 span{
     color: #f7b10a;
-    font-size: 1.06rem;
+    font-size: 17px;
 }
 .rukengbtn2:hover{
     background: #9f1600;
