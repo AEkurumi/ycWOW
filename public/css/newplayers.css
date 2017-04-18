@@ -48,13 +48,13 @@ a:hover{
     margin: 250px auto 110px;
 }
 h2{
-    font-size: 3.5rem;
+    font-size: 50px;
     text-align: center;
     color: #FFFFFF;
 }
 .xinshou{
     margin-top: 30px;
-    font-size: 1.1rem;
+    font-size: 18px;
     text-align: center;
     word-break: break-all;
     width: 750px;
@@ -70,7 +70,7 @@ h2{
     overflow: hidden;
 }
 .tabs-container{
-    width:80%;
+    width:100%;
     overflow: hidden;
 }
 .tabs-list{
@@ -217,6 +217,18 @@ h2{
     width: 100%;
     color: #ebdec2;
 }
+.con-content1{
+    float: left;
+    position: relative;
+    left:0;
+}
+.con-content1 p{
+    text-align: left;
+    font-size: 15px;
+    word-break: break-all;
+    width: 100%;
+    color: #ebdec2;
+}
 .panic .con-content{
     text-align: center;
     display: block;
@@ -228,7 +240,7 @@ h2{
     width:100%;
 }
 .con-bottom{
-    font-size: 1.1rem;
+    font-size: 18px;
     color: #ebdec2;
     margin-top: 40px;
 }
