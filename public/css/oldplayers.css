@@ -198,11 +198,11 @@ h2{
 }
 .con-tit1{
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
-    padding-top: 25px;
-    margin: 0 auto 25px;
+    padding-top: 20px;
+    margin: 0 auto 20px;
 }
 .con-tit2{
     color: #fff;
@@ -222,7 +222,7 @@ h2{
 }
 .con-content1 p{
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     word-break: break-all;
     width: 100%;
     color: #ebdec2;
@@ -252,6 +252,7 @@ h2{
 .con-link{
     display: inline;
     color: #f8b700;
+    font-size: 18px;
 }
 .con-link:hover{
     text-decoration: underline;

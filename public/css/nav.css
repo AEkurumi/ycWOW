@@ -61,6 +61,9 @@ a:hover{
     margin: 0 auto;
     position: relative;
 }
+.zt{
+    font-size: 10px;
+}
 .menu-search{
     float: left;
     position: absolute;
@@ -218,12 +221,16 @@ a:hover{
 .logined{
     background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
 }
+.menugundong .menu-dengji{
+    display: none;
+}
 .menu-dengji{
     position: absolute;
     float: left;
     top:25px;
     font-size: 14px;
     color: #fff;
+    display: block;
 }
 .menu-tuozhan{
     position: relative;
@@ -422,13 +429,13 @@ a:hover{
         max-width: 150px;
         padding: 0 25px;
         line-height: 79px;
-        font-size: 18px;
+        font-size: 15px;
     }
     .menu .menuli .menu-a{
         height: 78px;
     }
     .menugundong .menuli{
-        font-size: 18px;
+        font-size: 15px;
     }
     .menu-tuozhan{
         position: relative;
