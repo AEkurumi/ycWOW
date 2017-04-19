@@ -31,17 +31,14 @@ a{
     width:auto;
     height: auto;
     text-decoration: none;
-    color: #ffffff;
+    color: #ffb100;
 }
 a:hover{
     text-decoration: none;
+    color: #FFF;
 }
 /**************************************************/
-/*.page{*/
-    /*position: relative;*/
-    /*width:100%;*/
 
-/*}*/
 .header {
     width: 100%;
     height: 750px;
@@ -116,6 +113,10 @@ a:hover{
     border: 1px solid #9f1600!important;
     background: rgba(159,22,0,.5);
 }
+.login-btn:hover {
+    background: rgba(159,22,0,0.7)!important;
+    color: #ebdec2;
+}
 .w-info-btn .btn:first-child {
     margin-right: 6px;
 }
@@ -136,10 +137,7 @@ a:hover{
     border: 1px solid #9f1600!important;
     background: rgba(159,22,0,.5);
 }
-a {
-    color: #ffb100;
-    text-decoration: none;
-}
+
 .w-info-btn .btn:hover, .w-more-btn a:hover {
     background: rgba(176,102,1,1);
 }
@@ -269,11 +267,10 @@ a {
     height: 60px;
 
 }
-.col-title {
-    text-align: center;
-    color: #f8b700!important;
-}
 
+.tb-wrapper table tbody tr .col-title {
+    text-align: center;
+}
 .tb-wrapper table tbody tr.last-child{
     border-bottom: none;
 }
