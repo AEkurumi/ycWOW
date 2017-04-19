@@ -212,7 +212,9 @@ a:hover{
     width: 100%;
     float: left;
     position: relative;
-    background: url("../../public/images/guanzhu.jpg") no-repeat top;
+    background-image: url("../../public/images/guanzhu.jpg");
+    background-position: top;
+    background-size: 100%;
     border-top: 1px solid rgba(255,255,255,.08);
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
@@ -229,6 +231,32 @@ a:hover{
     font-size: 20px;
     padding: 0 20px 0;
     text-align: center;
+}
+.guanzhu-con a span{
+    margin: 30px auto 0;
+    background-image: url("../images/tuiguang-yellow.png");
+    width:32px;
+    height:30px;
+    display: block;
+}
+.guanzhu-con a span:hover{
+    margin: 30px auto 0;
+    background-image: url("../images/tuiguang-white.png");
+    width:32px;
+    height:30px;
+    display: block;
+}
+#wb{
+    background-position:0 top ;
+}
+#qq{
+    background-position:-52px top ;
+}
+#wx{
+    background-position:-104px top ;
+}
+#yk{
+    background-position:right top ;
 }
 
 
