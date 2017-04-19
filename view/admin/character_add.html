@@ -1,0 +1,64 @@
+{% extends "demo.html" %}
+
+{% block main %}
+<div class="breadmenu">
+    <ol class="breadcrumb" style="background:#303641; ">
+        <li><a href="/admin">管理界面</a></li>
+        <li><a href="javascript:void (0)">游戏玩法</a></li>
+        <li><span>添加游戏职业</span></li>
+    </ol>
+</div>
+
+
+<div style="padding:10px 40px">
+    <h3>添加游戏职业</h3>
+    <br><br>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="title">游戏种族</label>
+            <select name="category" id="category" class="form-control" style="width: 100px;">
+                <option value="1">熊猫人</option>
+                <option value="2">人类</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">游戏职业名称</label>
+            <input type="text" class="form-control" id="title" placeholder="请输入游戏种族名称" name="title" style="width: 300px;">
+        </div>
+        <div class="form-group">
+            <label for="title">游戏职业特点</label>
+            <input type="text" class="form-control" id="title_td" placeholder="请输入游戏种族名称" name="title" style="width: 300px;">
+        </div>
+
+        <div class="form-group">
+            <label for="title">游戏职业图片</label>
+            <input type="file" name="pic" id="pic" onchange="setImagePreviews(this,'showpic')" multiple/>
+        </div>
+
+        <div id="showpic" style="width: 100px; height: 100px;position: absolute; top: 265px; right: 550px;">
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">游戏职业简介</label>
+            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入游戏种族简介"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">提交</button>
+        <br><br>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

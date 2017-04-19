@@ -1,0 +1,39 @@
+{% extends "demo.html" %}
+
+{% block main %}
+<div class="breadmenu">
+    <ol class="breadcrumb" style="background:#303641; ">
+        <li><a href="/admin">管理界面</a></li>
+        <li><a href="javascript:void (0)">游戏玩法</a></li>
+        <li><span>游戏种族</span></li>
+    </ol>
+</div>
+
+
+<div style="padding:10px 40px">
+    <h3>游戏种族列表</h3>
+
+    <table class="table table-hover table-striped ">
+        <tr>
+            <td class="text-center" style="width: 50px;">ID</td>
+            <td class="text-center" style="width: 50px;">游戏阵营</td>
+            <td class="text-center" style="width: 50px;">游戏种族</td>
+            <td class="text-center">种族简介</td>
+            <td class="text-center" style="width: 50px;">操作</td>
+        </tr>
+
+        {% for gclass in allClass%}
+        <tr>
+            <td class="text-center">{{gclass.gid}}</td>
+            <td class="text-center">{{gclass.gcamp}}</td>
+            <td class="text-center">{{gclass.gclass}}</td>
+            <td class="text-center">{{gclass.gintro}}</td>
+            <td class="text-center"><a href="/admin/gameclass/delete?id={{gclass.gid.toString()}}">删除</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    {% include "page.html" %}
+</div>
+
+
+{% endblock %}
