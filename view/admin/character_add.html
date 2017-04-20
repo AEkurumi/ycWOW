@@ -13,23 +13,14 @@
 <div style="padding:10px 40px">
     <h3>添加游戏职业</h3>
     <br><br>
-
     <form method="post">
         <div class="form-group">
-            <label for="title">游戏种族</label>
-            <select name="category" id="category" class="form-control" style="width: 100px;">
-                <option value="1">熊猫人</option>
-                <option value="2">人类</option>
-            </select>
-        </div>
-
-        <div class="form-group">
             <label for="title">游戏职业名称</label>
-            <input type="text" class="form-control" id="title" placeholder="请输入游戏种族名称" name="title" style="width: 300px;">
+            <input type="text" class="form-control" id="title" placeholder="请输入游戏职业名称" name="title" style="width: 300px;">
         </div>
         <div class="form-group">
-            <label for="title">游戏职业特点</label>
-            <input type="text" class="form-control" id="title_td" placeholder="请输入游戏种族名称" name="title" style="width: 300px;">
+            <label for="title_td">游戏职业特点</label>
+            <input type="text" class="form-control" id="title_td" placeholder="请输入游戏职业特点" name="title" style="width: 300px;">
         </div>
 
         <div class="form-group">
@@ -37,22 +28,70 @@
             <input type="file" name="pic" id="pic" onchange="setImagePreviews(this,'showpic')" multiple/>
         </div>
 
-        <div id="showpic" style="width: 100px; height: 100px;position: absolute; top: 265px; right: 550px;">
-
+        <div class="showpic" style="overflow:hidden;position: absolute; top: 265px; left: 600px;">
+            <div id="showpic"></div>
         </div>
 
         <div class="form-group">
             <label for="description">游戏职业简介</label>
-            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入游戏种族简介"></textarea>
+            <textarea name="description" id="description" style="width: 500px;"  class="form-control" rows="5" placeholder="请输入游戏种族简介"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="button" onclick="addCareer()" class="btn btn-primary">提交</button>
         <br><br>
     </form>
-
 </div>
 
 
+<script>
+
+    function addCareer() {
+        //获取所有数据
+        var cname=$("#title").val();
+        var cfeatures=$("#title_td").val();
+        var cpic=$("#pic").val();
+        var cintro=$("#description").val();
+
+        if($("#showpic").children().length==1){
+            if(cname==null || cname=="" ||cfeatures==null || cfeatures=="" || cintro==null ||cintro==""){
+                alert("表单不能为空");
+            }else{
+                $.ajaxFileUpload({
+                    url:"/admin/characteradd",
+                    fileElementId:"pic",
+                    data:{
+                        cname:cname,
+                        cfeatures:cfeatures,
+                        cpic:cpic,
+                        cintro:cintro
+                    },
+                    dataType:"json",
+                    success:function (data,status) {
+                        if(data.code==1){
+                            $("#title").val("");
+                            $("#title_td").val("");
+                            $("#pic").val("");
+                            $("#description").val("");
+                            alert("添加成功");
+                            location.reload();
+                        }
+                    },
+                    error:function (data,status,err) {
+                        console.log(err)
+                    }
+                })
+            }
+        }else{
+            alert("只能选择一张图片，请重新选择")
+        }
+    }
+
+
+
+
+
+
+</script>
 
 
 

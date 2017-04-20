@@ -14,12 +14,12 @@
     <h3>添加游戏种族</h3>
     <br><br>
 
-    <form method="post" action="http://127.0.0.1:80/admin/gameclass" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">游戏阵营</label>
             <select name="gameclass" id="gclass" class="form-control" style="width: 100px;">
-                <option value="1">联盟</option>
-                <option value="2">部落</option>
+                <option value="联盟">联盟</option>
+                <option value="部落">部落</option>
             </select>
         </div>
 
@@ -39,45 +39,60 @@
 
         <div class="form-group">
             <label for="description">游戏种族简介</label>
-            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入游戏种族简介"></textarea>
+            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入游戏种族简介" style="width: 500px;"></textarea>
         </div>
 
-        <button type="submit" onclick="addclass()" class="btn btn-primary">提交</button>
+        <button type="button" onclick="addclass()" class="btn btn-primary">提交</button>
         <br><br>
     </form>
 </div>
 
 <script>
-//function addclass() {
-//    //获取所有数据
-//    var gcamp=$("#gclass").val();
-//    var gname=$("#title").val();
-//    var gpic=$("#pic").val();
-//    var gintro=$("#description").val();
-//
-//    console.log(gcamp);
-//    console.log(gname);
-//    console.log(gpic);
-//    console.log(gintro);
-//
-//    $.ajaxFileUpload({
-//        url:"/admin/addClass",
-//        fileElementId:"pic",
-//        data:{
-//            gcamp:gcamp,
-//            gname:gname,
-//            gpic:gpic,
-//            gintro:gintro
-//        },
-//        dataType:"json",
-//        success:function (data,status) {
-//
-//        },
-//        error:function (data,status,err) {
-//            console.log(err)
-//        }
-//    })
-//}
+function addclass() {
+    //获取所有数据
+    var gcamp=$("#gclass").val();
+    var gname=$("#title").val();
+    var gpic=$("#pic").val();
+    var gintro=$("#description").val();
+
+
+    if($("#showpic").children().length==1) {
+        if (gcamp == null || gcamp == "" || gname == null || gname == "" || gintro == null || gintro == "") {
+            alert("表单不能为空");
+        } else {
+            $.ajaxFileUpload({
+                url:"/admin/addClass",
+                fileElementId:"pic",
+                data:{
+                    gcamp:gcamp,
+                    gname:gname,
+                    gpic:gpic,
+                    gintro:gintro
+                },
+                dataType:"json",
+                success:function (data,status) {
+                    if(data.code==1){
+                        $("#title").val("");
+                        $("#pic").val("");
+                        $("#description").val("");
+                        alert("添加成功");
+                        location.reload();
+                    }
+                },
+                error:function (data,status,err) {
+                    console.log(err)
+                }
+            })
+        }
+    }else{
+        alert("只能选择一张图片，请重新选择")
+    }
+
+
+
+
+
+}
 
 
 

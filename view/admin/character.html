@@ -25,13 +25,13 @@
 
         {% for cclass in CClass%}
         <tr>
-            <td class="text-center">{{cclass.cid}}</td>
-            <td class="text-center">{{cclass.cname}}</td>
-            <td class="text-center">{{cclass.cintro}}</td>
-            <td class="text-center">{{cclass.cpic}}</td>
-            <td class="text-center">{{cclass.cintro}}</td>
-
-            <td class="text-center"><a href="/admin/character/delete?id={{cclass.cid.toString()}}">删除</a></td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cid}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cname}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cintro}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cpic}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">
+                <img src="../../routers/{{cclass.cintro}}" alt="">{{cclass.cintro}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;"><a href="/admin/character/delete?id={{cclass.cid.toString()}}">删除</a></td>
         </tr>
         {%endfor%}
     </table>

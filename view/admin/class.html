@@ -16,19 +16,21 @@
     <table class="table table-hover table-striped ">
         <tr>
             <td class="text-center" style="width: 50px;">ID</td>
-            <td class="text-center" style="width: 50px;">游戏阵营</td>
-            <td class="text-center" style="width: 50px;">游戏种族</td>
+            <td class="text-center" style="width: 100px;">游戏阵营</td>
+            <td class="text-center" style="width: 100px;">游戏种族</td>
             <td class="text-center">种族简介</td>
+            <td class="text-center" style="width: 150px;">种族图片</td>
             <td class="text-center" style="width: 50px;">操作</td>
         </tr>
 
         {% for gclass in allClass%}
         <tr>
-            <td class="text-center">{{gclass.gid}}</td>
-            <td class="text-center">{{gclass.gcamp}}</td>
-            <td class="text-center">{{gclass.gclass}}</td>
-            <td class="text-center">{{gclass.gintro}}</td>
-            <td class="text-center"><a href="/admin/gameclass/delete?id={{gclass.gid.toString()}}">删除</a></td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{gclass.gid}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{gclass.gcamp}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{gclass.gclass}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{gclass.gintro}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;"><img src="../../routers/{{gclass.gpic}}" style="width: 100px;height: 100px;" alt=""></td>
+            <td class="text-center" style="height: 100px; line-height: 100px;"><a href="/admin/gameclass/delete?id={{gclass.gid.toString()}}">删除</a></td>
         </tr>
         {%endfor%}
     </table>

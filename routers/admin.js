@@ -15,7 +15,7 @@ var pool=mysql.createPool({
     password:"aaaa"
 });
 
-var upload=multer({dest:"./photo"});
+var upload=multer({dest:"./pic"});
 //1、加载路由
 var router=express.Router();
 
@@ -29,7 +29,7 @@ router.use(function (req,res,next) {
 });
 
 
-
+//用户列表显示
 router.get("/user",function (req,res) {
     //确保绝对是从第一页开始的
     var page=Number(req.query.page || 1);
@@ -74,8 +74,6 @@ router.get("/user",function (req,res) {
     });
 
 });
-
-
 
 //种族列表显示
 router.get("/gameclass",function (req,res) {
@@ -141,6 +139,75 @@ router.get("/gameclass/delete",function (req,res) {
     })
 });
 
+router.post("/addClass",upload.array("pic"),function (req,res) {
+    var gcamp=req.body.gcamp;
+    var gname=req.body.gname;
+    var gintro=req.body.gintro;
+
+    pool.getConnection(function (err,conn) {
+        if(req.files!=undefined){
+            var file;
+            var fileName;
+            var filePath="";
+            for(var i in req.files){
+                file=req.files[i];
+                fileName=new Date().getTime() + "_" +file.originalname;
+                fs.renameSync(file.path,__dirname+"/pic/"+fileName);
+                if(filePath!=""){
+                    filePath+=",";
+                }
+                filePath+="/pic/"+fileName;
+
+            }
+        }
+        conn.query("insert into gameclass values(null,?,?,?,?)",[gcamp,gname,gintro,filePath],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                resData.code = 0;
+                resData.msg="网络连接失败，请稍后重试";
+                res.json(resData);
+            }else {
+                resData.code = 1;
+                resData.msg="添加成功";
+                res.json(resData);
+            }
+        })
+    })
+});
+
+
+router.get("/addClass",function (req,res) {
+    res.render("admin/class_add",{
+        userInfo:req.session.user
+    })
+});
+
+
+
+
+//
+// router.get("/characteradd",function (req,res) {
+//
+//     pool.getConnection(function (err,conn) {
+//         conn.query("select * from gameclass",function (err,result) {
+//             conn.release();
+//             if(err){
+//                 console.log(err);
+//             }else{
+//                 console.log(result);
+//                 res.render("admin/character_add",{
+//                     userInfo:req.session.user,
+//                     gClass:result
+//                 })
+//             }
+//         })
+//     })
+//
+// });
+
+
+
 
 
 
@@ -191,7 +258,7 @@ router.get("/character",function (req,res) {
 });
 
 
-//种族删除
+//职业删除
 router.get("/character/delete",function (req,res) {
     // var tid=req.url.split("=")[1];
     var cid=Number(req.query.id);
@@ -208,29 +275,52 @@ router.get("/character/delete",function (req,res) {
     })
 });
 
-
-
-
-router.get("/addClass",function (req,res) {
-    res.render("admin/class_add",{
+router.get("/characteradd",function (req,res) {
+    res.render("admin/character_add",{
         userInfo:req.session.user
     })
 });
 
 
 
-//种族添加
-router.post("/addClass",upload.array("pic"),function (req,res) {
-    var gcamp=req.body.gcamp;
-    var gname=req.body.gname;
-    var gpic=req.body.gpic;
-    var gintro=req.body.gintro;
+//职业添加
+router.post("/characteradd",upload.array("pic"),function (req,res) {
+    var cname=req.body.cname;
+    var cfeatures=req.body.cfeatures;
+    var cintro=req.body.cintro;
 
-    console.log(gcamp);
-    console.log(gname);
-    console.log(gpic);
-    console.log(gintro);
+    pool.getConnection(function (err,conn) {
+        console.log(req.files);
+        if(req.files!=undefined){
+            var file;
+            var fileName;
+            var filePath="";
+            for(var i in req.files){
+                file=req.files[i];
+                fileName=new Date().getTime() + "_" +file.originalname;
+                fs.renameSync(file.path,__dirname+"/pic/"+fileName);
+                if(filePath!=""){
+                    filePath+=",";
+                }
+                filePath+="/pic/"+fileName;
 
+            }
+        }
+        console.log(filePath);
+        conn.query("insert into career values(null,?,?,?,?)",[cname,cfeatures,cintro,filePath],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                resData.code = 0;
+                resData.msg="网络连接失败，请稍后重试";
+                res.json(resData);
+            }else {
+                resData.code = 1;
+                resData.msg="添加成功";
+                res.json(resData);
+            }
+        })
+    })
 });
 
 
