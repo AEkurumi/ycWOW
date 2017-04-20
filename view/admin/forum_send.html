@@ -1,0 +1,106 @@
+{% extends "demo.html" %}
+
+{% block main %}
+<div class="breadmenu">
+    <ol class="breadcrumb" style="background:#303641; ">
+        <li><a href="/admin">管理界面</a></li>
+        <li><a href="javascript:void (0)">论坛管理</a></li>
+        <li><span>论坛发帖</span></li>
+    </ol>
+</div>
+
+
+
+<div style="padding:10px 40px">
+    <h3>论坛发帖</h3>
+    <br><br>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">论坛区</label>
+            <select name="gameclass" id="gclass" class="form-control" style="width: 150px;">
+                <option value="客户服务">客户服务</option>
+                <option value="综合讨论">综合讨论</option>
+                <option value="职业讨论">职业讨论</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">论坛区</label>
+            <select name="gameclass" id="fclass" class="form-control" style="width: 250px;">
+                <option value="客服专区">客服专区</option>
+                <option value="客服建议区">客服建议区</option>
+                <option value="综合讨论区">综合讨论区</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="title">标题</label>
+            <input type="text" class="form-control" id="title" placeholder="请输入标题" name="title" style="width: 300px;">
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label for="title">游戏种族图片</label>-->
+            <!--<input type="file" name="pic" id="pic" onchange="setImagePreviews(this,'showpic')" multiple/>-->
+        <!--</div>-->
+
+        <!--<div id="showpic" style="width: 100px; height: 100px;position: absolute; top: 265px; right: 550px;">-->
+
+        <!--</div>-->
+
+        <div class="form-group">
+            <label for="description">内容</label>
+            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入内容" style="width: 500px;"></textarea>
+        </div>
+
+        <button type="button" onclick="addclass()" class="btn btn-primary">提交</button>
+        <br><br>
+    </form>
+</div>
+
+<script>
+function addclass() {
+    //获取所有数据
+    var conforum=$("#gclass").val();
+    var conforumname=$("#fclass").val();
+    var contit=$("#title").val();
+    var content=$("#description").val();
+
+
+
+    if (conforum == null || conforum == "" || conforumname == null || conforumname == "" || contit == null || contit == "" || content == null || content == "") {
+        alert("表单不能为空");
+    } else {
+        $.ajax({
+            type:"post",
+            url:"/admin/forumSend",
+            data:{
+                conforum:conforum,
+                conforumname:conforumname,
+                contit:contit,
+                content:content
+            },
+            success:function (result) {
+                if(result.code==0){
+                    alert(result.msg);
+                }else if(result.code==1){
+                    alert(result.msg);
+                    $("#gclass").val("");
+                    $("#fclass").val("");
+                    $("#title").val("");
+                    $("#description").val("");
+                }
+            }
+        });
+    }
+}
+
+</script>
+
+
+
+
+
+
+{% endblock %}

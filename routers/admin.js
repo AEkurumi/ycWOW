@@ -127,7 +127,7 @@ router.get("/gameclass/delete",function (req,res) {
     // var tid=req.url.split("=")[1];
     var gid=Number(req.query.id);
     pool.getConnection(function (err,conn) {
-        conn.query("delete from gameclass where gid=?",[gid],function () {
+        conn.query("delete from gameclass where gid=?",[gid],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
@@ -139,6 +139,7 @@ router.get("/gameclass/delete",function (req,res) {
     })
 });
 
+//种族添加
 router.post("/addClass",upload.array("pic"),function (req,res) {
     var gcamp=req.body.gcamp;
     var gname=req.body.gname;
@@ -186,29 +187,7 @@ router.get("/addClass",function (req,res) {
 
 
 
-//
-// router.get("/characteradd",function (req,res) {
-//
-//     pool.getConnection(function (err,conn) {
-//         conn.query("select * from gameclass",function (err,result) {
-//             conn.release();
-//             if(err){
-//                 console.log(err);
-//             }else{
-//                 console.log(result);
-//                 res.render("admin/character_add",{
-//                     userInfo:req.session.user,
-//                     gClass:result
-//                 })
-//             }
-//         })
-//     })
-//
-// });
-
-
-
-
+//******************************职业*******************
 
 
 //职业列表显示
@@ -263,7 +242,7 @@ router.get("/character/delete",function (req,res) {
     // var tid=req.url.split("=")[1];
     var cid=Number(req.query.id);
     pool.getConnection(function (err,conn) {
-        conn.query("delete from career where cid=?",[cid],function () {
+        conn.query("delete from career where cid=?",[cid],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
@@ -378,7 +357,7 @@ router.get("/forum/delete",function (req,res) {
     // var tid=req.url.split("=")[1];
     var fid=Number(req.query.id);
     pool.getConnection(function (err,conn) {
-        conn.query("delete from forum where fid=?",[fid],function () {
+        conn.query("delete from forum where fid=?",[fid],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
@@ -389,6 +368,163 @@ router.get("/forum/delete",function (req,res) {
         });
     })
 });
+
+
+router.get("/forumAdd",function (req,res) {
+    res.render("admin/forum_add",{
+        userInfo:req.session.user
+    })
+});
+
+
+
+//论坛版块添加
+router.post("/forumAdd",upload.array("pic"),function (req,res) {
+    var fonename=req.body.fonename;
+    var ftwoname=req.body.ftwoname;
+    var ftwointro=req.body.ftwointro;
+
+    pool.getConnection(function (err,conn) {
+        console.log(req.files);
+        if(req.files!=undefined){
+            var file;
+            var fileName;
+            var filePath="";
+            for(var i in req.files){
+                file=req.files[i];
+                fileName=new Date().getTime() + "_" +file.originalname;
+                fs.renameSync(file.path,__dirname+"/pic/"+fileName);
+                if(filePath!=""){
+                    filePath+=",";
+                }
+                filePath+="/pic/"+fileName;
+
+            }
+        }
+        console.log(filePath);
+        conn.query("insert into forum values(null,?,?,?,?)",[fonename,ftwoname,ftwointro,filePath],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                resData.code = 0;
+                resData.msg="网络连接失败，请稍后重试";
+                res.json(resData);
+            }else {
+                resData.code = 1;
+                resData.msg="添加成功";
+                res.json(resData);
+            }
+        })
+    })
+});
+
+
+//发送官方贴
+
+
+router.get("/forumSend",function (req,res) {
+    res.render("admin/forum_send",{
+        userInfo:req.session.user
+    })
+});
+
+router.post("/forumSend",function (req,res) {
+    var conforum=req.body.conforum;
+    var conforumname=req.body.conforumname;
+    var contit=req.body.contit;
+    var content=req.body.content;
+
+    var data=new Date();
+    var addTime=data.getFullYear()+","+(data.getMonth()+1)+","+data.getDate()+" "+data.getHours()+":"+data.getMinutes()+":"+data.getSeconds()+":"+data.getMilliseconds();
+
+    pool.getConnection(function (err,conn) {
+        conn.query("insert into content values(null,?,?,?,?,?,?)",[req.session.user._id,conforum,conforumname,contit,content,addTime],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                resData.code=0;
+                resData.msg="网络连接失败，请稍后重试注册";
+                res.json(resData);
+            }else{
+                resData.code=1;
+                resData.msg="发送成功";
+                res.json(resData);
+            }
+        })
+    })
+});
+
+
+//论坛列表显示
+router.get("/sendHistory",function (req,res) {
+    //确保绝对是从第一页开始的
+
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+
+    //获取所有的用户信息
+    pool.getConnection(function (err,conn) {
+        if(err){
+            console.log(err);
+        }else{
+            conn.query("select * from content",function (err,result) {
+                var count=result.length;
+                var pages=Math.ceil(count/size);
+                var mxpages=pages-1;
+                //控制一下页数
+                page=Math.min(page,pages);
+                page=Math.max(page,1);
+
+                //还要查一次数据库
+                conn.query("select * from content limit ?,?",[size*(page-1),size],function (err,rs) {
+                    conn.release();
+                    if(err){
+                        console.log(err);
+                        result={};
+                        res.render("admin/forum_li",{
+                            contents:rs
+                        });
+                    }else {
+                        res.render("admin/forum_li",{
+                            userInfo:req.session.user,
+                            contents:rs,
+                            tag:"sendHistory",
+                            page:page,
+                            pages:pages,
+                            count:count,
+                            size:size
+                        });
+                    }
+                })
+            })
+        }
+    });
+});
+
+
+//论坛版块删除
+router.get("/sendHistory/delete",function (req,res) {
+    // var tid=req.url.split("=")[1];
+    var conid=Number(req.query.id);
+    pool.getConnection(function (err,conn) {
+        conn.query("delete from content where conid=?",[conid],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                res.send("0")
+            }else{
+                res.send("<script>alert('删除成功');location.href='/admin/sendHistory';</script>")
+            }
+        });
+    })
+});
+
+
+
+
+
+
+
 
 
 

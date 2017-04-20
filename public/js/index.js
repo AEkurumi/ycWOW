@@ -94,6 +94,9 @@ $(function () {
         }
     });
 
+
+
+
     //登录
     $("#loginbtn").on("click",function () {
         var ulogemail=$("[name='uemail']").val();
@@ -129,6 +132,21 @@ $(function () {
             }
         })
     });
+
+   $("#adminUserOutLog").on("click",function () {
+        $.get("/api/user/logout",function (data) {
+            if(data=="1"){
+
+                //location.href="../../view/main/home.html";
+                location.href="/home";
+                alert("退出成功");
+            }else{
+                alert("退出失败，请重试");
+            }
+        })
+    });
+
+
 });
 
 function createCode() {

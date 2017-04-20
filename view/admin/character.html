@@ -18,8 +18,8 @@
             <td class="text-center" style="width: 50px;">ID</td>
             <td class="text-center" style="width: 100px;">游戏职业</td>
             <td class="text-center" style="width: 150px;">游戏职业特点</td>
-            <td class="text-center" style="width: 150px;">职业图片</td>
             <td class="text-center">游戏职业简介</td>
+            <td class="text-center" style="width: 150px;">职业图片</td>
             <td class="text-center" style="width: 50px;">操作</td>
         </tr>
 
@@ -28,9 +28,10 @@
             <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cid}}</td>
             <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cname}}</td>
             <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cintro}}</td>
-            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cpic}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{cclass.cintro}}</td>
             <td class="text-center" style="height: 100px; line-height: 100px;">
-                <img src="../../routers/{{cclass.cintro}}" alt="">{{cclass.cintro}}</td>
+                <img src="../../routers/{{cclass.cpic}}" style="width: 100px;height: 100px;" alt="">
+            </td>
             <td class="text-center" style="height: 100px; line-height: 100px;"><a href="/admin/character/delete?id={{cclass.cid.toString()}}">删除</a></td>
         </tr>
         {%endfor%}

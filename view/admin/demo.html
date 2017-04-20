@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="../../public/css/admin_index.css">
     <script src="../../public/js/jquery-2.0.3.js"></script>
     <script src="../../public/js/showPic.js"></script>
+    <script src="../../public/js/index.js"></script>
     <script src="../../public/js/ajaxfileupload.js"></script>
     <script src="../../public/dist/js/bootstrap.js"></script>
 </head>
-<body style="height: 1000px;">
+<body>
 <div class="sidebar-menu">
     <div class="sidebar-menu-inner">
         <header>
@@ -35,36 +36,61 @@
             <li><a href="/admin" class="main-menu-one"><i class="fa fa-institution"></i>&nbsp;<font>首页</font></a></li>
             <li><a href="/" class="main-menu-one"><i class="fa fa-desktop"></i>&nbsp;<font>官网</font></a></li>
             <li><a href="/admin/user" class="main-menu-one"><i class="fa fa-user"></i>&nbsp; <font>用户管理</font></a></li>
-            <li><a  class="main-menu-one" data-toggle="dropdown" href="#"><i class="fa fa-futbol-o"></i>&nbsp;&nbsp;<font>游戏玩法</font><span class="fa fa-angle-right" style="float: right"></span></a>
-                <ul class="sub" style="display: block;">
-                    <li>
-                        <a  class="main-menu-two" href="/admin/gameclass"><i class="fa fa-male"></i>&nbsp; <font>游戏种族列表</font></a>
-                        <a  class="main-menu-two" href="/admin/addClass"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏种族</font></a>
-                    </li>
-                    <li>
-                        <a  class="main-menu-two" href="/admin/character"><i class="fa fa-address-book-o"></i>&nbsp; <font>游戏职业列表</font></a>
-                        <a  class="main-menu-two" href="/admin/characteradd"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏职业</font></a>
-                    </li>
-                </ul>
+            <!--<li><a  class="main-menu-one" data-toggle="dropdown" href="#"><i class="fa fa-futbol-o"></i>&nbsp;&nbsp;<font>游戏玩法</font><span class="fa fa-angle-right" style="float: right"></span></a>-->
+                <!--<ul class="sub" style="display: block;">-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/gameclass"><i class="fa fa-male"></i>&nbsp; <font>游戏种族列表</font></a>-->
+                        <!--<a  class="main-menu-two" href="/admin/addClass"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏种族</font></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/character"><i class="fa fa-address-book-o"></i>&nbsp; <font>游戏职业列表</font></a>-->
+                        <!--<a  class="main-menu-two" href="/admin/characteradd"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏职业</font></a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <li>
+                <a  class="main-menu-one" href="/admin/gameclass"><i class="fa fa-male"></i>&nbsp; <font>游戏种族列表</font></a></li>
+            <li>
+                <a  class="main-menu-one" href="/admin/addClass"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏种族</font></a>
             </li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-home"></i>&nbsp; <font>论坛管理</font></a>
-                <ul class="sub" style="display: block;">
-                    <li>
-                        <a  class="main-menu-two" href="/admin/forum"><i class="fa fa-fort-awesome"></i>&nbsp; <font>论坛版块列表</font></a>
-                    </li>
-                    <li>
-                        <a  class="main-menu-two" href="/admin/addforum"><i class="fa fa-user-secret"></i>&nbsp; <font>添加版块</font></a>
-                    </li>
-                    <li>
-                        <a  class="main-menu-two" href="/admin/sendform"><i class="fa fa-user-secret"></i>&nbsp; <font>发送官方贴</font></a>
-                    </li>
-                </ul>
+            <li>
+                <a  class="main-menu-one" href="/admin/character"><i class="fa fa-address-book-o"></i>&nbsp; <font>游戏职业列表</font></a></li>
+            <li>
+                <a  class="main-menu-one" href="/admin/characteradd"><i class="fa fa-plus-circle"></i>&nbsp; <font>添加游戏职业</font></a>
             </li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-wrench"></i>&nbsp; <font>用户设置</font></a></li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-bell"></i>&nbsp; <font>通知</font></a></li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-envelope"></i>&nbsp; <font>邮箱</font></a></li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-cog"></i>&nbsp; <font>设置</font></a></li>
-            <li><a  class="main-menu-one" href="#"><i class="fa fa-sign-in"></i>&nbsp; <font>退出</font></a></li>
+            <!--<li><a  class="main-menu-one" href="#"><i class="fa fa-home"></i>&nbsp; <font>论坛管理</font></a>-->
+                <!--<ul class="sub" style="display: block;">-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/forum"><i class="fa fa-fort-awesome"></i>&nbsp; <font>论坛版块列表</font></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/forumAdd"><i class="fa fa-user-secret"></i>&nbsp; <font>添加版块</font></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/forumSend"><i class="fa fa-user-secret"></i>&nbsp; <font>发送官方贴</font></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a  class="main-menu-two" href="/admin/sendHistory"><i class="fa fa-user-secret"></i>&nbsp; <font>发贴记录</font></a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <li>
+                <a  class="main-menu-one" href="/admin/forum"><i class="fa fa-fort-awesome"></i>&nbsp; <font>论坛版块列表</font></a>
+            </li>
+            <li>
+                <a  class="main-menu-one" href="/admin/forumAdd"><i class="fa fa-user-secret"></i>&nbsp; <font>添加版块</font></a>
+            </li>
+            <li>
+                <a  class="main-menu-one" href="/admin/forumSend"><i class="fa fa-user-secret"></i>&nbsp; <font>发送官方贴</font></a>
+            </li>
+            <li>
+                <a  class="main-menu-one" href="/admin/sendHistory"><i class="fa fa-user-secret"></i>&nbsp; <font>发贴记录</font></a>
+            </li>
+            <!--<li><a  class="main-menu-one" href="#"><i class="fa fa-wrench"></i>&nbsp; <font>用户设置</font></a></li>-->
+            <!--<li><a  class="main-menu-one" href="#"><i class="fa fa-bell"></i>&nbsp; <font>通知</font></a></li>-->
+            <!--<li><a  class="main-menu-one" href="#"><i class="fa fa-envelope"></i>&nbsp; <font>邮箱</font></a></li>-->
+            <!--<li><a  class="main-menu-one" href="#"><i class="fa fa-cog"></i>&nbsp; <font>设置</font></a></li>-->
+            <li><a  class="main-menu-one" id="adminUserOutLog" onclick="adminUserOutLog()" href=""><i class="fa fa-sign-in"></i>&nbsp; <font>退出</font></a></li>
         </ul>
     </div>
 </div>

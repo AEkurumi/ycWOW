@@ -1,0 +1,100 @@
+{% extends "demo.html" %}
+
+{% block main %}
+<div class="breadmenu">
+    <ol class="breadcrumb" style="background:#303641; ">
+        <li><a href="/admin">管理界面</a></li>
+        <li><a href="javascript:void (0)">论坛管理</a></li>
+        <li><span>添加论坛版块</span></li>
+    </ol>
+</div>
+
+
+<div style="padding:10px 40px">
+    <h3>添加论坛版块</h3>
+    <br><br>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">论坛区</label>
+            <select name="gameclass" id="gclass" class="form-control" style="width: 150px;">
+                <option value="客户服务">客户服务</option>
+                <option value="综合讨论">综合讨论</option>
+                <option value="职业讨论">职业讨论</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">论坛版块名称</label>
+            <input type="text" class="form-control" id="title" placeholder="请输入游戏种族名称" name="title" style="width: 300px;">
+        </div>
+
+        <div class="form-group">
+            <label for="title">论坛版块图片</label>
+            <input type="file" name="pic" id="pic" onchange="setImagePreviews(this,'showpic')" multiple/>
+        </div>
+
+        <div id="showpic" style="width: 100px; height: 100px;position: absolute; top: 265px; right: 550px;">
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">论坛版块介绍</label>
+            <textarea name="description" id="description"  class="form-control" rows="5" placeholder="请输入游戏种族简介" style="width: 500px;"></textarea>
+        </div>
+
+        <button type="button" onclick="addclass()" class="btn btn-primary">提交</button>
+        <br><br>
+    </form>
+</div>
+
+<script>
+    function addclass() {
+        //获取所有数据
+        var fonename=$("#gclass").val();
+        var ftwoname=$("#title").val();
+        var fpic=$("#pic").val();
+        var ftwointro=$("#description").val();
+
+
+        if($("#showpic").children().length==1) {
+            if (fonename == null || fonename == "" || ftwoname == null || ftwoname == "" || ftwointro == null || ftwointro == "") {
+                alert("表单不能为空");
+            } else {
+                $.ajaxFileUpload({
+                    url:"/admin/forumsend",
+                    fileElementId:"pic",
+                    data:{
+                        fonename:fonename,
+                        ftwoname:ftwoname,
+                        fpic:fpic,
+                        ftwointro:ftwointro
+                    },
+                    dataType:"json",
+                    success:function (data,status) {
+                        if(data.code==1){
+                            $("#title").val("");
+                            $("#pic").val("");
+                            $("#description").val("");
+                            alert("添加成功");
+                            location.reload();
+                        }
+                    },
+                    error:function (data,status,err) {
+                        console.log(err)
+                    }
+                })
+            }
+        }else{
+            alert("只能选择一张图片，请重新选择")
+        }
+    }
+
+</script>
+
+
+
+
+
+
+{% endblock %}
