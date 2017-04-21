@@ -60,7 +60,7 @@ a:hover{
     position: relative;
     float: left;
     width: 100%;
-    height: 1070px;
+    height: 970px;
     overflow: hidden;
     background: none,#000;
     background-size: contain;
@@ -134,13 +134,14 @@ a:hover{
 
 /******************news*********************/
 #news{
-    height:400px;
+    height:175px;
     position: relative;
     top:0;
+    margin:0 10px 0;
 }
 .news-title{
     height:40px;
-    margin-left: 0;
+    margin-left: 13px;
 }
 .news-title p{
     font-size: 1.7em;
@@ -159,19 +160,19 @@ a:hover{
 }
 .news-con-area{
     width:25%;
-    height:260px;
+    height:175px;
     float: left;
     padding: 10px;
 }
 .news-con-content{
     border:1px solid #000000;
-    height: 310px;
+    height: 175px;
     width: 100%;
     position: relative;
 }
 .news-con-pic{
     position: relative;
-    height:70%;
+    height:100%;
     width: 100%;
 
 }
@@ -181,33 +182,35 @@ a:hover{
 }
 .news-con-title{
     padding: 12px 10px;
-    background: #211510;
-    border: 1px solid #504137;
-    position: relative;
+
+    position: absolute;
+    bottom: 0;
     width:100%;
-    height:30%;
+    height:50%;
 }
 .news-date{
     font-size: 1.4em;
     color: #fff;
 }
 .news-con-left{
-    font-size: 1.7em;
-    line-height: 1.3em;
+    font-size: 17px;
+    line-height: 20px;
     color: #f8b700;
     float: left;
     width:80%;
     overflow: hidden;
     font-weight: bold;
+    display: inline-block;
 }
 .news-con-right{
     font-size: 1.7em;
     line-height: 1.3em;
     color: #b1997f;
     float: left;
-    width:20%;
-    padding-left: 10%;
+    width:50px;
+    padding-left: 10px;
     padding-top: 23px;
+    display: inline-block;
 }
 .news-con-content:hover{
     border:2px solid #f8b700;
@@ -348,17 +351,18 @@ a:hover{
     text-align: right;
 }
 .large-title{
-    font-size: 6.7em;
+    font-size: 52px;
     font-weight: 700;
 }
 .Content-con{
-    font-size: 2.0em;
+    font-size: 18px;
     margin-top: 30px;
-
+    color: #ebdec2;
 }
 .Content-button{
     margin-top: 30px;
     font-size: 2.0em;
+
     width:150px;
     height: 50px;
     border: 1px solid #ccc;
@@ -788,7 +792,7 @@ a:hover{
 }
 @media (min-width: 1080px) {
     .large-assistant .large-left{
-        top:20px;
+        top:100px;
     }
     .rukengbtn,.rukengbtn2{
         margin-top: 20px;
