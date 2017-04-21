@@ -1,10 +1,18 @@
 /*footer start*/
+.divider{
+    height:4px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
 .guanzhu{
     height:90px;
     width: 100%;
     float: left;
     position: relative;
-    background: url("../../public/images/guanzhu.jpg") no-repeat top;
+    background-image: url("../../public/images/guanzhu.jpg");
+    background-position: top;
+    background-size: 100%;
     border-top: 1px solid rgba(255,255,255,.08);
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
@@ -18,13 +26,45 @@
     line-height: 90px;
 }
 .guanzhu ul li{
-    font-size: 2em;
+    font-size: 20px;
     padding: 0 20px 0;
     text-align: center;
 }
+.guanzhu-con a span{
+    margin: 30px auto 0;
+    background-image: url("../images/tuiguang-yellow.png");
+    width:32px;
+    height:30px;
+    display: block;
+}
+.guanzhu-con a span:hover{
+    margin: 30px auto 0;
+    background-image: url("../images/tuiguang-white.png");
+    width:32px;
+    height:30px;
+    display: block;
+}
+#wb{
+    background-position:0 top ;
+}
+#qq{
+    background-position:-52px top ;
+}
+#wx{
+    background-position:-104px top ;
+}
+#yk{
+    background-position:right top ;
+}
+
+
+
+
+
+/*footer start*/
 footer {
     background: url("../images/foot_bg.jpg") repeat center 0;
-    padding-top: 62px;
+    padding-top: 142px;
 }
 
 .footer{
@@ -32,7 +72,6 @@ footer {
     line-height: 20px;
     margin: 0;
     padding: 0;
-    font-size: 10px;
 }
 .Cooperation_info{
     width: 1000px;
@@ -45,13 +84,11 @@ footer {
 }
 .customer{
     float: left;
-
 }
 .customer a{
-    font-size: 10px;
-    float: left;
     margin-right: 37px;
     color:rgba(255,255,255,0.7);
+    float: left;
 }
 .customer_sp{
     display: inline-block;
@@ -84,7 +121,6 @@ footer {
 }
 .brand p{
     display: block;
-    font-size: 10px;
 }
 .brand_bg{
     display: inline-block;

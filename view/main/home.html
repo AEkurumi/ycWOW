@@ -57,27 +57,27 @@
                             <a href="/forum" class="menu-a"><span class="menu-span">论坛</span></a>
                         </li>
                     </ul>
-                    <ul class="rightnav row">
+                    <ul class="rightnav">
                         <li class="menuli">
                             <a href="" class="menu-a"><span class="menu-span">
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                         </li>
                         {% if userInfo._id %}
-                            {% if userInfo.isadmin %}
-                            <li class="menuli logined" id="adLogHome" style="display: none">
-                                <a href="" class="menuli_a">
-                                    <span class="menu-span">{{}}</span>
-                                </a>
-                                <a class="menuli_a" href="/admin">后台</a>
-                            </li>
-                            {%else%}
-                            <li class="menuli logined" id="LogHome" style="display: none">
-                                <a href="" class="menu-a">
-                                    <span class="menu-span">{{}}</span>
-                                    <span class="zt glyphicon glyphicon-chevron-down"></span>
-                                </a>
-                            </li>
-                            {%endif%}
+                        {% if userInfo.isadmin %}
+                        <li class="menuli logined" id="adLogHome" style="display: none">
+                            <a href="" class="menuli_a">
+                                <span class="menu-span">{{}}</span>
+                            </a>
+                            <a class="menuli_a" href="/admin">后台</a>
+                        </li>
+                        {%else%}
+                        <li class="menuli logined" id="LogHome" style="display: none">
+                            <a href="" class="menu-a">
+                                <span class="menu-span">{{}}</span>
+                                <span class="zt glyphicon glyphicon-chevron-down"></span>
+                            </a>
+                        </li>
+                        {%endif%}
 
                         {%else%}
                         <li class="menuli home_no" style="display: block">
@@ -260,6 +260,7 @@
 
 <!--con-->
 <div class="page-home-con container-fluid">
+
     <div class="home-little">
         <a href="" class="little-con">
             <div class="little-pic little-pic-a">
@@ -305,6 +306,7 @@
         </div>
 
     </div>
+    <div class="divider"></div>
     <div class="home-large container-fluid">
         <div class="large-bg large-version">
             <div class="large-con container">
@@ -318,6 +320,7 @@
             </div>
         </div>
     </div>
+    <div class="divider"></div>
     <div class="home-little">
         <a href="" class="little-con">
             <div class="little-pic little-pic-c">
@@ -347,6 +350,7 @@
             </div>
         </a>
     </div>
+
     <div class="home-large container-fluid">
         <div class="large-bg large-assistant">
             <div class="large-con container">
@@ -360,6 +364,7 @@
             </div>
         </div>
     </div>
+    <div class="divider"></div>
     <div class="home-large container-fluid">
         <div class="large-bg large-data">
             <div class="large-video">
@@ -379,16 +384,17 @@
 
         </div>
     </div>
+    <div class="divider"></div>
 </div>
 <div class="divider"></div>
 <div class="guanzhu">
     <div class="guanzhu-con">
         <ul>
             <li><span>关注魔兽</span></li>
-            <li><a href=""><span>微博</span></a></li>
-            <li><a href=""><span>腾讯</span></a></li>
-            <li><a href=""><span>微信</span></a></li>
-            <li><a href=""><span>优酷</span></a></li>
+            <li><a href=""><span id="wb"></span></a></li>
+            <li><a href=""><span id="qq"></span></a></li>
+            <li><a href=""><span id="wx"></span></a></li>
+            <li><a href=""><span id="yk"></span></a></li>
         </ul>
     </div>
 </div>
