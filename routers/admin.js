@@ -338,7 +338,7 @@ router.get("/forum",function (req,res) {
                         res.render("admin/forum",{
                             userInfo:req.session.user,
                             forums:rs,
-                            tag:"character",
+                            tag:"forum",
                             page:page,
                             pages:pages,
                             count:count,
