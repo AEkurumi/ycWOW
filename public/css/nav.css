@@ -184,7 +184,7 @@ a:hover{
 .menu-span{
     display: inline-block;
 }
-.menu .menuli .menu-a span{
+.menu .menuli .menu-a span,.menu .menuli .menuli-a span{
     display: inline-block;
     background-size: 1em 1em;
     -webkit-background-clip: text;
@@ -459,13 +459,25 @@ a:hover{
 }
 
 .menuli_a{
+    padding-top: 3px;
     width: 100%;
     height: 40px;
     text-align: center;
     line-height: 40px;
+    background-size: 1em 1em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100 0,#e2a233 25%, #f0c328 50%, #fff1a3 70%, #ffe13e 100%);
     color: #f8b700;
 }
-
+.menu-span{
+    display: inline-block;
+    background-size: 1em 1em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100 0,#e2a233 25%, #f0c328 50%, #fff1a3 70%, #ffe13e 100%);
+    color: #f8b700;
+}
 
 
 
