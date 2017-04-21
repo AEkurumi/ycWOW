@@ -35,17 +35,6 @@
         </div>
 
 
-        <!--<div class="form-group">-->
-            <!--<label for="title">论坛区</label>-->
-            <!--<select name="gameclass" id="fclass" class="form-control" style="width: 250px;">-->
-                <!--<option value="客服专区">客服专区</option>-->
-                <!--<option value="客服建议区">客服建议区</option>-->
-                <!--<option value="综合讨论区">综合讨论区</option>-->
-            <!--</select>-->
-        <!--</div>-->
-
-
-
 
         <div class="form-group">
             <label for="title">标题</label>
@@ -63,25 +52,6 @@
 </div>
 
 <script>
-    $("#fclass").blur(function () {
-        var conforum=$("#gclass").val();
-        if(conforum=="客服专区"){
-            alert("aaaaaaaaaaaaa")
-        }else if(conforum=="综合讨论"){
-            alert("vvvvvvvvvvv")
-        }else if(conforum=="综合讨论区"){
-            alert("cccccccccc")
-        }
-
-
-
-    });
-
-
-
-
-
-
 
 function addclass() {
     //获取所有数据
@@ -109,8 +79,6 @@ function addclass() {
                     alert(result.msg);
                 }else if(result.code==1){
                     alert(result.msg);
-                    $("#gclass").val("");
-                    $("#fclass").val("");
                     $("#title").val("");
                     $("#description").val("");
                 }

@@ -55,7 +55,7 @@ router.get("/forum",function (req,res) {
             }else if(result.length<=0){
                 console.log("数据库为空，请先添加数据库");
             }else{
-                res.render("main/forumIndex",{
+                res.render("main/forum/forumIndex",{
                     userInfo:req.session.user,
                     forums:result
                 })
@@ -64,8 +64,29 @@ router.get("/forum",function (req,res) {
     });
 });
 
-
-
+router.get("/forum/kefu",function (req,res) {
+    var url=req.url;
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from forum where furl=?",[url],function (err,result) {
+            if(err){
+                console.log(err);
+            }else{
+                conn.query("select * from content where conforumname=?",[result[0].ftwoname],function (err,rs) {
+                    conn.release();
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.render("main/forum/forum",{
+                            userInfo:req.session.user,
+                            forumss:result,
+                            cons:rs
+                        })
+                    }
+                })
+            }
+        })
+    })
+});
 
 
 
