@@ -65,12 +65,14 @@
                         {% if userInfo._id %}
                         {% if userInfo.isadmin %}
                         <li class="menuli logined" id="adLogHome" style="display: none">
-                            <a href="" class="menuli_a">
+                            <a href="" class="menu-a">
                                 <span class="menu-span">{{}}</span>
-                            </a>
-                            <a class="menuli_a" href="/admin">
+                                <span class="zt glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                                 <span>后台</span>
                             </a>
+                            <!--<a class="menuli_a" href="/admin">-->
+                                <!--<span>后台</span>-->
+                            <!--</a>-->
                         </li>
                         {%else%}
                         <li class="menuli logined" id="LogHome" style="display: none">
@@ -78,6 +80,7 @@
                                 <span class="menu-span">{{}}</span>
                                 <span class="zt glyphicon glyphicon-chevron-down"></span>
                             </a>
+
                         </li>
                         {%endif%}
 
@@ -401,7 +404,7 @@
     </div>
 </div>
 <div class="footer container-fluid">
-    <div class="footer-middle container">
+    <div class="footer-middle">
         <div class="footer-left">
             <a href="" class="zhichi">
                 <span class="zhichi-icon"></span>

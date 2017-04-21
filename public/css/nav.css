@@ -9,7 +9,9 @@ body{
     padding: 0;
 
 }
-
+div{
+    box-sizing: border-box;
+}
 .container-fluid{
     padding: 0;
 }
@@ -51,7 +53,7 @@ a:hover{
     transition: all 0.2s ease;
 }
 .nav{
-    background:url("../images/bg_nav.jpg") repeat-x 80px 0;
+    background-image:url("../images/bg_nav.jpg");
     background-size: auto 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.6);
     border:1px solid rgba(68,47,38,.5);
@@ -102,7 +104,8 @@ a:hover{
     z-index: 100;
     top:0;
     transition: all 0.3s ease;
-    background:url("../images/bg_nav.jpg") repeat-x;
+    background:url("../images/bg_nav.jpg") repeat-x 80px 0;
+    background-size: auto 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
 
@@ -184,7 +187,10 @@ a:hover{
 .menu-span{
     display: inline-block;
 }
-.menu .menuli .menu-a span,.menu .menuli .menuli-a span{
+.houtai{
+    display: block;
+}
+.menu .menuli .menu-a span{
     display: inline-block;
     background-size: 1em 1em;
     -webkit-background-clip: text;
@@ -215,11 +221,29 @@ a:hover{
     background-image: -webkit-linear-gradient(top,#fff 0,#fff 100%);
 }
 
-#register{
-    background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
+#register,.logined{
+
+    position: relative;
+    top:-1px;
+    right:-1px;
+    background: url("../images/sitenav-bar-user-bg.jpg") repeat-x -10px -1px;
+    background-size: auto 105%;
+    border-left:0 ;
+    border-right:0 ;
+    border:1px solid rgba(255,0,0,0.3);
+
 }
-.logined{
-    background: url("../images/sitenav-bar-user-bg.jpg") no-repeat center;
+.menugundong #register,.menugundong .logined{
+
+    position: relative;
+    top:0;
+    right:0;
+    background: url("../images/sitenav-bar-user-bg.jpg") repeat-x -10px -1px;
+    background-size: auto 105%;
+    border-left:0 ;
+    border-right:0 ;
+    border:1px solid rgba(255,0,0,0.3);
+
 }
 .menugundong .menu-dengji{
     display: none;
@@ -415,8 +439,8 @@ a:hover{
     .nav{
         height:80px;
         margin-top: 10px;
-        margin-left: 120px;
-
+        margin-left: 67px;
+        width: 90%;
     }
     .menu-logo{
         width: 256px;
@@ -425,17 +449,18 @@ a:hover{
         margin-top: -11px;
     }
     .menu .menuli{
-        height: 78px;
+        height: 80px;
         max-width: 150px;
         padding: 0 25px;
         line-height: 79px;
         font-size: 15px;
     }
     .menu .menuli .menu-a{
-        height: 78px;
+        height: 80px;
     }
     .menugundong .menuli{
         font-size: 15px;
+        height:50px;
     }
     .menu-tuozhan{
         position: relative;
@@ -463,7 +488,7 @@ a:hover{
     width: 100%;
     height: 40px;
     text-align: center;
-    line-height: 40px;
+    line-height: 43px;
     background-size: 1em 1em;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
