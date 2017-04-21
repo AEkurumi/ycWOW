@@ -46,6 +46,33 @@ router.get("/user/register",function (req,res) {
 });
 
 
+router.get("/forum",function (req,res) {
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from forum",function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+            }else if(result.length<=0){
+                console.log("数据库为空，请先添加数据库");
+            }else{
+                res.render("main/forumIndex",{
+                    userInfo:req.session.user,
+                    forums:result
+                })
+            }
+        })
+    });
+});
+
+
+
+
+
+
+
+
+
+
 router.get("/",function (req,res) {
     res.render("main/index",{
         userInfo:req.session.user
@@ -82,6 +109,13 @@ router.get("/admin",function (req,res) {
         userInfo:req.session.user
     });
 });
+
+
+
+
+
+
+
 
 
 

@@ -35,19 +35,22 @@
         </div>
 
 
+        <!--<div class="form-group">-->
+            <!--<label for="title">论坛区</label>-->
+            <!--<select name="gameclass" id="fclass" class="form-control" style="width: 250px;">-->
+                <!--<option value="客服专区">客服专区</option>-->
+                <!--<option value="客服建议区">客服建议区</option>-->
+                <!--<option value="综合讨论区">综合讨论区</option>-->
+            <!--</select>-->
+        <!--</div>-->
+
+
+
+
         <div class="form-group">
             <label for="title">标题</label>
             <input type="text" class="form-control" id="title" placeholder="请输入标题" name="title" style="width: 300px;">
         </div>
-
-        <!--<div class="form-group">-->
-            <!--<label for="title">游戏种族图片</label>-->
-            <!--<input type="file" name="pic" id="pic" onchange="setImagePreviews(this,'showpic')" multiple/>-->
-        <!--</div>-->
-
-        <!--<div id="showpic" style="width: 100px; height: 100px;position: absolute; top: 265px; right: 550px;">-->
-
-        <!--</div>-->
 
         <div class="form-group">
             <label for="description">内容</label>
@@ -60,6 +63,26 @@
 </div>
 
 <script>
+    $("#fclass").blur(function () {
+        var conforum=$("#gclass").val();
+        if(conforum=="客服专区"){
+            alert("aaaaaaaaaaaaa")
+        }else if(conforum=="综合讨论"){
+            alert("vvvvvvvvvvv")
+        }else if(conforum=="综合讨论区"){
+            alert("cccccccccc")
+        }
+
+
+
+    });
+
+
+
+
+
+
+
 function addclass() {
     //获取所有数据
     var conforum=$("#gclass").val();
