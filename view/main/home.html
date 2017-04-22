@@ -30,7 +30,7 @@
             <div class="menu" id="menu">
 
                 <div class="nav" id="nav">
-                    <a href=""  class="menu-logo-a">
+                    <a href="home.html"  class="menu-logo-a">
                         <div id="menu-logo" class="menu-logo"></div>
                     </a>
                     <div class="menu-search">
@@ -51,7 +51,7 @@
 
                         </li>
                         <li class="menuli">
-                            <a href="" class="menu-a"><span class="menu-span">新闻</span></a>
+                            <a href="news.html" class="menu-a"><span class="menu-span">新闻</span></a>
                         </li>
                         <li class="menuli">
                             <a href="/forum" class="menu-a"><span class="menu-span">论坛</span></a>
@@ -65,15 +65,12 @@
                         {% if userInfo._id %}
                         {% if userInfo.isadmin %}
                         <li class="menuli logined" id="adLogHome" style="display: none">
-                            <a href="" class="menu-a">
+                            <a href="" class=" menuli-a">
                                 <span class="menu-span">{{}}</span>
-                                <span class="zt glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-                                <span>后台</span>
+
                             </a>
-                            <!--<a class="menuli_a" href="/admin">-->
-                                <!--<span>后台</span>-->
-                            <!--</a>-->
                         </li>
+
                         {%else%}
                         <li class="menuli logined" id="LogHome" style="display: none">
                             <a href="" class="menu-a">
@@ -106,8 +103,8 @@
                             </div>
 
                             <ul>
-                                <li><a href="">种族</a></li>
-                                <li><a href="">职业</a></li>
+                                <li><a href="game/races.html">种族</a></li>
+                                <li><a href="game/classes.html">职业</a></li>
                                 <li><a href="">天赋模拟器</a></li>
                                 <li><a href="">服务器状态</a></li>
                                 <li><a href="">拍卖行</a></li>
@@ -123,26 +120,27 @@
 
                             </ul>
                         </div>
-                        <div class="tuozhanlan">
-                            <div class="tuozhan-title">
-                                <span>竞技</span>
-                            </div>
-                            <div class="tuozhan">
-                                <ul>
-                                    <li><a href="">史诗钥石排行榜</a></li>
-                                    <li><a href="">PvP排行榜</a></li>
-                                </ul>
-                            </div>
 
-                        </div>
                         <div class="tuozhanlan">
                             <div class="tuozhan-title">
                                 <span>下载</span>
                             </div>
                             <ul>
-                                <li><a href="">下载《魔兽世界》</a></li>
+                                <li><a href="game/download.html">下载《魔兽世界》</a></li>
 
                             </ul>
+                        </div>
+                        <div class="tuozhanlan">
+                            <div class="tuozhan-title">
+                                <span>控制</span>
+                            </div>
+                            <div class="tuozhan">
+                                <ul>
+                                    <li><a href="">后台</a></li>
+                                    <li><a href="">退出</a></li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
 
@@ -188,7 +186,7 @@
             <p>联军终于突破了古尔丹的防线！攻入暗夜要塞，对抗十名强大的首领，解放苏拉玛！</p>
             <div class="ruKeng">
                 <a class="rukengbtn" href=""><span>了解更多</span></a>
-                <a class="rukengbtn rukengbtn2" href=""><span>立即充值</span></a>
+                <a class="rukengbtn rukengbtn2" href="gamepoints/gamepoints.html"><span>立即充值</span></a>
             </div>
         </div>
         <div class="space-large container"></div>
