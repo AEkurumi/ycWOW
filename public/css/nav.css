@@ -466,7 +466,8 @@ a:hover{
         position: relative;
         display: block;
         top: -1px;
-        width:85.3%;
+        left:8px;
+        width:96%;
         height:325px;
         background: linear-gradient(to bottom,rgba(1,1,2,.97),rgba(21,13,6,.97));
         border: 1px solid #241505;
@@ -504,7 +505,9 @@ a:hover{
     color: #f8b700;
 }
 
-
+.menuli-a{
+    display: inline-block;
+}
 
 
 
