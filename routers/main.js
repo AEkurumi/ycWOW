@@ -71,8 +71,9 @@ router.get("/forum/kefu",function (req,res) {
             if(err){
                 console.log(err);
             }else{
-                conn.query("select * from content where conforumname=?",[result[0].ftwoname],function (err,rs) {
+                conn.query("select c.*,u.uname from content c,wowuser u where c.uid=u.uid && conforumname=?;",[result[0].ftwoname],function (err,rs) {
                     conn.release();
+                    console.log(rs);
                     if(err){
                         console.log(err);
                     }else{
@@ -88,6 +89,26 @@ router.get("/forum/kefu",function (req,res) {
     })
 });
 
+router.get("/topic/1492826403692",function (req,res) {
+    var url=req.url;
+    var num=url.split("/")[2];
+    console.log(num);
+    console.log(url);
+    pool.getConnection(function (err,conn) {
+        conn.query("select c.*,u.uname from content c,wowuser u where c.uid=u.uid && conurl=?",[num],function (err,result) {
+            conn.release();
+            console.log(result);
+            if(err){
+                console.log(err);
+            }else{
+                res.render("main/forum/forum_posts_off",{
+                    userInfo:req.session.user,
+                    cons:result
+                })
+            }
+        })
+    })
+});
 
 
 
@@ -125,6 +146,8 @@ router.get("/gamepoints/cellphone",function (req,res) {
     });
 });
 
+
+
 router.get("/admin",function (req,res) {
     res.render("admin/index",{
         userInfo:req.session.user
@@ -132,11 +155,50 @@ router.get("/admin",function (req,res) {
 });
 
 
+//新闻
+router.get("/news",function (req,res) {
+    res.render("main/news",{
+        userInfo:req.session.user
+    });
+});
+
+//职业
+router.get("/gameclass",function (req,res) {
+    console.log("gameclass");
+    res.render("main/game/classes",{
+        userInfo:req.session.user
+    });
+});
+
+//种族
+router.get("/gameraces",function (req,res) {
+    console.log("gameraces");
+    res.render("main/game/races",{
+        userInfo:req.session.user
+    });
+});
+
+//新玩家
+router.get("/newplayers1",function (req,res) {
+    res.render("main/game/newplayers1",{
+        userInfo:req.session.user
+    });
+});
 
 
+//老玩家
+router.get("/oldplayers1",function (req,res) {
+    res.render("main/game/oldplayers1",{
+        userInfo:req.session.user
+    });
+});
 
+//下载
+router.get("/download",function (req,res) {
+    res.render("main/game/download",{
 
-
+    });
+});
 
 
 

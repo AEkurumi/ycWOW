@@ -462,9 +462,10 @@ router.post("/forumSend",function (req,res) {
 
     var data=new Date();
     var addTime=data.getFullYear()+","+(data.getMonth()+1)+","+data.getDate()+" "+data.getHours()+":"+data.getMinutes()+":"+data.getSeconds()+":"+data.getMilliseconds();
+    var addurl=data.getTime();
 
     pool.getConnection(function (err,conn) {
-        conn.query("insert into content values(null,?,?,?,?,?,?,?)",[req.session.user._id,conforum,conforumname,contit,content,addTime,req.session.user.isadmin],function (err,result) {
+        conn.query("insert into content values(null,?,?,?,?,?,?,?,?,0)",[req.session.user._id,conforum,conforumname,contit,content,addTime,req.session.user.isadmin,addurl],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);

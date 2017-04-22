@@ -74,305 +74,37 @@
     <div class="main_official">
         <div class="main_off_con">
             {% for con in cons%}
-                {% if con.isadmin %}
-                <a class="main_off_art" href="">
+                {% if con.isadmin==1 %}
+                <a class="main_off_art" href="/topic/{{con.conurl}}">
                     <span class="main_off_art_icon"></span>
                     <span class="main_off_art_title">{{con.contit}}</span>
                     <span class="main_off_art_news">
                         <i class="new_icon"></i>
-                        <span class="news_num">3</span>
+                        <span class="news_num">{{con.ans}}</span>
                     </span>
-                    <span class="main_off_art_author">{{con.uid}}</span>
+                    <span class="main_off_art_author">{{con.uname}}</span>
                     <span class="main_off_art_time">{{con.contime}}</span>
                 </a>
                 {%endif%}
             {%endfor%}
-            <a class="main_off_art noborder" href="">
-                <span class="main_off_art_icon"></span>
-                <span class="main_off_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_off_art_news">
-                    <i class="new_icon"></i>
-                    <span class="news_num">3</span>
-                </span>
-                <span class="main_off_art_author">糖水菠萝</span>
-                <span class="main_off_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_off_art noborder" href="">
-                <span class="main_off_art_icon">
-                    <i class="main_off_art_icon_name"></i>
-                </span>
-                <span class="main_off_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_off_art_news">
-                    <i class="new_icon"></i>
-                    <span class="news_num">3</span>
-                </span>
-                <span class="main_off_art_author">糖水菠萝</span>
-                <span class="main_off_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_off_art noborder" href="">
-                <span class="main_off_art_icon"></span>
-                <span class="main_off_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_off_art_news">
-                    <i class="new_icon"></i>
-                    <span class="news_num">3</span>
-                </span>
-                <span class="main_off_art_author">糖水菠萝</span>
-                <span class="main_off_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_off_art noborder" href="">
-                <span class="main_off_art_icon"></span>
-                <span class="main_off_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_off_art_news">
-                    <i class="new_icon"></i>
-                    <span class="news_num">3</span>
-                </span>
-                <span class="main_off_art_author">糖水菠萝</span>
-                <span class="main_off_art_time">2017年7月21日</span>
-            </a>
         </div>
     </div>
     <div class="main_user">
         <div class="main_user_con">
-            <a class="main_user_art" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
-            <a class="main_user_art noborder" href="">
-                <span class="main_user_art_icon"></span>
-                <span class="main_user_art_title">【关注】进入游戏出现"服务器不兼容"提示的问题</span>
-                <span class="main_user_art_news">
-                        <i class="new_icon"></i>
-                        <span class="news_num">3</span>
-                    </span>
-                <span class="main_user_art_author">糖水菠萝</span>
-                <span class="main_user_art_time">2017年7月21日</span>
-            </a>
+            {% for con in cons%}
+                {% if con.isadmin==0 %}
+                    <a class="main_off_art" href="/topic/{{con.conurl}}">
+                        <span class="main_user_art_icon"></span>
+                        <span class="main_off_art_title">{{con.contit}}</span>
+                        <span class="main_off_art_news">
+                                <i class="new_icon"></i>
+                                <span class="news_num">{{con.ans}}</span>
+                            </span>
+                        <span class="main_off_art_author">{{con.uname}}</span>
+                        <span class="main_off_art_time">{{con.contime}}</span>
+                    </a>
+                {%endif%}
+            {%endfor%}
         </div>
     </div>
     <div class="main_next">

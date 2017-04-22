@@ -25,8 +25,13 @@
                 </div>
                 <div class="bg_top_zw_right">
                     <ul>
-                        <li><a class="zw_a_txt" href="javascript:void(0)">您的通行证 <span class="zw_game_cor_right "></span></a></li>
-                        <li><a class="zw_a_txt" href="">支持</a></li>
+                        {% if userInfo._id %}
+                        <li><a class="zw_a_txt" onclick="forumout()" href="">退出</a></li>
+                        <li><a class="zw_a_txt" href="javascript:void (0)">{{userInfo.uname}}</a></li>
+                        {%else%}
+                        <li><a class="zw_a_txt" href="/user/login">请登录</a></li>
+                        {%endif%}
+                        <li><a class="zw_a_txt" href="https://www.battlenet.com.cn/support/">支持</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,8 +46,9 @@
                     <span class="forum_logo"></span>
                     <i>论坛</i>
                     <span class="forum_next_icon"></span>
-                    <i class="forum_now">技术支持区</i>
-
+                    <i>{{cons[0].conforumname}}</i>
+                    <span class="forum_next_icon"></span>
+                    <i class="forum_now">{{cons[0].contit}}</i>
                 </a>
             </div>
         </div>
@@ -53,23 +59,71 @@
         <div class="main_title_con">
             <div class="main_title_name">
                 <i class="main_logo"></i>
-                <span class="main_title_name_txt">技术支持区</span>
+                <span class="main_title_name_txt">{{cons[0].contit}}</span>
             </div>
             <div class="main_title_search">
-                <span class="search_icon"></span>
                 <form>
-                    <input type="text" class="search_txt" placeholder="搜索">
                     <button class="new_theme">
-                        <i class="new_theme_add_icon"></i>
-                        <span class="new_theme_name">新主题</span>
+                        <i class="forum_icon"></i>
+                        <span class="new_theme_name">回复</span>
                     </button>
                 </form>
             </div>
         </div>
-    </div>
 
-    <div class="main_next">
-        <a class="main_next_btn" href="">下一页&nbsp;&gt;</a>
+        {% for content in cons%}
+        <div class="forum_posts">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{content.uname}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <div class="forum_posts_right_con">
+                    {{content.content}}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        {%endfor%}
+        <div class="forum_posts">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <div class="forum_posts_right_con">
+                    昨天上午转服后 军团再临APP显示该角色暂时无法登陆 什么时候能恢复
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="huifu">
+        <div class="huifudiv">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{content.uname}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <textarea style="width: 70%;height: 200px;"  disabled="disabled"></textarea><br>
+                <button class="new_theme">发送</button>
+            </div>
+            <div class="clear"></div>
+        </div>
     </div>
 </div>
 
