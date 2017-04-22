@@ -28,6 +28,7 @@ a{
     color: #ffffff;
 }
 a:hover{
+    color:#fff;
     text-decoration: none;
 }
 
@@ -97,6 +98,10 @@ h2{
 }
 .tabs-on{
     background: #f8b700;
+    color: #000;
+}
+.tabs-on:hover a{
+
     color: #000;
 }
 
