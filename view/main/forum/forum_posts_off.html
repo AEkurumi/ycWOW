@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>《魔兽世界》论坛</title>
+    <link rel="shortcut icon" href="../../../public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../public/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/css/forum.css">
+    <script src="../../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../../public/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header class="maxheader">
+    <div class="header_bg_top_forum">
+        <div class="bg_top_zw">
+            <div class="bg_top">
+                <div class="bg_top_zw_left">
+                    <ul>
+                        <li><a class="zw_logo" href="http://www.battlenet.com.cn/"></a></li>
+                        <li><a class="zw_a_txt gamecilck" href="javascript:void (0)">游戏 <span class="zw_game_cor"></span></a></li>
+                        <li><a class="zw_a_txt" href="https://www.battlenet.com.cn/shop/">商城</a></li>
+                    </ul>
+                </div>
+                <div class="bg_top_zw_right">
+                    <ul>
+                        {% if userInfo._id %}
+                        <li><a class="zw_a_txt" onclick="forumout()" href="">退出</a></li>
+                        <li><a class="zw_a_txt" href="javascript:void (0)">{{userInfo.uname}}</a></li>
+                        {%else%}
+                        <li><a class="zw_a_txt" href="/user/login">请登录</a></li>
+                        {%endif%}
+                        <li><a class="zw_a_txt" href="https://www.battlenet.com.cn/support/">支持</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg_top_wow">
+            <div class="bg_top">
+                <a class="bg_top_wow_logo" href="https://wowchina.com/zh-cn/">
+                    <span class="wow_logo"></span>
+                    <i>《魔兽世界》</i>
+                </a>
+                <a class="bg_top_wow_forum" href="javascript:void (0)">
+                    <span class="forum_logo"></span>
+                    <i>论坛</i>
+                    <span class="forum_next_icon"></span>
+                    <i>{{cons[0].conforumname}}</i>
+                    <span class="forum_next_icon"></span>
+                    <i class="forum_now">{{cons[0].contit}}</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main">
+    <div class="main_title">
+        <div class="main_title_con">
+            <div class="main_title_name">
+                <i class="main_logo"></i>
+                <span class="main_title_name_txt">{{cons[0].contit}}</span>
+            </div>
+            <div class="main_title_search">
+                <form>
+                    <button class="new_theme">
+                        <i class="forum_icon"></i>
+                        <span class="new_theme_name">回复</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {% for content in cons%}
+        <div class="forum_posts">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{content.uname}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <div class="forum_posts_right_con">
+                    {{content.content}}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        {%endfor%}
+        <div class="forum_posts">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <div class="forum_posts_right_con">
+                    昨天上午转服后 军团再临APP显示该角色暂时无法登陆 什么时候能恢复
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="huifu">
+        <div class="huifudiv">
+            <div class="forum_posts_left">
+                <a class="forum_posts_left_logo" href="">
+                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                </a>
+                <div class="forum_posts_left_user" >
+                    <span>{{content.uname}}</span>
+                </div>
+            </div>
+            <div class="forum_posts_right">
+                <textarea style="width: 70%;height: 200px;"  disabled="disabled"></textarea><br>
+                <button class="new_theme">发送</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<!--底部-->
+<footer class="footer">
+    <p class="foot_thank">感谢访问<a href="">暴雪论坛</a> (2.16.5) · <a href="">补丁说明</a></p>
+</footer>
+<div class="foot_div">
+    <footer class="foot">
+        <div class="customer">
+            <p>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp1"></span>支持</a>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp2"></span>反馈</a>
+                <a class="customer_p_a" href=""><span class="cus_p_a_sp3"></span>战网安全中心</a>
+                <a href="javascript:void (0)" class="customer_right">
+                    <i class="word_bg"></i>
+                    <span class="language"><span class="country">中国</span>&nbsp;-&nbsp;<span class="country_langue">简体中文</span></span>
+                    <b class="drow_icon"></b>
+                </a>
+            </p>
+
+        </div>
+        <div class="footer_logo">
+            <img src="../../../public/images/blizzard.0tuLw.png" alt="blizzard">
+        </div>
+        <div class="footer_text">
+            <ul class="text_ul">
+                <li><a href="">查找职位</a>|</li>
+                <li><a href="">关于</a>|</li>
+                <li><a href="">隐私</a>|</li>
+                <li><a href="">法律条款</a>|</li>
+                <li><a href="">著作权侵权</a></li>
+            </ul>
+            <ul class="text_ul">
+                <li><a href="">沪网文[2014]0731-161号</a>|</li>
+                <li><a href=""> 增值电信业务经营许可证编号：沪B2－20080012</a></li>
+            </ul>
+            <ul class="text_ul_none">
+                <li><a href="javascript:void(0)">互联网违法和不良信息举报电话：0571-28090163</a>|</li>
+                <li><a href="javascript:void(0)">沪公网安备：31011502002167</a></li>
+            </ul>
+        </div>
+        <div class="text_copy">©2017 Blizzard Entertainment, Inc.</div>
+        <div class="integ">
+            <a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="../../../public/images/police.png"></a>
+            <a target="_blank" href="http://www.zx110.org/"><img src="../../../public/images/zx110.png"></a>
+            <a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20111011175417664"><img src="../../../public/images/sgs-icon.png"></a>
+            <a target="_blank" href="http://www.shjbzx.cn/"><img src="../../../public/images/icon20120516.png"></a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

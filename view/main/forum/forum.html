@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>《魔兽世界》论坛</title>
-    <link rel="shortcut icon" href="../../public/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../../public/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../public/css/forum.css">
-    <script src="../../public/js/jquery-2.0.3.js"></script>
-    <script src="../../public/dist/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../../../public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../public/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/css/forum.css">
+    <script src="../../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../../public/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header class="maxheader">
@@ -25,8 +25,13 @@
                 </div>
                 <div class="bg_top_zw_right">
                     <ul>
-                        <li><a class="zw_a_txt" href="javascript:void(0)">您的通行证 <span class="zw_game_cor_right "></span></a></li>
-                        <li><a class="zw_a_txt" href="">支持</a></li>
+                        {% if userInfo._id %}
+                        <li><a class="zw_a_txt" onclick="forumout()" href="">退出</a></li>
+                        <li><a class="zw_a_txt" href="javascript:void (0)">{{userInfo.uname}}</a></li>
+                        {%else%}
+                        <li><a class="zw_a_txt" href="/user/login">请登录</a></li>
+                        {%endif%}
+                        <li><a class="zw_a_txt" href="https://www.battlenet.com.cn/support/">支持</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,8 +46,7 @@
                     <span class="forum_logo"></span>
                     <i>论坛</i>
                     <span class="forum_next_icon"></span>
-                    <i class="forum_now">技术支持区</i>
-
+                    <i class="forum_now">{{forumss[0].ftwoname}}</i>
                 </a>
             </div>
         </div>
@@ -53,7 +57,7 @@
         <div class="main_title_con">
             <div class="main_title_name">
                 <i class="main_logo"></i>
-                <span class="main_title_name_txt">技术支持区</span>
+                <span class="main_title_name_txt">{{forumss[0].ftwoname}}</span>
             </div>
             <div class="main_title_search">
                 <span class="search_icon"></span>
@@ -67,7 +71,42 @@
             </div>
         </div>
     </div>
-
+    <div class="main_official">
+        <div class="main_off_con">
+            {% for con in cons%}
+                {% if con.isadmin==1 %}
+                <a class="main_off_art" href="/topic/{{con.conurl}}">
+                    <span class="main_off_art_icon"></span>
+                    <span class="main_off_art_title">{{con.contit}}</span>
+                    <span class="main_off_art_news">
+                        <i class="new_icon"></i>
+                        <span class="news_num">{{con.ans}}</span>
+                    </span>
+                    <span class="main_off_art_author">{{con.uname}}</span>
+                    <span class="main_off_art_time">{{con.contime}}</span>
+                </a>
+                {%endif%}
+            {%endfor%}
+        </div>
+    </div>
+    <div class="main_user">
+        <div class="main_user_con">
+            {% for con in cons%}
+                {% if con.isadmin==0 %}
+                    <a class="main_off_art" href="/topic/{{con.conurl}}">
+                        <span class="main_user_art_icon"></span>
+                        <span class="main_off_art_title">{{con.contit}}</span>
+                        <span class="main_off_art_news">
+                                <i class="new_icon"></i>
+                                <span class="news_num">{{con.ans}}</span>
+                            </span>
+                        <span class="main_off_art_author">{{con.uname}}</span>
+                        <span class="main_off_art_time">{{con.contime}}</span>
+                    </a>
+                {%endif%}
+            {%endfor%}
+        </div>
+    </div>
     <div class="main_next">
         <a class="main_next_btn" href="">下一页&nbsp;&gt;</a>
     </div>
@@ -94,7 +133,7 @@
 
         </div>
         <div class="footer_logo">
-            <img src="../../public/images/blizzard.0tuLw.png" alt="blizzard">
+            <img src="../../../public/images/blizzard.0tuLw.png" alt="blizzard">
         </div>
         <div class="footer_text">
             <ul class="text_ul">
@@ -115,12 +154,16 @@
         </div>
         <div class="text_copy">©2017 Blizzard Entertainment, Inc.</div>
         <div class="integ">
-            <a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="../../public/images/police.png"></a>
-            <a target="_blank" href="http://www.zx110.org/"><img src="../../public/images/zx110.png"></a>
-            <a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20111011175417664"><img src="../../public/images/sgs-icon.png"></a>
-            <a target="_blank" href="http://www.shjbzx.cn/"><img src="../../public/images/icon20120516.png"></a>
+            <a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="../../../public/images/police.png"></a>
+            <a target="_blank" href="http://www.zx110.org/"><img src="../../../public/images/zx110.png"></a>
+            <a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20111011175417664"><img src="../../../public/images/sgs-icon.png"></a>
+            <a target="_blank" href="http://www.shjbzx.cn/"><img src="../../../public/images/icon20120516.png"></a>
         </div>
     </footer>
 </div>
 </body>
+
+
+
+
 </html>

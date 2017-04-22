@@ -155,5 +155,12 @@ router.get("/user/logout",function (req,res) {
     res.send("1");
 });
 
+//退出
+router.get("/outlog",function (req,res) {
+    delete req.session.user;
+    console.log(req.session.user);
+    res.send("1");
+});
+
 //2、把这个路由的文件和主模块连接起来
 module.exports=router;

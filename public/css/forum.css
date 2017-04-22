@@ -206,9 +206,12 @@ li{
 .main_title{
     padding-top: 35px;
     padding-bottom: 35px;
+
 }
 .main_title_con{
     width: 85%;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 50px;
 }
 .main_title_name{
     display: inline-block;
@@ -278,6 +281,15 @@ li{
     top:4px;
     left: 10px;
 }
+.forum_icon{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top:6px;
+    left: 10px;
+    background-image: url("../images/forum/icon/icon-sprites-24-wow-gold.png");
+    background-position: -168px -96px;
+}
 .new_theme_name{
     display: inline-block;
     font-size: 17px;
@@ -298,6 +310,9 @@ li{
 }
 
 .new_theme:hover .new_theme_add_icon{
+    background-image: url("../images/forum/icon/icon-sprites-24-white.png");
+}
+.new_theme:hover .forum_icon{
     background-image: url("../images/forum/icon/icon-sprites-24-white.png");
 }
 .main_next{
@@ -498,6 +513,9 @@ footer.foot{
     border-bottom: 1px solid rgba(255,255,255,.15);
     position: relative;
 }
+.main_off_art:hover,.main_user_art:hover{
+    background: rgba(255,255,255,.1);
+}
 .noborder{
     border-top: none;
 }
@@ -584,3 +602,88 @@ footer.foot{
     width: 100%;
     margin-top: 40px;
 }
+
+.forum_posts{
+    width: 85%;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.forum_posts_left{
+    width: 30%;
+    float: left;
+}
+.forum_posts_right{
+    width: 70%;
+    float: left;
+
+}
+.forum_posts_left_logo{
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    float: left;
+}
+
+.forum_posts_left_logo img{
+    border:3px solid #00aeff;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.forum_posts_left_user{
+    display: inline-block;
+    float: left;
+    position: relative;
+    top:10px;
+    left: 20px;
+    color: #fff;
+}
+.forum_posts_left_user span{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.forum_posts_right_time{
+    color: rgba(255,255,255,0.5);
+    font-size: 18px;
+}
+.forum_posts_right_time:hover{
+    color: rgba(255,255,255,0.5);
+}
+.forum_posts_right_con{
+    font-size: 18px;
+    margin-top: 20px;
+    color: rgba(255,255,255,0.8);
+}
+.clear{
+    clear:both
+}
+
+.huifu{
+    margin-top: 50px;
+    width: 100%;
+    height: 350px;
+    background: rgba(255,255,255,0.1)
+}
+.huifudiv{
+    width: 85%;
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

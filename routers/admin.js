@@ -146,6 +146,8 @@ router.post("/addClass",upload.array("pic"),function (req,res) {
     var gintro=req.body.gintro;
 
     pool.getConnection(function (err,conn) {
+        console.log("aaaaaaaaa"+req.files);
+        console.log(req.files);
         if(req.files!=undefined){
             var file;
             var fileName;
@@ -352,6 +354,30 @@ router.get("/forum",function (req,res) {
 });
 
 
+
+router.get("/forumClass",function (req,res) {
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from forum",function (err,result) {
+            conn.release();
+            if(err){
+                res.render("admin/forum",{
+                    forumClass:result
+                });
+            }else {
+                res.render("admin/forum",{
+                    userInfo:req.session.user,
+                    forumClass:result
+                });
+            }
+        })
+    })
+});
+
+
+
+
+
+
 //论坛版块删除
 router.get("/forum/delete",function (req,res) {
     // var tid=req.url.split("=")[1];
@@ -436,9 +462,10 @@ router.post("/forumSend",function (req,res) {
 
     var data=new Date();
     var addTime=data.getFullYear()+","+(data.getMonth()+1)+","+data.getDate()+" "+data.getHours()+":"+data.getMinutes()+":"+data.getSeconds()+":"+data.getMilliseconds();
+    var addurl=data.getTime();
 
     pool.getConnection(function (err,conn) {
-        conn.query("insert into content values(null,?,?,?,?,?,?)",[req.session.user._id,conforum,conforumname,contit,content,addTime],function (err,result) {
+        conn.query("insert into content values(null,?,?,?,?,?,?,?,?,0)",[req.session.user._id,conforum,conforumname,contit,content,addTime,req.session.user.isadmin,addurl],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
