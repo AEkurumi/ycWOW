@@ -45,7 +45,7 @@ router.get("/user/register",function (req,res) {
     });
 });
 
-
+//论坛
 router.get("/forum",function (req,res) {
     pool.getConnection(function (err,conn) {
         conn.query("select * from forum",function (err,result) {
@@ -114,24 +114,25 @@ router.get("/topic/1492826403692",function (req,res) {
 
 
 
-
+//首页
 router.get("/",function (req,res) {
     res.render("main/index",{
         userInfo:req.session.user
     });
 });
+//home界面
 router.get("/home",function (req,res) {
     res.render("main/home",{
         userInfo:req.session.user
     });
 });
-
+//登录
 router.get("/user/login",function (req,res) {
     res.render("main/login",{
 
     });
 });
-
+//立即充值
 router.get("/gamepoints/gamepoints",function (req,res) {
     res.render("main/gamepoints/gamepoints",{
 
@@ -139,7 +140,7 @@ router.get("/gamepoints/gamepoints",function (req,res) {
 });
 
 
-
+//手机充值
 router.get("/gamepoints/cellphone",function (req,res) {
     res.render("main/gamepoints/cellphone",{
 
@@ -147,7 +148,7 @@ router.get("/gamepoints/cellphone",function (req,res) {
 });
 
 
-
+//后台界面
 router.get("/admin",function (req,res) {
     res.render("admin/index",{
         userInfo:req.session.user
@@ -165,16 +166,47 @@ router.get("/news",function (req,res) {
 //职业
 router.get("/gameclass",function (req,res) {
     console.log("gameclass");
-    res.render("main/game/classes",{
-        userInfo:req.session.user
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from career",function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+            }else{
+                res.render("main/game/classes",{
+                    userInfo:req.session.user,
+                    career1:result[0],
+                    career2:result[1],
+                    career3:result[2],
+                    career4:result[3],
+                    career5:result[4],
+                    career6:result[5],
+                    career7:result[6],
+                    career8:result[7],
+                    career9:result[8],
+                    career10:result[9],
+                    career11:result[10],
+                    career12:result[11],
+                    career13:result[12],
+                });
+            }
+        })
     });
 });
 
 //种族
 router.get("/gameraces",function (req,res) {
     console.log("gameraces");
-    res.render("main/game/races",{
-        userInfo:req.session.user
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from gameclass",function (err,result) {
+            if(err){
+                console.log(err);
+            }else{
+                res.render("main/game/races",{
+                    userInfo:req.session.user,
+                    gameclass:result
+                });
+            }
+        })
     });
 });
 
@@ -184,6 +216,24 @@ router.get("/newplayers1",function (req,res) {
         userInfo:req.session.user
     });
 });
+router.get("/newplayers2",function (req,res) {
+    res.render("main/game/newplayers2",{
+        userInfo:req.session.user
+    });
+});
+
+router.get("/newplayers3",function (req,res) {
+    res.render("main/game/newplayers3",{
+        userInfo:req.session.user
+    });
+});
+
+router.get("/newplayers4",function (req,res) {
+    res.render("main/game/newplayers4",{
+        userInfo:req.session.user
+    });
+});
+
 
 
 //老玩家
@@ -193,6 +243,21 @@ router.get("/oldplayers1",function (req,res) {
     });
 });
 
+router.get("/oldplayers2",function (req,res) {
+    res.render("main/game/oldplayers2",{
+        userInfo:req.session.user
+    });
+});
+router.get("/oldplayers3",function (req,res) {
+    res.render("main/game/oldplayers3",{
+        userInfo:req.session.user
+    });
+});
+router.get("/oldplayers4",function (req,res) {
+    res.render("main/game/oldplayers4",{
+        userInfo:req.session.user
+    });
+});
 //下载
 router.get("/download",function (req,res) {
     res.render("main/game/download",{

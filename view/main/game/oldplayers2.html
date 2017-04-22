@@ -12,7 +12,7 @@
     <link href="../../../public/css/footer.css" rel="stylesheet">
 
     <script src="../../../public/js/jquery-2.0.3.js"></script>
-    <script src="../../../public/js/nav.js"></script>
+
 </head>
 <body>
     <div class="page">
@@ -22,7 +22,7 @@
                 <div class="menu" id="menu">
 
                     <div class="nav" id="nav">
-                        <a href="home.html"  class="menu-logo-a">
+                        <a href="/home"  class="menu-logo-a">
                             <div id="menu-logo" class="menu-logo"></div>
                         </a>
                         <div class="menu-search">
@@ -55,23 +55,11 @@
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                             </li>
                             {% if userInfo._id %}
-                            {% if userInfo.isadmin %}
-                            <li class="menuli logined" id="adLogHome" style="display: none">
-                                <a href="" class=" menuli-a">
-                                    <span class="menu-span">{{}}</span>
-
-                                </a>
-                            </li>
-
-                            {%else%}
-                            <li class="menuli logined" id="LogHome" style="display: none">
+                            <li class="menuli logined" id="adLogHome" style="display: block">
                                 <a href="" class="menu-a">
-                                    <span class="menu-span">{{}}</span>
-                                    <span class="zt glyphicon glyphicon-chevron-down"></span>
+                                    <span class="menu-span">{{userInfo.uname}}</span>
                                 </a>
-
                             </li>
-                            {%endif%}
 
                             {%else%}
                             <li class="menuli home_no" style="display: block">
@@ -189,7 +177,7 @@
                     很高兴你终于决定重新踏上史诗旅程！我们将竭力使你的回归旅途变得轻松而简单，让我们开始吧。
                 </div>
                 <div class="rukeng">
-                    <a href="download.html" class="download">
+                    <a href="/download" class="download">
                         <div class=" btn-next rukengbtn2">
                             <span>下载游戏</span>
                         </div>
@@ -202,10 +190,10 @@
         <div class="tabs">
             <div class="tabs-container">
                 <ul class="tabs-list">
-                    <li class="tabs-item"><a href="oldplayers1.html" class="tabs-off">你的账号</a></li>
-                    <li class="tabs-item"><a href="oldplayers2.html" class="tabs-on">游戏更新</a></li>
-                    <li class="tabs-item"><a href="oldplayers3.html" class="tabs-off">你的角色</a></li>
-                    <li class="tabs-item"><a href="oldplayers4.html" class="tabs-off">重启旅程</a></li>
+                    <li class="tabs-item"><a href="/oldplayers1" class="tabs-off">你的账号</a></li>
+                    <li class="tabs-item"><a href="/oldplayers2" class="tabs-on">游戏更新</a></li>
+                    <li class="tabs-item"><a href="/oldplayers3" class="tabs-off">你的角色</a></li>
+                    <li class="tabs-item"><a href="/oldplayers4" class="tabs-off">重启旅程</a></li>
                 </ul>
             </div>
 
@@ -306,13 +294,13 @@
                 <div class="con-box">
                     <div class="panic-con">
                         <div class="rukeng">
-                            <a href="oldplayers1.html" class="panic-a">
+                            <a href="/oldplayers1" class="panic-a">
                                 <div class=" btn-prev rukengbtn">
                                     <span>上一页：你的账号</span>
                                 </div>
                             </a>
 
-                            <a href="oldplayers3.html" class="panic-a">
+                            <a href="/oldplayers3" class="panic-a">
                                 <div class=" btn-next rukengbtn">
                                     <span>下一页：你的角色</span>
                                 </div>
@@ -393,7 +381,7 @@
                 </div>
             </div>
         </footer>
-
+        <script src="../../../public/js/nav.js"></script>
         <script>
             var tab=$(".tabs-item");
             //console.log(tab);

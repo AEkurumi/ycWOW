@@ -100,9 +100,9 @@ h2{
     background: #f8b700;
     color: #000;
 }
-.tabs-on:hover a{
-
-    color: #000;
+.tabs-on:hover,.tabs-off:hover{
+    background: #f8b700;
+    color: #ffffff;
 }
 
 /**********************************************/

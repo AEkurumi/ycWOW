@@ -12,7 +12,7 @@
     <link href="../../../public/css/footer.css" rel="stylesheet">
 
     <script src="../../../public/js/jquery-2.0.3.js"></script>
-    <script src="../../../public/js/nav.js"></script>
+
 </head>
 <body>
     <div class="page">
@@ -22,7 +22,7 @@
                 <div class="menu" id="menu">
 
                     <div class="nav" id="nav">
-                        <a href="home.html"  class="menu-logo-a">
+                        <a href="/home"  class="menu-logo-a">
                             <div id="menu-logo" class="menu-logo"></div>
                         </a>
                         <div class="menu-search">
@@ -55,23 +55,11 @@
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                             </li>
                             {% if userInfo._id %}
-                            {% if userInfo.isadmin %}
-                            <li class="menuli logined" id="adLogHome" style="display: none">
-                                <a href="" class=" menuli-a">
-                                    <span class="menu-span">{{}}</span>
-
-                                </a>
-                            </li>
-
-                            {%else%}
-                            <li class="menuli logined" id="LogHome" style="display: none">
-                                <a href="" class="menu-a">
-                                    <span class="menu-span">{{}}</span>
-                                    <span class="zt glyphicon glyphicon-chevron-down"></span>
-                                </a>
-
-                            </li>
-                            {%endif%}
+                                <li class="menuli logined" id="adLogHome" style="display: block">
+                                    <a href="" class="menu-a">
+                                        <span class="menu-span">{{userInfo.uname}}</span>
+                                    </a>
+                                </li>
 
                             {%else%}
                             <li class="menuli home_no" style="display: block">
@@ -194,10 +182,10 @@
         <div class="tabs">
             <div class="tabs-container">
                 <ul class="tabs-list">
-                    <li class="tabs-item"><a href="newplayers1.html" class="tabs-off">第一部分</a></li>
-                    <li class="tabs-item"><a href="newplayers2.html" class="tabs-off">第二部分</a></li>
-                    <li class="tabs-item"><a href="newplayers3.html" class="tabs-off">第三部分</a></li>
-                    <li class="tabs-item"><a href="newplayers4.html" class="tabs-on">第四部分</a></li>
+                    <li class="tabs-item"><a href="/newplayers1" class="tabs-off">第一部分</a></li>
+                    <li class="tabs-item"><a href="/newplayers2" class="tabs-off">第二部分</a></li>
+                    <li class="tabs-item"><a href="/newplayers3" class="tabs-off">第三部分</a></li>
+                    <li class="tabs-item"><a href="/newplayers4" class="tabs-on">第四部分</a></li>
                 </ul>
             </div>
 
@@ -326,12 +314,11 @@
                     <div class="panic-con">
 
                         <div class="rukeng">
-                            <a href="download.html" class="panic-a">
+                            <a href="/download" class="panic-a">
                                 <div class=" download rukengbtn2">
                                     <span>免费下载</span>
                                 </div>
                             </a>
-
                         </div>
                     </div>
                 </div>
@@ -406,7 +393,7 @@
                 </div>
             </div>
         </footer>
-
+        <script src="../../../public/js/nav.js"></script>
         <script>
             var tab=$(".tabs-item");
             //console.log(tab);

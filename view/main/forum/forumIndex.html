@@ -36,7 +36,7 @@
         </div>
         <div class="bg_top_wow">
             <div class="bg_top">
-                <a class="bg_top_wow_logo" href="https://wowchina.com/zh-cn/">
+                <a class="bg_top_wow_logo" href="/home">
                     <span class="wow_logo"></span>
                     <i>《魔兽世界》</i>
                 </a>
@@ -215,7 +215,7 @@
 
 
     function forumout() {
-        $.get("/api/user/logout",function (data) {
+        $.get("/api/outlog",function (data) {
             if(data=="1"){
                 location.reload();
                 alert("退出成功");

@@ -14,7 +14,7 @@
 
     <script src="../../public/js/jquery-2.0.3.js"></script>
     <script src="../../public/dist/js/bootstrap.js"></script>
-    <script src="../../public/js/nav.js"></script>
+
 </head>
 <body>
     <div class="pine">
@@ -23,7 +23,7 @@
             <div class="menu" id="menu">
 
                 <div class="nav" id="nav">
-                    <a href="home.html"  class="menu-logo-a">
+                    <a href="/home"  class="menu-logo-a">
                         <div id="menu-logo" class="menu-logo"></div>
                     </a>
                     <div class="menu-search">
@@ -56,23 +56,11 @@
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                         </li>
                         {% if userInfo._id %}
-                        {% if userInfo.isadmin %}
-                        <li class="menuli logined" id="adLogHome" style="display: none">
-                            <a href="" class=" menuli-a">
-                                <span class="menu-span">{{}}</span>
-
-                            </a>
-                        </li>
-
-                        {%else%}
-                        <li class="menuli logined" id="LogHome" style="display: none">
-                            <a href="" class="menu-a">
-                                <span class="menu-span">{{}}</span>
-                                <span class="zt glyphicon glyphicon-chevron-down"></span>
-                            </a>
-
-                        </li>
-                        {%endif%}
+                            <li class="menuli logined" id="adLogHome" style="display: block">
+                                <a href="" class="menu-a">
+                                    <span class="menu-span">{{userInfo.uname}}</span>
+                                </a>
+                            </li>
 
                         {%else%}
                         <li class="menuli home_no" style="display: block">
@@ -404,6 +392,7 @@
 
             </div>
         </div>
+
     </div>
     <div class="divider"></div>
     <div class="guanzhu">
@@ -417,8 +406,6 @@
             </ul>
         </div>
     </div>
-
-
     <footer>
         <div class="footer">
             <div class="Cooperation_info">
@@ -474,7 +461,6 @@
             </div>
         </div>
     </footer>
-
-
+    <script src="../../public/js/nav.js"></script>
 </body>
 </html>

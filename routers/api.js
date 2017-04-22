@@ -158,7 +158,6 @@ router.get("/user/logout",function (req,res) {
 //退出
 router.get("/outlog",function (req,res) {
     delete req.session.user;
-    console.log(req.session.user);
     res.send("1");
 });
 

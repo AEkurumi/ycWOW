@@ -11,7 +11,7 @@
     <link href="../../../public/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <script src="../../../public/js/jquery-2.0.3.js"></script>
-    <script src="../../../public/js/nav.js"></script>
+
 </head>
 <body>
     <div class="page">
@@ -20,7 +20,7 @@
             <div class="menu" id="menu">
 
                 <div class="nav" id="nav">
-                    <a href="home.html"  class="menu-logo-a">
+                    <a href="/home"  class="menu-logo-a">
                         <div id="menu-logo" class="menu-logo"></div>
                     </a>
                     <div class="menu-search">
@@ -53,23 +53,11 @@
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                         </li>
                         {% if userInfo._id %}
-                        {% if userInfo.isadmin %}
-                        <li class="menuli logined" id="adLogHome" style="display: none">
-                            <a href="" class=" menuli-a">
-                                <span class="menu-span">{{}}</span>
-
-                            </a>
-                        </li>
-
-                        {%else%}
-                        <li class="menuli logined" id="LogHome" style="display: none">
+                        <li class="menuli logined" id="adLogHome" style="display: block">
                             <a href="" class="menu-a">
-                                <span class="menu-span">{{}}</span>
-                                <span class="zt glyphicon glyphicon-chevron-down"></span>
+                                <span class="menu-span">{{userInfo.uname}}</span>
                             </a>
-
                         </li>
-                        {%endif%}
 
                         {%else%}
                         <li class="menuli home_no" style="display: block">
@@ -199,104 +187,24 @@
 
                 </div>
                 <div class="con-lof3">
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/airen.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">矮人</span>
-                                    <span class="card-p">大胆而勇敢的矮人族是一支古老的种族，它起源于早期世界的泰坦用具有活力的石头创造的土灵。</span>
-                                </div>
+                    {%for game in gameclass %}
+                        {%if game.gcamp=="联盟"%}
+                            <div class="card cards">
+                                <a href="" class="cards-card">
+                                    <div class="card-ima">
+                                        <div class="airen" style="background: url('../../../routers/{{game.gpic}}');background-size: cover;"></div>
+                                    </div>
+                                    <div class="card-con">
+                                        <div class="card-all">
+                                            <span class="card-tit">{{game.gclass}}</span>
+                                            <span class="card-p">{{game.gintro}}</span>
+                                        </div>
 
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/zhuru.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">侏儒</span>
-                                    <span class="card-p">聪明、生机勃勃并且阴晴不定的侏儒在艾泽拉斯文明的种族中代表了一个独特的矛盾体。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/renlei.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">人类</span>
-                                    <span class="card-p">虽然人类只是艾泽拉斯大陆上最年轻的种族之一，但他们的坚毅和决心已经帮助他们战胜了许多挑战。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/anyejingling.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">暗夜精灵</span>
-                                    <span class="card-p">古老而与世隔绝的暗夜精灵在艾泽拉斯历史的形成中扮演着关键性的角色。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/delaini.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">德莱尼</span>
-                                    <span class="card-p">德莱尼人以坚定不移的圣光信仰作为武器，他们逃离了战火纷飞的家园，成为了联盟的中坚成员，他们必将让这些古老的恶魔宿敌付出代价。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/langren.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">狼人</span>
-                                    <span class="card-p">在可怕的格雷迈恩之墙后面，有一个可怕的诅咒肆虐了吉尔尼斯这个与世隔绝的人类王国，许多健壮的居民被转化成可怕的野兽，他们被称为狼人。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/xiongmaoren1.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">熊猫人</span>
-                                    <span class="card-p">睿智的熊猫人重视身心的和谐，并为潘达利亚大陆的富饶和完整不懈地斗争着。一部分熊猫人离开了家乡加入联盟，在此寻找真正的正义以及荣耀。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
+                        {%endif%}
+                    {%endfor%}
                 </div>
             </div>
 
@@ -313,104 +221,24 @@
                     </div>
                 </div>
                 <div class="con-lof3">
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/shouren.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">兽人</span>
-                                    <span class="card-p">和部落的其他种族不同的是，兽人不是艾泽拉斯原住民。起初，他们以萨满部族的身份居住在苍翠繁茂的德拉诺世界。</span>
-                                </div>
+                    {%for game in gameclass %}
+                        {%if game.gcamp=="部落"%}
+                            <div class="card cards">
+                                <a href="" class="cards-card">
+                                    <div class="card-ima">
+                                        <div class="airen" style="background: url('../../../routers/{{game.gpic}}');background-size: cover;"></div>
+                                    </div>
+                                    <div class="card-con">
+                                        <div class="card-all">
+                                            <span class="card-tit">{{game.gclass}}</span>
+                                            <span class="card-p">{{game.gintro}}</span>
+                                        </div>
 
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/ntr.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">牛头人</span>
-                                    <span class="card-p">爱好和平的牛头人（在他们自己的语言中称为shu’halo）长期居住在卡利姆多，在他们的女神大地母亲的命令下，他们努力保护大自然的平衡。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/jumo.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">巨魔</span>
-                                    <span class="card-p">艾泽拉斯野蛮的巨魔因其残忍、邪恶的神秘主义以及对其他种族的强烈仇恨而臭名昭著。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/wangling.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">亡灵</span>
-                                    <span class="card-p">第三次战争后，巫妖王对其庞大军队的控制开始减弱，一小支亡灵队伍挣脱了他们主人的意志。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/xuejingling.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">血精灵</span>
-                                    <span class="card-p">在第三次战争期间，居住在奎尔萨拉斯的高等精灵几乎被屠杀殆尽。现在他们努力想要重现种族昔日的辉煌，并克服对奥术魔法的依赖。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/dijing.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">地精</span>
-                                    <span class="card-p">当锈水财阀的地精与其交往过的盟友重修旧好，他们受到了部落的热烈欢迎。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card cards">
-                        <a href="" class="cards-card">
-                            <div class="card-ima">
-                                <div class="airen" style="background: url('../../../public/images/game/xiongmaoren2.jpg');background-size: cover;"></div>
-                            </div>
-                            <div class="card-con">
-                                <div class="card-all">
-                                    <span class="card-tit">熊猫人</span>
-                                    <span class="card-p">睿智的熊猫人重视身心的和谐，并为潘达利亚大陆的富饶和完整不懈地斗争着。一部分熊猫人离开了家乡加入部落，毅然承担起保卫家园和其他种族的重担。</span>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
+                        {%endif%}
+                    {%endfor%}
                 </div>
             </div>
         </div>
@@ -485,6 +313,6 @@
             </div>
         </div>
     </footer>
-
+    <script src="../../../public/js/nav.js"></script>
 </body>
 </html>
