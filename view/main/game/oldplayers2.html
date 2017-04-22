@@ -10,6 +10,9 @@
     <link href="../../../public/css/oldplayers.css" rel="stylesheet">
     <link href="../../../public/css/nav.css" rel="stylesheet">
     <link href="../../../public/css/footer.css" rel="stylesheet">
+
+    <script src="../../../public/js/jquery-2.0.3.js"></script>
+    <script src="../../../public/js/nav.js"></script>
 </head>
 <body>
     <div class="page">
@@ -19,7 +22,7 @@
                 <div class="menu" id="menu">
 
                     <div class="nav" id="nav">
-                        <a href=""  class="menu-logo-a">
+                        <a href="home.html"  class="menu-logo-a">
                             <div id="menu-logo" class="menu-logo"></div>
                         </a>
                         <div class="menu-search">
@@ -40,26 +43,48 @@
 
                             </li>
                             <li class="menuli">
-                                <a href="" class="menu-a"><span class="menu-span">新闻</span></a>
+                                <a href="/news" class="menu-a"><span class="menu-span">新闻</span></a>
                             </li>
                             <li class="menuli">
-                                <a href="" class="menu-a"><span class="menu-span">论坛</span></a>
+                                <a href="/forum" class="menu-a"><span class="menu-span">论坛</span></a>
                             </li>
                         </ul>
                         <ul class="rightnav">
                             <li class="menuli">
                                 <a href="" class="menu-a"><span class="menu-span">
-                                <span class="\zt glyphicon glyphicon-search"></span></span></a></li>
-                            <li class="menuli">
+                                <span class="\zt glyphicon glyphicon-search"></span></span></a>
+                            </li>
+                            {% if userInfo._id %}
+                            {% if userInfo.isadmin %}
+                            <li class="menuli logined" id="adLogHome" style="display: none">
+                                <a href="" class=" menuli-a">
+                                    <span class="menu-span">{{}}</span>
+
+                                </a>
+                            </li>
+
+                            {%else%}
+                            <li class="menuli logined" id="LogHome" style="display: none">
                                 <a href="" class="menu-a">
+                                    <span class="menu-span">{{}}</span>
+                                    <span class="zt glyphicon glyphicon-chevron-down"></span>
+                                </a>
+
+                            </li>
+                            {%endif%}
+
+                            {%else%}
+                            <li class="menuli home_no" style="display: block">
+                                <a href="/user/login" class="menu-a">
                                     <span class="menu-span">登录</span>
                                 </a>
                             </li>
-                            <li class="menuli" id="register">
-                                <a href="" class="menu-a">
+                            <li class="menuli home_no" id="register" style="display: block">
+                                <a href="/user/register" class="menu-a">
                                     <span class="menu-span">注册</span>
                                 </a>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
                     <div class="menu-tuozhan" id="tuozhan1" style="display: none;">
@@ -70,8 +95,8 @@
                                 </div>
 
                                 <ul>
-                                    <li><a href="">种族</a></li>
-                                    <li><a href="">职业</a></li>
+                                    <li><a href="/gameraces">种族</a></li>
+                                    <li><a href="/gameclass">职业</a></li>
                                     <li><a href="">天赋模拟器</a></li>
                                     <li><a href="">服务器状态</a></li>
                                     <li><a href="">拍卖行</a></li>
@@ -82,32 +107,49 @@
                                     <span>指南</span>
                                 </div>
                                 <ul>
-                                    <li><a href="">新玩家：准备起步</a></li>
-                                    <li><a href="">回归玩家：欢迎回归</a></li>
+                                    <li><a href="/newplayers1">新玩家：准备起步</a></li>
+                                    <li><a href="/oldplayers1">回归玩家：欢迎回归</a></li>
 
                                 </ul>
                             </div>
-                            <div class="tuozhanlan">
-                                <div class="tuozhan-title">
-                                    <span>竞技</span>
-                                </div>
-                                <div class="tuozhan">
-                                    <ul>
-                                        <li><a href="">史诗钥石排行榜</a></li>
-                                        <li><a href="">PvP排行榜</a></li>
-                                    </ul>
-                                </div>
 
-                            </div>
                             <div class="tuozhanlan">
                                 <div class="tuozhan-title">
                                     <span>下载</span>
                                 </div>
                                 <ul>
-                                    <li><a href="">下载《魔兽世界》</a></li>
+                                    <li><a href="/download">下载《魔兽世界》</a></li>
 
                                 </ul>
                             </div>
+                            {% if userInfo._id %}
+
+                            <div class="tuozhanlan">
+                                <div class="tuozhan-title">
+                                    <span>控制</span>
+                                </div>
+                                <div class="tuozhan">
+                                    <ul>
+                                        {% if userInfo.isadmin %}
+                                        <li><a href="/admin">后台</a></li>
+                                        {% endif %}
+                                        <li><a id="tuichu" href="">退出</a></li>
+                                        <script>
+                                            $("#tuichu").on("click",function () {
+                                                $.get("/api/outlog",function (data) {
+                                                    if(data=="1"){
+                                                        location.href="/home";
+                                                        alert("退出成功");
+                                                    }
+                                                    console.log("aaaaaaa")
+                                                })
+                                            })
+                                        </script>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            {% endif %}
                         </div>
 
                     </div>
@@ -134,8 +176,6 @@
                                 </div>
                                 <ul>
                                     <li><a href="">魔兽里程碑</a></li>
-
-
                                 </ul>
                             </div>
 
@@ -353,8 +393,7 @@
                 </div>
             </div>
         </footer>
-        <script src="../../../public/js/jquery-2.0.3.js"></script>
-        <script src="../../../public/js/nav.js"></script>
+
         <script>
             var tab=$(".tabs-item");
             //console.log(tab);

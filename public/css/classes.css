@@ -41,7 +41,7 @@ a:hover{
     overflow-x: hidden;
     position: relative;
     z-index: 0;
-    background: url("../images/game/races.jpg") top center;
+    background: url("../images/game/classes.jpg") top center;
     background-size: 2400px;
 }
 .header{
@@ -130,7 +130,7 @@ a:hover{
     display: block;
 }
 .con-lof1 span{
-    font-size: 2.5em;
+    font-size: 40px;
     color: #fff;
     font-weight: 700;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
@@ -157,7 +157,7 @@ a:hover{
 }
 .cards{
     margin-bottom: 20px;
-    margin-top: -1px;
+    margin-top: 0;
 }
 .cards-card{
     display: block;
@@ -184,7 +184,7 @@ a:hover{
     padding: 20px;
 }
 .card-tit{
-    font-size: 1.6rem;
+    font-size: 24px;
     line-height: 1.5em;
     font-weight: 700;
     color: #f8b700;
@@ -193,7 +193,7 @@ a:hover{
 }
 .card-p{
     line-height: 1.7em;
-    font-size: 1.5em;
+    font-size: 18px;
     word-break: normal;
     color: #ebdec2;
 }
