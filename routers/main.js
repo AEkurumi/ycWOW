@@ -45,16 +45,19 @@ router.get("/user/register",function (req,res) {
     });
 });
 
-//论坛
+
+
+// 论坛
 router.get("/forum",function (req,res) {
     pool.getConnection(function (err,conn) {
-        conn.query("select * from forum",function (err,result) {
+        conn.query("select f.fname,fr.*from forumfirst f,forum fr where f.fid=fr.fid",function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
             }else if(result.length<=0){
                 console.log("数据库为空，请先添加数据库");
             }else{
+                console.log(result);
                 res.render("main/forum/forumIndex",{
                     userInfo:req.session.user,
                     forums:result
@@ -64,19 +67,33 @@ router.get("/forum",function (req,res) {
     });
 });
 
-router.get("/forum/kefu",function (req,res) {
+
+// router.get("/forum",function (req,res) {
+//     pool.getContent(function (err,conn) {
+//         if(err){
+//             console.log(err);
+//         }else{
+//             conn.query("select ")
+//         }
+//     })
+// });
+
+
+
+router.get("/forum/*",function (req,res) {
     var url=req.url;
     pool.getConnection(function (err,conn) {
-        conn.query("select * from forum where furl=?",[url],function (err,result) {
+        conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and furl=?",[url],function (err,result) {
             if(err){
                 console.log(err);
             }else{
-                conn.query("select c.*,u.uname from content c,wowuser u where c.uid=u.uid && conforumname=?;",[result[0].ftwoname],function (err,rs) {
+                console.log(result[0].ftwoname);
+                conn.query("select c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid && ftwoname=?",[result[0].ftwoname],function (err,rs) {
                     conn.release();
-                    console.log(rs);
                     if(err){
                         console.log(err);
                     }else{
+                        console.log(rs[0].contime.split(",")[0]);
                         res.render("main/forum/forum",{
                             userInfo:req.session.user,
                             forumss:result,
@@ -89,15 +106,12 @@ router.get("/forum/kefu",function (req,res) {
     })
 });
 
-router.get("/topic/1492826403692",function (req,res) {
+router.get("/topic/*",function (req,res) {
     var url=req.url;
     var num=url.split("/")[2];
-    console.log(num);
-    console.log(url);
     pool.getConnection(function (err,conn) {
-        conn.query("select c.*,u.uname from content c,wowuser u where c.uid=u.uid && conurl=?",[num],function (err,result) {
+        conn.query("select fr.furl,c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid && conurl=?",[num],function (err,result) {
             conn.release();
-            console.log(result);
             if(err){
                 console.log(err);
             }else{

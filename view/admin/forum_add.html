@@ -18,9 +18,9 @@
         <div class="form-group">
             <label for="title">论坛区</label>
             <select name="gameclass" id="gclass" class="form-control" style="width: 150px;">
-                <option value="客户服务">客户服务</option>
-                <option value="综合讨论">综合讨论</option>
-                <option value="职业讨论">职业讨论</option>
+                {% for fname in fnames%}
+                    <option value="{{fname.fname}}">{{fname.fname}}</option>
+                {%endfor%}
             </select>
         </div>
 

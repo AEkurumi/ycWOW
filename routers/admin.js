@@ -319,7 +319,7 @@ router.get("/forum",function (req,res) {
         if(err){
             console.log(err);
         }else{
-            conn.query("select * from forum",function (err,result) {
+            conn.query("select f.fname,fr.*from forumfirst f,forum fr where f.fid=fr.fid",function (err,result) {
                 var count=result.length;
                 var pages=Math.ceil(count/size);
                 var mxpages=pages-1;
@@ -328,7 +328,7 @@ router.get("/forum",function (req,res) {
                 page=Math.max(page,1);
 
                 //还要查一次数据库
-                conn.query("select * from forum limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.query("select f.fname,fr.*from forumfirst f,forum fr where f.fid=fr.fid limit ?,?",[size*(page-1),size],function (err,rs) {
                     conn.release();
                     if(err){
                         console.log(err);
@@ -396,12 +396,26 @@ router.get("/forum/delete",function (req,res) {
 });
 
 
-router.get("/forumAdd",function (req,res) {
-    res.render("admin/forum_add",{
-        userInfo:req.session.user
-    })
-});
 
+
+
+
+
+router.get("/forumAdd",function (req,res) {
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from forumfirst",function (err,result) {
+            if(err){
+               console.log(err);
+            }else {
+                console.log(result);
+                res.render("admin/forum_add",{
+                    userInfo:req.session.user,
+                    fnames:result
+                })
+            }
+        })
+    });
+});
 
 
 //论坛版块添加
@@ -445,14 +459,47 @@ router.post("/forumAdd",upload.array("pic"),function (req,res) {
 });
 
 
-//发送官方贴
 
 
 router.get("/forumSend",function (req,res) {
-    res.render("admin/forum_send",{
-        userInfo:req.session.user
-    })
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from forumfirst",function (err,result) {
+            if(err){
+                console.log(err);
+            }else {
+                conn.query("select * from forum",function (err,rs) {
+                    conn.release();
+                    if(err){
+                        console.log(err);
+                    }else {
+                        console.log(rs);
+                        console.log(result);
+                        res.render("admin/forum_send",{
+                            userInfo:req.session.user,
+                            forums:rs,
+                            fnames:result
+                        })
+                    }
+                })
+            }
+        })
+    });
 });
+
+
+router.get("/forumSend",function (req,res) {
+    pool.getConnection(function (err,conn) {
+
+    });
+});
+
+
+//发送官方贴
+// router.get("/forumSend",function (req,res) {
+//     res.render("admin/forum_send",{
+//         userInfo:req.session.user
+//     })
+// });
 
 router.post("/forumSend",function (req,res) {
     var conforum=req.body.conforum;
@@ -494,7 +541,7 @@ router.get("/sendHistory",function (req,res) {
         if(err){
             console.log(err);
         }else{
-            conn.query("select * from content",function (err,result) {
+            conn.query("select c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid",function (err,result) {
                 var count=result.length;
                 var pages=Math.ceil(count/size);
                 var mxpages=pages-1;
@@ -503,7 +550,7 @@ router.get("/sendHistory",function (req,res) {
                 page=Math.max(page,1);
 
                 //还要查一次数据库
-                conn.query("select * from content limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.query("select c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid limit ?,?",[size*(page-1),size],function (err,rs) {
                     conn.release();
                     if(err){
                         console.log(err);
@@ -512,6 +559,7 @@ router.get("/sendHistory",function (req,res) {
                             contents:rs
                         });
                     }else {
+                        console.log(rs);
                         res.render("admin/forum_li",{
                             userInfo:req.session.user,
                             contents:rs,
@@ -545,13 +593,6 @@ router.get("/sendHistory/delete",function (req,res) {
         });
     })
 });
-
-
-
-
-
-
-
 
 
 

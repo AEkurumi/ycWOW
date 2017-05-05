@@ -72,7 +72,7 @@
         </header>
         <div class="forumCus_li">
             {% for forum in forums%}
-                {% if forum.fonename=="客户服务" %}
+                {% if forum.fname=="客户服务" %}
                 <a class="forumCuspice_left" href="{{forum.furl}}">
                     <div class="diva">
                         <img src="../../routers/{{forum.fpic}}" style="width: 50px;height: 50px;">
@@ -93,7 +93,7 @@
         </header>
         <div class="forumCus_li">
             {% for forum in forums%}
-            {% if forum.fonename=="综合讨论" %}
+            {% if forum.fname=="综合讨论" %}
             <a class="forumCuspice_left" href="{{forum.furl}}">
                 <div class="diva">
                     <img src="../../routers/{{forum.fpic}}" style="width: 50px;height: 50px;">
@@ -115,7 +115,7 @@
         </header>
         <div class="forumCus_li">
             {% for forum in forums%}
-                {% if forum.fonename=="职业讨论" %}
+                {% if forum.fname=="职业讨论" %}
                 <a class="forumCuspice_left" href="{{forum.furl}}">
                     <div class="diva">
 
@@ -224,13 +224,6 @@
             }
         })
     }
-
-
-
-
-
-
-
 
 
 </script>

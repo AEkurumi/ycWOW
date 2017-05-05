@@ -64,19 +64,18 @@
                                 <span class="\zt glyphicon glyphicon-search"></span></span></a>
                         </li>
                         {% if userInfo.uname %}
-                            <li class="menuli logined" id="adLogHome" style="display: block">
+                            <li class="menuli logined" id=" " style="display: block">
                                 <a href="" class="menu-a">
                                     <span class="menu-span">{{userInfo.uname}}</span>
                                 </a>
                             </li>
-
                         {%else%}
-                            <li class="menuli home_no" style="display: block">
+                            <li class="menuli home_no">
                                 <a href="/user/login" class="menu-a">
                                     <span class="menu-span">登录</span>
                                 </a>
                             </li>
-                            <li class="menuli home_no" id="register" style="display: block">
+                            <li class="menuli home_no" id="register">
                                 <a href="/user/register" class="menu-a">
                                     <span class="menu-span">注册</span>
                                 </a>
@@ -131,17 +130,7 @@
                                     <li><a href="/admin">后台</a></li>
                                     {% endif %}
                                     <li><a id="tuichu" href="">退出</a></li>
-                                    <script>
-                                        $("#tuichu").on("click",function () {
-                                            $.get("/api/outlog",function (data) {
-                                                if(data=="1"){
-                                                    location.href="/home";
-                                                    alert("退出成功");
-                                                }
-                                                console.log("aaaaaaa")
-                                            })
-                                        })
-                                    </script>
+
                                 </ul>
                             </div>
 
@@ -460,6 +449,19 @@
     </div>
 </footer>
 <script>
+
+    
+    $("#tuichu").on("click",function () {
+        $.get("/api/outlog",function (data) {
+            if(data=="1"){
+                location.href="/home";
+                alert("退出成功");
+            }
+            console.log("aaaaaaa")
+        })
+    })
+
+
     window.onscroll=function () {
 
         var t = document.documentElement.scrollTop || document.body.scrollTop;
@@ -537,6 +539,8 @@
 
         }
     });
+
+
 </script>
 </body>
 </html>

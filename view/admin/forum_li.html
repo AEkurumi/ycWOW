@@ -27,9 +27,9 @@
         {% for content in contents %}
         <tr>
             <td class="text-center">{{content.conid}}</td>
-            <td class="text-center">{{content.uid}}</td>
-            <td class="text-center">{{content.conforum}}</td>
-            <td class="text-center">{{content.conforumname}}</td>
+            <td class="text-center">{{content.uname}}</td>
+            <td class="text-center">{{content.fname}}</td>
+            <td class="text-center">{{content.ftwoname}}</td>
             <td class="text-center">{{content.contit}}</td>
             <td class="text-center">{{content.content}}</td>
             <td class="text-center"><a href="/admin/sendHistory/delete?id={{content.conid.toString()}}">删除</a></td>
