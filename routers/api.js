@@ -161,5 +161,44 @@ router.get("/outlog",function (req,res) {
     res.send("1");
 });
 
+
+router.post("/ans/post",function (req,res) {
+    var cid=req.body.contentid;
+    //协议    只是程序员为了方便存数据，约定好，什么符号是什么意思
+    var postData=req.session.user.uname+","+new Date()+","+req.body.content+";";
+    pool.getConnection(function (err,conn) {
+        conn.query("update content set ans=CONCAT(ans,?) where conid=?",[postData,cid],function (err,result) {
+            conn.release();
+            if(err){
+                console.log(err);
+                resData.code=0;
+                resData.message="评论失败";
+                res.json(resData);
+            }else{
+                resData.code=1;
+                resData.message="评论成功";
+                res.json(resData);
+            }
+
+        })
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //2、把这个路由的文件和主模块连接起来
 module.exports=router;

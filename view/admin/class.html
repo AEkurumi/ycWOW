@@ -15,12 +15,23 @@
 
     <table class="table table-hover table-striped ">
         <tr>
-            <td class="text-center" style="width: 50px;">ID</td>
-            <td class="text-center" style="width: 100px;">游戏阵营</td>
-            <td class="text-center" style="width: 100px;">游戏种族</td>
-            <td class="text-center">种族简介</td>
-            <td class="text-center" style="width: 150px;">种族图片</td>
-            <td class="text-center" style="width: 50px;">操作</td>
+            <th class="text-center" style="width: 50px; vertical-align: middle !important;">ID</th>
+            <th class="text-center" style="width: 150px; vertical-align: middle !important;">
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" style="background: transparent; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        游戏阵营 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/gameclass/lianmeng">联盟</a></li>
+                        <li><a href="/admin/gameclass/buluo">部落</a></li>
+                    </ul>
+                </div>
+
+            </th>
+            <th class="text-center" style="width: 100px; vertical-align: middle !important;">游戏种族</th>
+            <th class="text-center" style="vertical-align: middle !important;">种族简介</th>
+            <th class="text-center" style="width: 150px; vertical-align: middle !important;">种族图片</th>
+            <th class="text-center" style="width: 50px; vertical-align: middle !important;">操作</th>
         </tr>
 
         {% for gclass in allClass%}

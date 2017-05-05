@@ -15,17 +15,30 @@
 
     <table class="table table-hover table-striped ">
         <tr>
-            <td class="text-center" style="width: 50px;">ID</td>
-            <td class="text-center" style="width: 100px;">论坛区域</td>
-            <td class="text-center" style="width: 150px;">论坛级版块</td>
-            <td class="text-center">论坛二级版块介绍</td>
-            <td class="text-center" style="width: 150px;">论坛级版块图片</td>
-            <td class="text-center" style="width: 50px;">操作</td>
+            <th class="text-center" style="width: 50px;vertical-align: middle !important;">ID</th>
+            <th class="text-center" style="width: 100px; vertical-align: middle !important;">
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" style="background: transparent; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b>论坛区域</b> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/forum/kuhu">客户服务</a></li>
+                        <li><a href="/admin/forum/zonghe">综合讨论</a></li>
+                        <li><a href="/admin/forum/zhiye">职业讨论</a></li>
+                    </ul>
+                </div>
+
+
+            </th>
+            <th class="text-center" style="width: 150px;vertical-align: middle !important;">论坛级版块</th>
+            <th class="text-center" style="vertical-align: middle !important;">论坛二级版块介绍</th>
+            <th class="text-center" style="width: 150px;vertical-align: middle !important;">论坛级版块图片</th>
+            <th class="text-center" style="width: 50px;vertical-align: middle !important;">操作</th>
         </tr>
 
         {% for forum in forums %}
         <tr>
-            <td class="text-center" style="height: 100px; line-height: 100px;">{{forum.fid}}</td>
+            <td class="text-center" style="height: 100px; line-height: 100px;">{{forum.ftwoid}}</td>
             <td class="text-center" style="height: 100px; line-height: 100px;">{{forum.fname}}</td>
             <td class="text-center" style="height: 100px; line-height: 100px;">{{forum.ftwoname}}</td>
             <td class="text-center" style="height: 100px; padding-top: 49px;">{{forum.ftwointro}}</td>

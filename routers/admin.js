@@ -121,6 +121,84 @@ router.get("/gameclass",function (req,res) {
     });
 });
 
+//显示联盟
+router.get("/gameclass/lianmeng",function (req,res) {
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from gameclass where gcamp='联盟'",function (err,result) {
+
+            var count=result.length;
+            var pages=Math.ceil(count/size);
+            var mxpages=pages-1;
+            //控制一下页数
+            page=Math.min(page,pages);
+            page=Math.max(page,1);
+
+            conn.query("select * from gameclass where gcamp='联盟' limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.release();
+                if(err){
+                    console.log(err);
+                    result={};
+                    res.render("admin/class",{
+                        allClass:rs
+                    });
+                }else{
+                    res.render("admin/class",{
+                        userInfo:req.session.user,
+                        allClass:rs,
+                        tag:"gameclass/lianmeng",
+                        page:page,
+                        pages:pages,
+                        count:count,
+                        size:size
+                    });
+                }
+
+            });
+        })
+    })
+});
+
+//显示联盟
+router.get("/gameclass/buluo",function (req,res) {
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+    pool.getConnection(function (err,conn) {
+        conn.query("select * from gameclass where gcamp='部落'",function (err,result) {
+
+            var count=result.length;
+            var pages=Math.ceil(count/size);
+            var mxpages=pages-1;
+            //控制一下页数
+            page=Math.min(page,pages);
+            page=Math.max(page,1);
+
+            conn.query("select * from gameclass where gcamp='部落' limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.release();
+                if(err){
+                    console.log(err);
+                    result={};
+                    res.render("admin/class",{
+                        allClass:rs
+                    });
+                }else{
+                    res.render("admin/class",{
+                        userInfo:req.session.user,
+                        allClass:rs,
+                        tag:"gameclass/buluo",
+                        page:page,
+                        pages:pages,
+                        count:count,
+                        size:size
+                    });
+                }
+
+            });
+        })
+    })
+});
+
 
 //种族删除
 router.get("/gameclass/delete",function (req,res) {
@@ -146,8 +224,6 @@ router.post("/addClass",upload.array("pic"),function (req,res) {
     var gintro=req.body.gintro;
 
     pool.getConnection(function (err,conn) {
-        console.log("aaaaaaaaa"+req.files);
-        console.log(req.files);
         if(req.files!=undefined){
             var file;
             var fileName;
@@ -185,6 +261,27 @@ router.get("/addClass",function (req,res) {
         userInfo:req.session.user
     })
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -271,7 +368,6 @@ router.post("/characteradd",upload.array("pic"),function (req,res) {
     var cintro=req.body.cintro;
 
     pool.getConnection(function (err,conn) {
-        console.log(req.files);
         if(req.files!=undefined){
             var file;
             var fileName;
@@ -287,7 +383,6 @@ router.post("/characteradd",upload.array("pic"),function (req,res) {
 
             }
         }
-        console.log(filePath);
         conn.query("insert into career values(null,?,?,?,?)",[cname,cfeatures,cintro,filePath],function (err,result) {
             conn.release();
             if(err){
@@ -353,7 +448,119 @@ router.get("/forum",function (req,res) {
     });
 });
 
+router.get("/forum/kuhu",function (req,res) {
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+    pool.getConnection(function (err,conn) {
+        conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='1'",function (err,result) {
 
+            var count=result.length;
+            var pages=Math.ceil(count/size);
+            var mxpages=pages-1;
+            //控制一下页数
+            page=Math.min(page,pages);
+            page=Math.max(page,1);
+
+            conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='1' limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.release();
+                if(err){
+                    console.log(err);
+                    result={};
+                    res.render("admin/forum",{
+                        forums:rs
+                    });
+                }else{
+                    res.render("admin/forum",{
+                        userInfo:req.session.user,
+                        forums:rs,
+                        tag:"forum/kuhu",
+                        page:page,
+                        pages:pages,
+                        count:count,
+                        size:size
+                    });
+                }
+
+            });
+        })
+    })
+});
+
+router.get("/forum/zonghe",function (req,res) {
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+    pool.getConnection(function (err,conn) {
+        conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='2'",function (err,result) {
+
+            var count=result.length;
+            var pages=Math.ceil(count/size);
+            var mxpages=pages-1;
+            //控制一下页数
+            page=Math.min(page,pages);
+            page=Math.max(page,1);
+
+            conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='2' limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.release();
+                if(err){
+                    console.log(err);
+                    result={};
+                    res.render("admin/forum",{
+                        forums:rs
+                    });
+                }else{
+                    res.render("admin/forum",{
+                        userInfo:req.session.user,
+                        forums:rs,
+                        tag:"forum/zonghe",
+                        page:page,
+                        pages:pages,
+                        count:count,
+                        size:size
+                    });
+                }
+
+            });
+        })
+    })
+});
+
+router.get("/forum/zhiye",function (req,res) {
+    var page=Number(req.query.page || 1);
+    var size=7;  //默认每一页7个
+    pool.getConnection(function (err,conn) {
+        conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='3'",function (err,result) {
+
+            var count=result.length;
+            var pages=Math.ceil(count/size);
+            var mxpages=pages-1;
+            //控制一下页数
+            page=Math.min(page,pages);
+            page=Math.max(page,1);
+
+            conn.query("select f.fname,fr.* from forumfirst f,forum fr where f.fid=fr.fid and fr.fid='3' limit ?,?",[size*(page-1),size],function (err,rs) {
+                conn.release();
+                if(err){
+                    console.log(err);
+                    result={};
+                    res.render("admin/forum",{
+                        forums:rs
+                    });
+                }else{
+                    res.render("admin/forum",{
+                        userInfo:req.session.user,
+                        forums:rs,
+                        tag:"forum/zhiye",
+                        page:page,
+                        pages:pages,
+                        count:count,
+                        size:size
+                    });
+                }
+
+            });
+        })
+    })
+});
 
 router.get("/forumClass",function (req,res) {
     pool.getConnection(function (err,conn) {
@@ -420,12 +627,11 @@ router.get("/forumAdd",function (req,res) {
 
 //论坛版块添加
 router.post("/forumAdd",upload.array("pic"),function (req,res) {
-    var fonename=req.body.fonename;
+    var fonename=Number(req.body.fonename);
     var ftwoname=req.body.ftwoname;
     var ftwointro=req.body.ftwointro;
 
     pool.getConnection(function (err,conn) {
-        console.log(req.files);
         if(req.files!=undefined){
             var file;
             var fileName;
@@ -441,8 +647,11 @@ router.post("/forumAdd",upload.array("pic"),function (req,res) {
 
             }
         }
-        console.log(filePath);
-        conn.query("insert into forum values(null,?,?,?,?)",[fonename,ftwoname,ftwointro,filePath],function (err,result) {
+        var data=new Date();
+        var addTime=data.getFullYear()+","+(data.getMonth()+1)+","+data.getDate()+" "+data.getHours()+":"+data.getMinutes()+":"+data.getSeconds()+":"+data.getMilliseconds();
+        var addurl="/form/"+data.getTime();
+
+        conn.query("insert into forum values(null,?,?,?,?,?)",[fonename,ftwoname,ftwointro,filePath,addurl],function (err,result) {
             conn.release();
             if(err){
                 console.log(err);
@@ -472,8 +681,6 @@ router.get("/forumSend",function (req,res) {
                     if(err){
                         console.log(err);
                     }else {
-                        console.log(rs);
-                        console.log(result);
                         res.render("admin/forum_send",{
                             userInfo:req.session.user,
                             forums:rs,
@@ -559,7 +766,6 @@ router.get("/sendHistory",function (req,res) {
                             contents:rs
                         });
                     }else {
-                        console.log(rs);
                         res.render("admin/forum_li",{
                             userInfo:req.session.user,
                             contents:rs,
@@ -575,6 +781,17 @@ router.get("/sendHistory",function (req,res) {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 //论坛版块删除

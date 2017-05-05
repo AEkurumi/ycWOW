@@ -57,7 +57,6 @@ router.get("/forum",function (req,res) {
             }else if(result.length<=0){
                 console.log("数据库为空，请先添加数据库");
             }else{
-                console.log(result);
                 res.render("main/forum/forumIndex",{
                     userInfo:req.session.user,
                     forums:result
@@ -67,19 +66,6 @@ router.get("/forum",function (req,res) {
     });
 });
 
-
-// router.get("/forum",function (req,res) {
-//     pool.getContent(function (err,conn) {
-//         if(err){
-//             console.log(err);
-//         }else{
-//             conn.query("select ")
-//         }
-//     })
-// });
-
-
-
 router.get("/forum/*",function (req,res) {
     var url=req.url;
     pool.getConnection(function (err,conn) {
@@ -87,13 +73,24 @@ router.get("/forum/*",function (req,res) {
             if(err){
                 console.log(err);
             }else{
-                console.log(result[0].ftwoname);
+                console.log(result);
                 conn.query("select c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid && ftwoname=?",[result[0].ftwoname],function (err,rs) {
                     conn.release();
                     if(err){
                         console.log(err);
                     }else{
-                        console.log(rs[0].contime.split(",")[0]);
+
+                        for(var i=0;i<rs.length;i++){
+
+                            var length=rs[i].ans.split(";").length;
+
+                            if(length==0){
+                                rs[i].ans=0;
+                            }else{
+                                rs[i].ans=length-1;
+                            }
+                        }
+                        console.log(rs);
                         res.render("main/forum/forum",{
                             userInfo:req.session.user,
                             forumss:result,
@@ -112,12 +109,31 @@ router.get("/topic/*",function (req,res) {
     pool.getConnection(function (err,conn) {
         conn.query("select fr.furl,c.*,w.uname,f.fname,fr.ftwoname from forumfirst f,wowuser w,content c,forum fr where f.fid=c.fid and c.ftwoid=fr.ftwoid and c.uid=w.uid && conurl=?",[num],function (err,result) {
             conn.release();
+
+            var mycomments=result[0].ans.split(";");
+            var comments=[];
+            var mydata={};
+            for(var i=0;i<mycomments.length-1;i++){
+                mydata.uname=mycomments[i].split(",")[0];
+                mydata.ttime=mycomments[i].split(",")[1];
+                mydata.content=mycomments[i].split(",")[2];
+                comments.push(mydata);
+                mydata={};
+            }
+
+            //数组倒序
+            comments.reverse();
+
+            result[0].comments=comments.length;
+
             if(err){
                 console.log(err);
             }else{
                 res.render("main/forum/forum_posts_off",{
                     userInfo:req.session.user,
-                    cons:result
+                    cons:result,
+                    comments:comments
+
                 })
             }
         })
@@ -179,39 +195,40 @@ router.get("/news",function (req,res) {
 
 //职业
 router.get("/gameclass",function (req,res) {
-    console.log("gameclass");
     pool.getConnection(function (err,conn) {
         conn.query("select * from career",function (err,result) {
-            conn.release();
-            if(err){
-                console.log(err);
+            var len=result.length;
+            var yblen;
+            if(len%2==0){
+                yblen=len/2;
             }else{
-                res.render("main/game/classes",{
-                    userInfo:req.session.user,
-                    career1:result[0],
-                    career2:result[1],
-                    career3:result[2],
-                    career4:result[3],
-                    career5:result[4],
-                    career6:result[5],
-                    career7:result[6],
-                    career8:result[7],
-                    career9:result[8],
-                    career10:result[9],
-                    career11:result[10],
-                    career12:result[11],
-                    career13:result[12],
-                });
+                yblen=Math.round(len/2);
             }
+            conn.query("select * from career limit ?",[yblen],function (err,resu) {
+                conn.query("select * from career limit ?,?",[yblen,len],function (err,resul) {
+                    conn.release();
+                    if(err){
+                        console.log(err);
+                    }else{
+                        res.render("main/game/classes",{
+                            userInfo:req.session.user,
+                            career1s:resu,
+                            career2s:resul
+
+
+                        })
+                    }
+                });
+            });
         })
     });
 });
 
 //种族
 router.get("/gameraces",function (req,res) {
-    console.log("gameraces");
     pool.getConnection(function (err,conn) {
         conn.query("select * from gameclass",function (err,result) {
+            conn.release();
             if(err){
                 console.log(err);
             }else{

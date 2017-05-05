@@ -80,10 +80,10 @@
                     <span class="main_off_art_title">{{con.contit}}</span>
                     <span class="main_off_art_news">
                         <i class="new_icon"></i>
-                        <span class="news_num">{{con.ans}}</span>
+                        <span class="news_num">{%if con.ans%}{{con.ans}}{%else%}0{%endif%}</span>
                     </span>
                     <span class="main_off_art_author">{{con.uname}}</span>
-                    <span class="main_off_art_time">{{con.contime}}</span>
+                    <span class="main_off_art_time">{{con.contime | date('Y年m月d日',-8*60)}}</span>
                 </a>
                 {%endif%}
             {%endfor%}
@@ -101,7 +101,7 @@
                                 <span class="news_num">{{con.ans}}</span>
                             </span>
                         <span class="main_off_art_author">{{con.uname}}</span>
-                        <span class="main_off_art_time">{{con.contime}</span>
+                        <span class="main_off_art_time">{{con.contime | date('Y年m月d日',-8*60)}}</span>
                     </a>
                 {%endif%}
             {%endfor%}

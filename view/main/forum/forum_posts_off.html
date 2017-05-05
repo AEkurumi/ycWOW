@@ -61,14 +61,14 @@
                 <i class="main_logo"></i>
                 <span class="main_title_name_txt">{{cons[0].contit}}</span>
             </div>
-            <div class="main_title_search">
-                <form>
-                    <button class="new_theme">
-                        <i class="forum_icon"></i>
-                        <span class="new_theme_name">回复</span>
-                    </button>
-                </form>
-            </div>
+            <!--<div class="main_title_search">-->
+                <!--<form>-->
+                    <!--<button class="new_theme">-->
+                        <!--<i class="forum_icon"></i>-->
+                        <!--<span class="new_theme_name">回复</span>-->
+                    <!--</button>-->
+                <!--</form>-->
+            <!--</div>-->
         </div>
 
         {% for content in cons%}
@@ -80,9 +80,11 @@
                 <div class="forum_posts_left_user" >
                     <span>{{content.uname}}</span>
                 </div>
+
             </div>
+            <input type="hidden" id="contentId" value="{{content.conid}}">
             <div class="forum_posts_right">
-                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <a class="forum_posts_right_time" href="javascript:void (0);">{{content.contime|date('Y年m月d日',-8*60)}}</a>
                 <div class="forum_posts_right_con">
                     {{content.content}}
                 </div>
@@ -90,46 +92,57 @@
             <div class="clear"></div>
         </div>
         {%endfor%}
+
+        {% for comment in comments%}
         <div class="forum_posts">
             <div class="forum_posts_left">
                 <a class="forum_posts_left_logo" href="">
-                    <img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">
+                    <img src="../../../public/images/forum/icon/avatar-wow-default.png" style="width: 72px;height: 72px;">
                 </a>
                 <div class="forum_posts_left_user" >
-                    <span>aaaa</span>
+                    <span>{{comment.uname}}</span>
                 </div>
+
             </div>
             <div class="forum_posts_right">
-                <a class="forum_posts_right_time" href="javascript:void (0);">2017年8月26日</a>
+                <a class="forum_posts_right_time" href="javascript:void (0);">{{comment.ttime | date('Y年m月d日 H:i:s',-8*60)}}</a>
                 <div class="forum_posts_right_con">
-                    昨天上午转服后 军团再临APP显示该角色暂时无法登陆 什么时候能恢复
+                    {{comment.content}}
                 </div>
             </div>
             <div class="clear"></div>
         </div>
+        {%endfor%}
+
+
+
     </div>
-    <!--<div class="huifu">-->
+    <div class="huifu">
+        <div class="huifudiv">
 
+            {%if userInfo._id%}
+                <div class="forum_posts_left">
+                    <a class="forum_posts_left_logo" href="javascript:void(0)">
+                        <img src="../../../public/images/forum/icon/avatar-wow-default.png" style="width: 72px;height: 72px;">
+                    </a>
+                    <div class="forum_posts_left_user" >
+                        <span>{{userInfo.uname}}</span>
+                    </div>
+                </div>
+                <div class="forum_posts_right">
+                    <textarea id="tijiaoContent" style="width: 70%;height: 200px; font-size: 20px;"></textarea><br>
+                    <button type="submit" id="tijiao" class="new_theme">发送</button>
+                </div>
+                <div class="clear"></div>
+            {%else%}
+                <div style="text-align: center; margin-top: 70px;">
+                    <a href="/user/login" class="new_theme" style="width: 300px;height: 50px; line-height: 50px;">请先登录</a>
+                </div>
 
+            {%endif%}
 
-
-        <!--<div class="huifudiv">-->
-            <!---->
-            <!--<div class="forum_posts_left">-->
-                <!--<a class="forum_posts_left_logo" href="">-->
-                    <!--<img src="../../../public/images/forum/icon/wangyi.gif" style="width: 72px;height: 72px;">-->
-                <!--</a>-->
-                <!--<div class="forum_posts_left_user" >-->
-                    <!--<span>{{content.uname}}</span>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="forum_posts_right">-->
-                <!--<textarea style="width: 70%;height: 200px;"></textarea><br>-->
-                <!--<button class="new_theme">发送</button>-->
-            <!--</div>-->
-            <!--<div class="clear"></div>-->
-        <!--</div>-->
-    <!--</div>-->
+        </div>
+    </div>
 </div>
 
 
@@ -181,5 +194,33 @@
         </div>
     </footer>
 </div>
+
+<script>
+
+    $("#tijiao").on("click",function () {
+        $.ajax({
+            type:"POST",
+            url:"/api/ans/post",
+            data:{
+                contentid:$("#contentId").val(),
+                content:$("#tijiaoContent").val()
+            },
+            success:function (data) {
+                alert(data.message);
+                location.reload();
+            }
+
+        })
+    })
+</script>
+
+
+
+
+
+
+
+
+
 </body>
 </html>

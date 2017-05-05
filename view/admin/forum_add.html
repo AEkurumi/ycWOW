@@ -19,7 +19,7 @@
             <label for="title">论坛区</label>
             <select name="gameclass" id="gclass" class="form-control" style="width: 150px;">
                 {% for fname in fnames%}
-                    <option value="{{fname.fname}}">{{fname.fname}}</option>
+                    <option value="{{fname.fid}}">{{fname.fname}}</option>
                 {%endfor%}
             </select>
         </div>
